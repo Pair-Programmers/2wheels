@@ -14,32 +14,12 @@
     <title>Buy Engine &amp; Mechanical Parts online in Pakistan | PakWheels</title>
     <script src="https://wsa2.pakwheels.com/assets/classified/top_javascript-0c9654bdb83d35bf1fa129a253ce6300.js" type="text/javascript"></script>
     <script src="{{ asset('website') }}/assets/js/search-add-list.js" type="text/javascript"></script>
+</head>
+<body>
     <style>
         body {
             background-color: #fff;
         }
-
-        .location-checkbox,
-        .brand-checkbox,
-        .range-checkbox,
-        .category-checkbox {
-            width: fit-content;
-        }
-
-        .range-checkbox-block,
-        .company-checkbox-block,
-        .location-checkbox-block,
-        .category-parts-checkbox-block {
-            height: 35px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    </style>
-</head>
-
-<body>
-    <style>
         .dropdown-toggle::after {
             display: none;
         }
@@ -84,6 +64,22 @@
                 max-width: 1280px;
                 width: 1280px;
             }
+        }
+        .location-checkbox,
+        .brand-checkbox,
+        .range-checkbox,
+        .category-checkbox {
+            width: fit-content;
+        }
+
+        .range-checkbox-block,
+        .company-checkbox-block,
+        .location-checkbox-block,
+        .category-parts-checkbox-block {
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     </style>
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
@@ -330,627 +326,133 @@
                     <div class="search-page-new">
                         <div class="row">
                             <div class="col-md-2 accessory-refine-search">
-                                <div class="col-10 p-0">
-                                    <h4 data-toggle="collapse" data-target="#choosebike" class="pt-3" style="cursor: pointer;">Choose</h4>
-                                    <div id="choosebike" class="collaps">
-                                        <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="category-parts">Used Bike</label>
-                                            <input type="checkbox" name="body_type[]" value="Standard" id="category-parts" class="category-checkbox">
-                                        </div>
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="bicycles-parts">New Bike</label>
-                                            <input type="checkbox" name="body_type[]" value="Heavy Bike" id="bicycles-parts" class="category-checkbox">
-                                        </div>
-                                    </div>
-                                    <h4 data-toggle="collapse" data-target="#demo" class="pt-3" style="cursor: pointer;">CATEGORIES</h4>
-                                    <div id="demo" class="collaps">
-                                        <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="category-parts">Standard</label>
-                                            <input type="checkbox" name="body_type[]" value="Standard" id="category-parts" class="category-checkbox">
-                                        </div>
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="bicycles-parts">Heavy Bike</label>
-                                            <input type="checkbox" name="body_type[]" value="Heavy Bike" id="bicycles-parts" class="category-checkbox">
-                                        </div>
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="scooters-parts">Sports Bike</label>
-                                            <input type="checkbox" name="body_type[]" value="Sports Bike" id="scooters-parts" class="category-checkbox">
-                                        </div>
-
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="scooters-parts">Dirt Bike</label>
-                                            <input type="checkbox" name="body_type[]" value="Dirt Bike" id="scooters-parts" class="category-checkbox">
-                                        </div>
-
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="category-parts">ATV</label>
-                                            <input type="checkbox" name="body_type[]" value="ATV" id="category-parts" class="category-checkbox">
-                                        </div>
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="bicycles-parts">Chopper</label>
-                                            <input type="checkbox" name="body_type[]" value="Chopper" id="bicycles-parts" class="category-checkbox">
-                                        </div>
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="scooters-parts">Scooter</label>
-                                            <input type="checkbox" name="body_type[]" value="Scooter" id="scooters-parts" class="category-checkbox">
-                                        </div>
-
-                                        <div class="category-parts-checkbox-block">
-                                            <label class="m-0" for="scooters-parts">Trail</label>
-                                            <input type="checkbox" name="body_type[]" value="Trail" id="scooters-parts" class="category-checkbox">
-                                        </div>
-                                    </div>
-                                    <h4 data-toggle="collapse" data-target="#demo3" class="pt-3" style="cursor: pointer;">LOCATIONS</h4>
-
-                                    <div id="demo3" class="collapse">
-                                        <h6 class="py-2">FILTER </h6>
-                                        <div class="location-checkbox-block">
-                                            <label class="m-0" for="city_name_lahore">Lahore</label>
-                                            <input type="checkbox" name="city[]" value="Lahore" id="city_name_lahore" class="location-checkbox">
-                                        </div>
-                                        <div class="location-checkbox-block">
-                                            <label class="m-0" for="city_name_karachi">Karachi</label>
-                                            <input type="checkbox" name="city[]" value="Karachi" id="city_name_karachi" class="location-checkbox">
-                                        </div>
-                                        <div class="location-checkbox-block">
-                                            <label class="m-0" for="city_name_islamabad">Islamabad</label>
-                                            <input type="checkbox" name="city[]" value="Islamabad" id="city_name_islamabad" class="location-checkbox">
-                                        </div>
-                                        <div class="location-checkbox-block">
-                                            <label class="m-0" for="city_name_rawalpindi">Rawalpindi</label>
-                                            <input type="checkbox" name="city[]" value="Rawalpindi" id="city_name_rawalpindi" class="location-checkbox">
-                                        </div>
-                                        <div class="location-checkbox-block">
-                                            <label class="m-0" for="city_name_peshawar">Peshawar</label>
-                                            <input type="checkbox" name="city[]" value="Peshawar" id="city_name_peshawar" class="location-checkbox">
-                                        </div>
-                                    </div>
-                                    <h4 data-toggle="collapse" data-target="#demo2" class="pt-3" style="cursor: pointer;">Company / MAKE</h4>
-                                    <div id="demo2" class="collapse">
-                                        <p>All Make</p>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="1">Honda</label>
-                                            <input type="checkbox" name="companies[]" value="1" id="1" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="2">Yamaha</label>
-                                            <input type="checkbox" name="companies[]" value="2" id="2" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="3">Sazuki</label>
-                                            <input type="checkbox" name="companies[]" value="3" id="3" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="4">Chinese Bike</label>
-                                            <input type="checkbox" name="companies[]" value="4" id="4" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="5">United</label>
-                                            <input type="checkbox" name="companies[]" value="5" id="5" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="6">Road Prince</label>
-                                            <input type="checkbox" name="companies[]" value="6" id="6" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="7">Kawasaki</label>
-                                            <input type="checkbox" name="companies[]" value="7" id="7" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="8">Super Power</label>
-                                            <input type="checkbox" name="companies[]" value="8" id="8" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="9">Hi Speed</label>
-                                            <input type="checkbox" name="companies[]" value="9" id="9" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="10">Unique</label>
-                                            <input type="checkbox" name="companies[]" value="10" id="10" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="11">Benelli</label>
-                                            <input type="checkbox" name="companies[]" value="11" id="11" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="12">Vespa</label>
-                                            <input type="checkbox" name="companies[]" value="12" id="12" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="13">ZXMCO</label>
-                                            <input type="checkbox" name="companies[]" value="13" id="13" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="14">Sigma</label>
-                                            <input type="checkbox" name="companies[]" value="14" id="14" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="15">Harley Davidson</label>
-                                            <input type="checkbox" name="companies[]" value="15" id="15" class="brand-checkbox">
-                                        </div>
-                                    </div>
-
-                                    <h4 data-toggle="collapse" data-target="#demo33" class="pt-3" style="cursor: pointer;">Model</h4>
-                                    <div id="demo33" class="collapse">
-                                        <p>All Models</p>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="1">CD 70</label>
-                                            <input type="checkbox" name="modeles[]" value="1" id="1" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="2">CB 150F</label>
-                                            <input type="checkbox" name="modeles[]" value="2" id="2" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="3">Pridor</label>
-                                            <input type="checkbox" name="modeles[]" value="3" id="3" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="4">CG 125 Deluxe</label>
-                                            <input type="checkbox" name="modeles[]" value="4" id="4" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="5">CD 70 Dream</label>
-                                            <input type="checkbox" name="modeles[]" value="5" id="5" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="6">CB 125F</label>
-                                            <input type="checkbox" name="modeles[]" value="6" id="6" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="7">YBR 125</label>
-                                            <input type="checkbox" name="modeles[]" value="7" id="7" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="8">YBR 125G</label>
-                                            <input type="checkbox" name="modeles[]" value="8" id="8" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="9">YB 125Z</label>
-                                            <input type="checkbox" name="modeles[]" value="9" id="9" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="10">Royale YB 100</label>
-                                            <input type="checkbox" name="modeles[]" value="10" id="10" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="11">YZF-R6</label>
-                                            <input type="checkbox" name="modeles[]" value="11" id="11" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="12">YZF-R1</label>
-                                            <input type="checkbox" name="modeles[]" value="12" id="12" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="13">GS 150</label>
-                                            <input type="checkbox" name="modeles[]" value="13" id="13" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="14">GD 110S</label>
-                                            <input type="checkbox" name="modeles[]" value="14" id="14" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="15">GR 150</label>
-                                            <input type="checkbox" name="modeles[]" value="15" id="15" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="16">GS 150 SE</label>
-                                            <input type="checkbox" name="modeles[]" value="16" id="16" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="17">GSX-R600</label>
-                                            <input type="checkbox" name="modeles[]" value="17" id="17" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="18">Hayabusa</label>
-                                            <input type="checkbox" name="modeles[]" value="18" id="18" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="19">GD 110</label>
-                                            <input type="checkbox" name="modeles[]" value="19" id="19" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="20">OW Ninja 250cc</label>
-                                            <input type="checkbox" name="modeles[]" value="20" id="20" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="21">150cc</label>
-                                            <input type="checkbox" name="modeles[]" value="21" id="21" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="22">70</label>
-                                            <input type="checkbox" name="modeles[]" value="22" id="22" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="23">125</label>
-                                            <input type="checkbox" name="modeles[]" value="23" id="23" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="24">Lifan</label>
-                                            <input type="checkbox" name="modeles[]" value="24" id="24" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="25">OW R3 250cc</label>
-                                            <input type="checkbox" name="modeles[]" value="25" id="25" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="26">US 70</label>
-                                            <input type="checkbox" name="modeles[]" value="26" id="26" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="27">US 125</label>
-                                            <input type="checkbox" name="modeles[]" value="27" id="27" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="28">US 100</label>
-                                            <input type="checkbox" name="modeles[]" value="28" id="28" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="29">US Scooty 100</label>
-                                            <input type="checkbox" name="modeles[]" value="29" id="29" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="30">US 125 Deluxe</label>
-                                            <input type="checkbox" name="modeles[]" value="30" id="30" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="31">US 150 Ultimate</label>
-                                            <input type="checkbox" name="modeles[]" value="31" id="31" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="32">RP 70 Passion</label>
-                                            <input type="checkbox" name="modeles[]" value="32" id="32" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="33">Wego 150</label>
-                                            <input type="checkbox" name="modeles[]" value="33" id="33" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="34">RP 110</label>
-                                            <input type="checkbox" name="modeles[]" value="34" id="34" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="35">RP 125 Euro II</label>
-                                            <input type="checkbox" name="modeles[]" value="35" id="35" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="36">Bullet</label>
-                                            <input type="checkbox" name="modeles[]" value="36" id="36" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="37">Robinson 150</label>
-                                            <input type="checkbox" name="modeles[]" value="37" id="37" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="38">Ninja 250R</label>
-                                            <input type="checkbox" name="modeles[]" value="38" id="38" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="39">GTO 125</label>
-                                            <input type="checkbox" name="modeles[]" value="39" id="39" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="40">GTO 100</label>
-                                            <input type="checkbox" name="modeles[]" value="40" id="40" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="41">GTO 110</label>
-                                            <input type="checkbox" name="modeles[]" value="41" id="41" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="42">Ninja ZX-10R</label>
-                                            <input type="checkbox" name="modeles[]" value="42" id="42" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="43">SP 70</label>
-                                            <input type="checkbox" name="modeles[]" value="43" id="43" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="44">Leo 200</label>
-                                            <input type="checkbox" name="modeles[]" value="44" id="44" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="45">SP 150 Archi</label>
-                                            <input type="checkbox" name="modeles[]" value="45" id="45" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="46">SP-100</label>
-                                            <input type="checkbox" name="modeles[]" value="46" id="46" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="47">PK 150 Archi</label>
-                                            <input type="checkbox" name="modeles[]" value="47" id="47" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="48">Sultan SP 250</label>
-                                            <input type="checkbox" name="modeles[]" value="48" id="48" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="49">Infinity 150</label>
-                                            <input type="checkbox" name="modeles[]" value="49" id="49" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="50">CDI SR-70CC EURO-2</label>
-                                            <input type="checkbox" name="modeles[]" value="50" id="50" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="51">Xtreme UD 70</label>
-                                            <input type="checkbox" name="modeles[]" value="51" id="51" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="52">UD 100</label>
-                                            <input type="checkbox" name="modeles[]" value="52" id="52" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="53">UD 125</label>
-                                            <input type="checkbox" name="modeles[]" value="53" id="53" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="54">Crazer UD-150</label>
-                                            <input type="checkbox" name="modeles[]" value="54" id="54" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="55">TNT 25</label>
-                                            <input type="checkbox" name="modeles[]" value="55" id="55" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="56">TNT 150i</label>
-                                            <input type="checkbox" name="modeles[]" value="56" id="56" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="57">302 R</label>
-                                            <input type="checkbox" name="modeles[]" value="57" id="57" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="58">180S</label>
-                                            <input type="checkbox" name="modeles[]" value="58" id="58" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="59">TNT 600</label>
-                                            <input type="checkbox" name="modeles[]" value="59" id="59" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="60">TRK 251</label>
-                                            <input type="checkbox" name="modeles[]" value="60" id="60" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="61">150cc</label>
-                                            <input type="checkbox" name="modeles[]" value="61" id="61" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="62">PIAGGIO</label>
-                                            <input type="checkbox" name="modeles[]" value="62" id="62" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="63">P150x</label>
-                                            <input type="checkbox" name="modeles[]" value="63" id="63" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="64">KPR 200 Cruise</label>
-                                            <input type="checkbox" name="modeles[]" value="64" id="64" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="65">ZX 70 City Rider</label>
-                                            <input type="checkbox" name="modeles[]" value="65" id="65" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="66">Monster ZX 250-D</label>
-                                            <input type="checkbox" name="modeles[]" value="66" id="66" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="67">ZX 125</label>
-                                            <input type="checkbox" name="modeles[]" value="67" id="67" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="68">ZX 70 Thunder Plus</label>
-                                            <input type="checkbox" name="modeles[]" value="68" id="68" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="69">ZX 100 Power Max</label>
-                                            <input type="checkbox" name="modeles[]" value="69" id="69" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="70">ZX 125 Stallion</label>
-                                            <input type="checkbox" name="modeles[]" value="70" id="70" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="71">Valentino 350</label>
-                                            <input type="checkbox" name="modeles[]" value="71" id="71" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="72">Skyline 250</label>
-                                            <input type="checkbox" name="modeles[]" value="72" id="72" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="73">Gladiator 200</label>
-                                            <input type="checkbox" name="modeles[]" value="73" id="73" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="74">Thunder 150</label>
-                                            <input type="checkbox" name="modeles[]" value="74" id="74" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="75">VALENTINO 150cc</label>
-                                            <input type="checkbox" name="modeles[]" value="75" id="75" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="76">ELIGATOR 250CC</label>
-                                            <input type="checkbox" name="modeles[]" value="76" id="76" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="77">Valentino 250</label>
-                                            <input type="checkbox" name="modeles[]" value="77" id="77" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="78">Iron 883</label>
-                                            <input type="checkbox" name="modeles[]" value="78" id="78" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="79">883 Low</label>
-                                            <input type="checkbox" name="modeles[]" value="79" id="79" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="80">Night Rod Special</label>
-                                            <input type="checkbox" name="modeles[]" value="80" id="80" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="81">1200 Custom</label>
-                                            <input type="checkbox" name="modeles[]" value="81" id="81" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="82">883 Custom</label>
-                                            <input type="checkbox" name="modeles[]" value="82" id="82" class="brand-checkbox">
-                                        </div>
-                                        <div class="company-checkbox-block">
-                                            <label class="m-0" for="83">Ultra Classic</label>
-                                            <input type="checkbox" name="modeles[]" value="83" id="83" class="brand-checkbox">
-                                        </div>
-                                    </div>
-
-                                    <h4 data-toggle="collapse" data-target="#demo11" class="pt-3" style="cursor: pointer;">Price</h4>
-                                    <div id="demo11" class="collaps">
-                                        <div class="row m-0">
-                                            <p>Change a range below</p>
-                                            <div class="col-12 p-0">
-                                                <div class="row m-0 align-items-center">
-                                                    <div class="col-12 p-0 my-2">
-                                                        <input type="number" name="price_from" min="0" class="custom-control" placeholder="From">
+                            <form style="width: 100%;display:block;" action="bike_search_result_sidebar_index" method="POST">
+                                        @csrf
+                                        <div class="row m-0 w-100">
+                                            <div class="col-md-12 col-2 p-0 w-100">
+                                                <h4 data-toggle="collapse" data-target="#choosebike" class="pt-3" style="cursor: pointer;">Choose </h4>
+                                                <div id="choosebike" class="collaps">
+                                                    <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="category-parts">Used Bike</label>
+                                                        <input type="radio" name="category" value="Used Bike" id="category-parts" class="category-checkbox" />
                                                     </div>
-                                                    <div class="col-12 p-0">
-                                                        <input type="number" name="price_to" min="0" class="custom-control" placeholder="To">
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="bicycles-parts">New Bike</label>
+                                                        <input type="radio" name="category" value="New Bike" id="bicycles-parts" class="category-checkbox" />
+                                                    </div>
+
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="bicycles-parts">Both</label>
+                                                        <input type="radio" name="category" value="Both" checked id="bicycles-parts" class="category-checkbox" />
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button class="btn common-btn-clr mt-5 text-right" type="submit"> Search</button>
-                                </div>
-                                <!-- <div class="sidebar-filters">
-                                    <div class="filter-panel-new box" data-pjax-enable>
-                                        <div class="accordion" id="sidebar">
-                                            <div class="accordion-group search-filter-heading">
-                                                <div class="accordion-heading">
-                                                    <a class="accordion-toggle">Show Results By:</a>
-                                                </div>
-                                            </div>
-                                            <div class="accordion-group">
-                                                <div class="accordion-heading">
-                                                    <a class="accordion-toggle" data-toggle="collapse" href="#collapse_search_key_keyword">
-                                                        <i class="fa fa-caret-down"></i>Search by Keyword
-                                                    </a>
-                                                </div>
-                                                <div id="collapse_search_key_keyword" class="accordion-body collapse in">
-                                                    <div class="accordion-inner">
-                                                        <form id="" action="{{ route('search_by_word') }}" method="POST">
-                                                            @csrf
-                                                            <input class="pr35" id="q" placeholder="e.g. honda, cd 70 " required name="searchbyname" type="text" />
+                                                <h4 data-toggle="collapse" data-target="#demo" class="pt-3" style="cursor: pointer;">CATEGORIES</h4>
+                                                <div id="demo" class="collaps">
+                                                    <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="category-parts">Standard</label>
+                                                        <input type="checkbox" name="body_type[]" value="Standard" id="category-parts" class="category-checkbox" />
+                                                    </div>
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="bicycles-parts">Heavy Bike</label>
+                                                        <input type="checkbox" name="body_type[]" value="Heavy Bike" id="bicycles-parts" class="category-checkbox" />
+                                                    </div>
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="scooters-parts">Sports Bike</label>
+                                                        <input type="checkbox" name="body_type[]" value="Sports Bike" id="scooters-parts" class="category-checkbox" />
+                                                    </div>
 
-                                                            <input class="btn btn-primary refine-go" type="submit" value="Go" />
-                                                        </form>
-                                                        <input id="query_params" name="query_params" type="hidden" value="" />
-                                                        </form>
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="scooters-parts">Dirt Bike</label>
+                                                        <input type="checkbox" name="body_type[]" value="Dirt Bike" id="scooters-parts" class="category-checkbox" />
+                                                    </div>
+
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="category-parts">ATV</label>
+                                                        <input type="checkbox" name="body_type[]" value="ATV" id="category-parts" class="category-checkbox" />
+                                                    </div>
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="bicycles-parts">Chopper</label>
+                                                        <input type="checkbox" name="body_type[]" value="Chopper" id="bicycles-parts" class="category-checkbox" />
+                                                    </div>
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="scooters-parts">Scooter</label>
+                                                        <input type="checkbox" name="body_type[]" value="Scooter" id="scooters-parts" class="category-checkbox" />
+                                                    </div>
+
+                                                    <div class="category-parts-checkbox-block">
+                                                        <label class="m-0" for="scooters-parts">Trail</label>
+                                                        <input type="checkbox" name="body_type[]" value="Trail" id="scooters-parts" class="category-checkbox" />
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="accordion-group">
-                                                <div class="accordion-heading">
-                                                    <a class="accordion-toggle" data-toggle="collapse" href="#collapse_category1">
-                                                        <i class="fa fa-caret-down"></i>Category
-                                                    </a>
-                                                </div>
-                                                <div style="padding-left: 4px;padding-right: 4px;" id="collapse_category1" class="accordion-body collapse in">
-                                                    <div class="accordion-inner">
-                                                        <div id="sidetree">
-                                                            <ul id="tree" class="list-unstyled treeview">
-                                                                <li class="expandable">
-                                                                    @foreach ($companies as $company)
-                                                                    <a href="{{ route('bike_by_make', $company->id) }}" style="display: block;">
-                                                                        {{ $company->name }}
-                                                                    </a>
-                                                                    @endforeach
+                                                <h4 data-toggle="collapse" data-target="#demo3" class="pt-3" style="cursor: pointer;">LOCATIONS</h4>
 
-
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                                <div id="demo3" class="collapse">
+                                                    <h6 class="py-2">FILTER </h6>
+                                                    <div class="location-checkbox-block">
+                                                        <label class="m-0" for="city_name_lahore">Lahore</label>
+                                                        <input type="checkbox" name="city[]" value="Lahore" id="city_name_lahore" class="location-checkbox" />
+                                                    </div>
+                                                    <div class="location-checkbox-block">
+                                                        <label class="m-0" for="city_name_karachi">Karachi</label>
+                                                        <input type="checkbox" name="city[]" value="Karachi" id="city_name_karachi" class="location-checkbox" />
+                                                    </div>
+                                                    <div class="location-checkbox-block">
+                                                        <label class="m-0" for="city_name_islamabad">Islamabad</label>
+                                                        <input type="checkbox" name="city[]" value="Islamabad" id="city_name_islamabad" class="location-checkbox" />
+                                                    </div>
+                                                    <div class="location-checkbox-block">
+                                                        <label class="m-0" for="city_name_rawalpindi">Rawalpindi</label>
+                                                        <input type="checkbox" name="city[]" value="Rawalpindi" id="city_name_rawalpindi" class="location-checkbox" />
+                                                    </div>
+                                                    <div class="location-checkbox-block">
+                                                        <label class="m-0" for="city_name_peshawar">Peshawar</label>
+                                                        <input type="checkbox" name="city[]" value="Peshawar" id="city_name_peshawar" class="location-checkbox" />
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="accordion-group">
-                                                <div class="accordion-heading">
-                                                    <a class="accordion-toggle" data-toggle="collapse" href="#collapse_category2">
-                                                        <i class="fa fa-caret-down"></i>Models
-                                                    </a>
-                                                </div>
-                                                <div id="collapse_category2" class="accordion-body collapse in">
-                                                    <div class="accordion-inner">
-                                                        <div id="sidetree">
-                                                            <ul id="tree" class="list-unstyled treeview">
-                                                                <li class="expandable">
-                                                                    @foreach ($models as $model)
-                                                                    <a href="{{ route('bike_by_model', $model->id) }}" style="margin-left:3px;">
-                                                                        {{ $model->name }}
-                                                                    </a>&nbsp; /
-                                                                    @endforeach
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                                <h4 data-toggle="collapse" data-target="#demo2" class="pt-3" style="cursor: pointer;">Company / MAKE</h4>
+                                                <div id="demo2" class="collapse">
+                                                    <p>All Make</p>
+                                                    @foreach ($companies as $key=>$company)
+                                                    <div class="company-checkbox-block">
+                                                        <label class="m-0" for="{{$company->id}}">{{$company->name}}</label>
+                                                        <input type="checkbox" name="companies[]" value="{{$company->id}}" id="{{$company->id}}" class="brand-checkbox" />
                                                     </div>
+                                                    @endforeach
                                                 </div>
-                                            </div>
-                                            <div class="accordion-group">
-                                                <div class="accordion-heading">
-                                                    <a class="accordion-toggle text-left " data-toggle="collapse" href="#collapse_4">
-                                                        <i class="fa fa-caret-down"></i>Engine Type
-                                                    </a>
-                                                </div>
-                                                <div id="collapse_4" class="accordion-body filter_21 collapse in">
-                                                    <div class="accordion-inner">
-                                                        <ul class="list-unstyled ">
 
-                                                            <li title="Accessories for Sale in Pakistan">
-                                                                <label class="filter-check clearfix">
-                                                                    <input type="checkbox" value="2-stroke" />
-                                                                    2 Stroke
-                                                                </label>
-                                                            </li>
-                                                            <li title="Accessories for Sale in Pakistan">
-
-                                                                <label class="filter-check clearfix">
-                                                                    <input type="checkbox" value="4-stroke" />
-                                                                    4 Stroke
-                                                                </label>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="clearfix"></div>
+                                                <h4 data-toggle="collapse" data-target="#demo33" class="pt-3" style="cursor: pointer;">Model</h4>
+                                                <div id="demo33" class="collapse">
+                                                    <p>All Models</p>
+                                                    @foreach ($models as $key=>$model)
+                                                    <div class="company-checkbox-block">
+                                                        <label class="m-0" for="{{$model->id}}">{{$model->name}}</label>
+                                                        <input type="checkbox" name="modeles[]" value="{{$model->id}}" id="{{$model->id}}" class="brand-checkbox" />
                                                     </div>
+                                                    @endforeach
                                                 </div>
-                                            </div>
-                                            <div class="accordion-group">
-                                                <div class="accordion-heading">
-                                                    <a class="accordion-toggle text-left " data-toggle="collapse" href="#collapse_5">
-                                                        <i class="fa fa-caret-down"></i>Price Range
-                                                    </a>
-                                                </div>
-                                                <form class="w-100 d-block" id="" action="{{ route('search_by_price_range') }}" method="POST">
-                                                    @csrf
-                                                    <div id="collapse_5" class="accordion-body filter_25 p-1 collapse in">
-                                                        <div class="accordion-inner">
-                                                            <div class="range-filter clearfix d-flex justify-content-between">
-                                                                <input class="rng-hintify" style="width: 90px;height:34px;" data-hintify="{&quot;min&quot;:1,&quot;max&quot;:1000000000,&quot;step&quot;:5000,&quot;add_comma&quot;:true}" id="pr_from" maxlength="9" name="price_from" placeholder="From" type="number" value="" required />
-                                                                <input class="rng-hintify" style="width: 90px;height:34px;" data-hintify="{&quot;min&quot;:1,&quot;max&quot;:1000000000,&quot;step&quot;:5000,&quot;add_comma&quot;:true}" id="pr_to" maxlength="9" name="price_to" placeholder="To" type="number" value="" required />
-                                                                <input class="btn btn-primary pull-left" data-alias="pr" data-max-text="More" data-min-text="Less" data-name="price range" id="pr-go" name="commit" type="submit" value="Go" />
-                                                                <div class="clearfix"></div>
+                                 
+                                                <h4 data-toggle="collapse" data-target="#demo11" class="pt-3" style="cursor: pointer;">Year</h4>
+                                                <div id="demo11" class="collaps">
+                                                    <div class="row m-0">
+                                                        <p>Change a range below</p>
+                                                        <div class="col-12 p-0">
+                                                            <div class="row m-0 align-items-center">
+                                                                <div class="col-12 p-0 my-2">
+                                                                    <input type="number" maxlength="4" minlength="4" min="1950" max="2021" name="price_from" min="0" class="custom-control" placeholder="From">
+                                                                </div>
+                                                                <div class="col-12 p-0">
+                                                                    <input type="number" maxlength="4" minlength="4" min="1950" max="2021" name="price_to" min="0" class="custom-control" placeholder="To">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
+                                                </div>
+                                                <button class="btn common-btn-clr mt-5 text-right" type="submit"> Search</button>
                                             </div>
                                         </div>
-                                    </div>
-                                </div> -->
+                                    </form>
                             </div>
                             <!-- copy here -->
                             <div class="col-md-10 search-listing">
@@ -991,12 +493,12 @@
                                 <!-- search start -->
                                 <div class="col-12 p-0 mb-3">
                                     <!-- {{route('bike_search_result_index')}} -->
-                                    <form action="" method="POST">
+                                    <form action="{{route('bike_search_result_index')}}" method="POST">
                                         @csrf
                                         <div class="row m-0 w-100">
 
-                                            <div class="col-md-6 my-1 col-12 p-0 pr-md-2">
-                                                <input type="text" required name="keyword" placeholder="Search Here" class="custom-control w-100 ">
+                                            <div class="col-md-6 my-1 col-12 pl-md-5 ">
+                                                <input type="text" name="keyword" placeholder="Search Here" class="custom-control w-100 ">
                                             </div>
                                             <div class="col-md-2 my-1 col-12 px-md-0">
                                                 <input type="text" name="min_price" list="MinPrice" placeholder="Min Price" />
@@ -1038,7 +540,7 @@
                                                     <option value='200000'>200,000 Pk</option>
                                                 </datalist>
                                             </div>
-                                            <div class="col-md-2 my-1 col-12 pl-md-0 pb-1">
+                                            <div class="col-md-2 my-1 col-12 pl-md-0 pr-md-5 pb-1">
                                                 <button class="btn common-btn-clr w-100 h-100">Search</button>
                                             </div>
                                         </div>
@@ -1106,14 +608,14 @@
                                                 </div>
                                                 <div class="col-md-12 text-right p-0">
                                                     <form action="{{ route('add_to_wishlist') }}" method="POST">
-                                                            @csrf
-                                                            {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
-                                                            <input type="hidden" name="for_favourite" value="{{ $product->for_favourite }}">
-                                                            <input type="hidden" name="product_or_bike_id" value="{{ $product->id }}">
-                                                            <!-- <span><i class="icofont icofont-heart-alt"></i></span> -->
-                                                            <span style="font-size: 21px;">&#9825;</span>
-                                                        </form>
-                                                    </div>
+                                                        @csrf
+                                                        {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
+                                                        <input type="hidden" name="for_favourite" value="{{ $product->for_favourite }}">
+                                                        <input type="hidden" name="product_or_bike_id" value="{{ $product->id }}">
+                                                        <!-- <span><i class="icofont icofont-heart-alt"></i></span> -->
+                                                        <span style="font-size: 21px;">&#9825;</span>
+                                                    </form>
+                                                </div>
                                                 <div class="search-bottom clearfix">
                                                     <div>
                                                         <div style="margin-bottom: 10px" class="quantizer-info links-container pull-right mr5 clearfix">
