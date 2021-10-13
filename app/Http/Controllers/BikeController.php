@@ -13,6 +13,7 @@ use Auth;
 
 class BikeController extends Controller
 {
+    private $paginate_qty = 15;
     /**
      * Display a listing of the resource.
      *
@@ -76,7 +77,7 @@ class BikeController extends Controller
                 return redirect()->back()->with('error', 'Maximum Post Reaches, You canot Post More');
             }else{
                 Bike::create($inputs);
-                
+
                 $user->update(['no_of_post_bike'=>($no_of_posts+1)]);
                 return redirect()->back()->with('success', 'Post Submitted Successfully');
             }
@@ -148,7 +149,7 @@ class BikeController extends Controller
          unset($inputs['user']);
          unset($inputs['used_bike']);
 
-        
+
 
         $inputs['user_id'] = Auth::id();
         $inputs['additional_info'] = json_encode($request->additional_info);
@@ -196,11 +197,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = Company::find($make)->name;
 
-        $bikes = Bike::where('category', 'Used Bike')->where('company_id', $make)->get();
-        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('category', 'Used Bike')->where('company_id', $make)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -214,11 +215,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = $body_type;
 
-        $bikes = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->get();
-        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -232,11 +233,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = $city;
 
-        $bikes = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->get();
-        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -251,51 +252,51 @@ class BikeController extends Controller
         switch ($price) {
             case '1':
                 $search_result = 'below 20000';
-                $bikes = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->get();
-                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('price', 'DESC')->get();
-                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('price', 'ASC')->get();
-                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('created_at', 'ASC')->get();
-                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('created_at', 'DESC')->get();
+                $bikes = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->paginate($this->paginate_qty);
+                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '<', 20000)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
                 break;
             case '2':
                 $search_result = '20000 to 40000';
-                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->get();
-                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('price', 'DESC')->get();
-                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('price', 'ASC')->get();
-                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('created_at', 'ASC')->get();
-                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('created_at', 'DESC')->get();
+                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->paginate($this->paginate_qty);
+                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 20000)->where('price', '<=', 40000)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
                 break;
             case '3':
                 $search_result = '40000 to 60000';
-                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->get();
-                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('price', 'DESC')->get();
-                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('price', 'ASC')->get();
-                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('created_at', 'ASC')->get();
-                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('created_at', 'DESC')->get();
+                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->paginate($this->paginate_qty);
+                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 40000)->where('price', '<=', 60000)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
                 break;
             case '4':
                 $search_result = '60000 to 100000';
-                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->get();
-                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('price', 'DESC')->get();
-                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('price', 'ASC')->get();
-                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('created_at', 'ASC')->get();
-                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('created_at', 'DESC')->get();
+                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->paginate($this->paginate_qty);
+                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 60000)->where('price', '<=', 100000)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
                 break;
             case '5':
                 $search_result = '100000 to 100000';
-                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->get();
-                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('price', 'DESC')->get();
-                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('price', 'ASC')->get();
-                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('created_at', 'ASC')->get();
-                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('created_at', 'DESC')->get();
+                $bikes = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->paginate($this->paginate_qty);
+                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>=', 100000)->where('price', '<=', 140000)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
                 break;
             case '6':
                 $search_result = 'above 1400000';
-                $bikes = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->get();
-                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('price', 'DESC')->get();
-                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('price', 'ASC')->get();
-                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('created_at', 'ASC')->get();
-                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('created_at', 'DESC')->get();
+                $bikes = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->paginate($this->paginate_qty);
+                $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+                $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateOld = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+                $bikesDateRecent = Bike::where('category', 'Used Bike')->where('price', '>', 1400000)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
                 break;
             default:
                 $vendors = array();
@@ -312,11 +313,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = Company::find($make)->name;
 
-        $bikes = Bike::where('category', 'New Bike')->where('company_id', $make)->get();
-        $bikesPriceHighToLow = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('category', 'New Bike')->where('company_id', $make)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -330,11 +331,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = Company::find($make)->name;
 
-        $bikes = Bike::where('company_id', $make)->get();
-        $bikesPriceHighToLow = Bike::where('company_id', $make)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('company_id', $make)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('company_id', $make)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('company_id', $make)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('company_id', $make)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('company_id', $make)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('company_id', $make)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('company_id', $make)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('company_id', $make)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -348,11 +349,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = BikeModel::find($model)->name;
 
-        $bikes = Bike::where('category', 'New Bike')->where('model_id', $model)->get();
-        $bikesPriceHighToLow = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('category', 'New Bike')->where('model_id', $model)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('category', 'New Bike')->where('model_id', $model)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -366,11 +367,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = BikeModel::find($model)->name;
 
-        $bikes = Bike::where('category', 'Used Bike')->where('model_id', $model)->get();
-        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('category', 'Used Bike')->where('model_id', $model)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -384,11 +385,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = BikeModel::find($model)->name;
 
-        $bikes = Bike::where('model_id', $model)->get();
-        $bikesPriceHighToLow = Bike::where('model_id', $model)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('model_id', $model)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('model_id', $model)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('model_id', $model)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('model_id', $model)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('model_id', $model)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('model_id', $model)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('model_id', $model)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('model_id', $model)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -403,11 +404,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = '';
 
-        $bikes = Bike::orderby('created_at', 'DESC')->get();
-        $bikesPriceHighToLow = Bike::orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::orderby('created_at', 'DESC')->get();
+        $bikes = Bike::orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::orderby('created_at', 'DESC')->paginate($this->paginate_qty);
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
          'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
 
@@ -416,15 +417,15 @@ class BikeController extends Controller
     public function search_by_word(Request $request)//
     {
         $models = BikeModel::all();
-        
+
         $companies = Company::all();
         $search_result = $request->searchbyname;
 
-        $bikes = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'DESC')->get();
-        $bikesPriceHighToLow = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
          'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
 
@@ -437,11 +438,11 @@ class BikeController extends Controller
         $companies = Company::all();
         $search_result = $request->price_from . '  -  ' . $request->price_to;
 
-        $bikes = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->get();
-        $bikesPriceHighToLow = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('price', 'DESC')->get();
-        $bikesPriceLowToHigh = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('price', 'ASC')->get();
-        $bikesDateOld = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'ASC')->get();
-        $bikesDateRecent = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'DESC')->get();
+        $bikes = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->paginate($this->paginate_qty);
+        $bikesPriceHighToLow = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        $bikesPriceLowToHigh = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('price', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateOld = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        $bikesDateRecent = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
@@ -512,7 +513,7 @@ class BikeController extends Controller
 
     public function bikeimport()
     {
-        
+
         $models = BikeModel::all();
         $companies = Company::all();
         $allnews = Blog::orderby('created_at', 'DESC')->paginate(3);
@@ -522,7 +523,7 @@ class BikeController extends Controller
     }
     public function bikefinance()
     {
-        
+
         $models = BikeModel::all();
         $companies = Company::all();
 
@@ -532,7 +533,7 @@ class BikeController extends Controller
 
     public function mtmispak()
     {
-        
+
         $models = BikeModel::all();
         $companies = Company::all();
 

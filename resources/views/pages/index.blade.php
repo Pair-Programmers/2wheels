@@ -259,13 +259,15 @@
                                     <div class="generic-green truncate fs14">PKR {{ $bike->price }} <span>k</span></div>
                                     <div class="mt10 mb10">
                                         <span class="rating generic-orange fs12 fs12">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                @if($i <= $bike->rating)
+                                                <i class="fas fa-star"></i>
+                                                @else
+                                                <i class="fas fa-star-o"></i>
+                                                @endif
+                                            @endfor
                                         </span>
-                                        <span class="fs14 generic-gray ml5 dib">{{ count($bike->model->reviews) }} Reviews</span>
+                                        <span class="fs14 generic-gray ml5 dib">{{ $bike->no_of_reviews }} Reviews</span>
                                     </div>
                                 </div>
                             </a>
@@ -275,7 +277,11 @@
                 @empty
                 @endforelse
                 <!--  -->
+                <div class="col-12 p-0">
+                    {{ $searchedbikes->links('pagination::bootstrap-4') }}
+                </div>
             </div>
+
             <!--  -->
         </div>
     </div>
@@ -331,6 +337,102 @@
             </a>
         </div>
         <div class="tab-content jump">
+            <div class="tab-pane active" id="home1">
+                <div class="product-slider-active owl-carousel">
+
+                    <div class="product-wrapper-bundle">
+                        @php
+                            $number = 1;
+                        @endphp
+                        @foreach ($newBikes as $key=>$bike)
+                            <div class="product-wrapper">
+                                <div class="product-img">
+                                    <a href="{{route('bike.show', $bike->id)}}">
+                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:488px;width:370px;">
+                                    </a>
+                                    <div class="product-item-dec">
+                                        <ul>
+                                            <li>{{$bike->model_year}}</li>
+                                            <li>{{$bike->company->name}}</li>
+                                            <li>{{$bike->body_type}}</li>
+                                            <li>{{$bike->engine_type}}</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product-content-wrapper">
+                                        <div class="product-title-spreed">
+                                            <h4><a href="product-details.html">{{$bike->name}}</a></h4>
+                                            <span>{{$bike->rating}}/5</span>
+                                        </div>
+                                        <div class="product-price">
+                                            <span>PKR {{$bike->price}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @if ($number % 2 == 0)
+                                </div>
+                                <div class="product-wrapper-bundle">
+
+                            @endif
+                            @php
+                                $number = $number + 1;
+                            @endphp
+                        @endforeach
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="home2">
+                <div class="product-slider-active owl-carousel">
+                    <div class="product-wrapper-bundle">
+                        @php
+                            $number = 1;
+                        @endphp
+                        @foreach ($usedBikes as $key=>$bike)
+                            <div class="product-wrapper">
+                                <div class="product-img">
+                                    <a href="{{route('bike.show', $bike->id)}}">
+                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:488px;width:370px;">
+                                    </a>
+                                    <div class="product-item-dec">
+                                        <ul>
+                                            <li>{{$bike->model_year}}</li>
+                                            <li>{{$bike->company->name}}</li>
+                                            <li>{{$bike->body_type}}</li>
+                                            <li>{{$bike->engine_type}}</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product-content-wrapper">
+                                        <div class="product-title-spreed">
+                                            <h4><a href="product-details.html">{{$bike->name}}</a></h4>
+                                            <span>{{$bike->rating}}/5</span>
+                                        </div>
+                                        <div class="product-price">
+                                            <span>PKR {{$bike->price}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @if ($number % 2 == 0)
+                                </div>
+                                <div class="product-wrapper-bundle">
+
+                            @endif
+                            @php
+                                $number = $number + 1;
+                            @endphp
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- <div class="tab-content jump">
             <div class="tab-pane active" id="home1">
                 <div class="product-slider-active owl-carousel">
                     <div class="product-wrapper-bundle">
@@ -400,7 +502,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

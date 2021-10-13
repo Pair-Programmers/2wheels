@@ -55,6 +55,17 @@ class WishlistController extends Controller
         }
     }
 
+    public function addToWishlist($id)
+    {
+
+
+        $wishlist=new Wishlist();
+        $wishlist->user_id=Auth::user()->id;
+        $wishlist->product_or_bike_id=$id;
+        $wishlist->for_favourite='bike';
+        $wishlist->save();
+    }
+
     /**
      * Display the specified resource.
      *

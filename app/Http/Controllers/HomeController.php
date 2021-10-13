@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+
         $models = BikeModel::all();
 
         $companies = Company::all();
@@ -36,7 +36,7 @@ class HomeController extends Controller
         $newBikes = Bike::where('category', 'New Bike')->orderby('created_at', 'DESC')->get();
         $usedBikes = Bike::where('category', 'Used Bike')->orderby('created_at', 'DESC')->get();
 
-        $searchedbikes = Bike::orderby('created_at', 'DESC')->get();
+        $searchedbikes = Bike::orderby('created_at', 'DESC')->paginate(15);
 
         $latestProducts = Product::orderby('created_at', 'DESC')->get();
         $blogs = Blog::orderby('created_at', 'DESC')->paginate(3);

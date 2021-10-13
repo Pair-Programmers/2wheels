@@ -12,14 +12,14 @@
         <div class="container">
             <h2 style="padding:60px 0px 10px  !important;">Most Reviewed Bikes </h2>
             <ul class="row list-unstyled">
-                @foreach ($bike_models as $model)
+                @foreach ($bike_models as $key=>$model)
                     <li class="col-md-3">
                         <div class="panel-130-100-make">
                             <div  class="show cards">
                                 <div class="img-box mb10">
                                     <div class="img-content">
-                                        <img alt="Honda CG 125" class="pic"
-                                            src="{{ asset('storage') }}/images/bikemodels/{{ $model->image }}"
+                                        <img alt="{{ $model->name }}" class="pic"
+                                            src="{{ asset('storage') }}/images/bikes/{{ $model->getImages()[0]}}"
                                             title="{{ $model->name }}" />
                                     </div>
                                 </div>
@@ -27,22 +27,21 @@
                                     <h3 class="nomargin">{{ $model->name }}</h3>
                                     <span class="rating generic-orange fs12 fs12">
                                         @for ($i = 1; $i <= 5; $i++)
-                                            @if ($i <= $model->rating) <span
-                                                class="fa fa-star checked"></span>
+                                            @if ($i <= $model->rating)
+                                            <i class="fa fa-star"></i>
                                             @else
-                                                <span class="fa fa-star "></span> @endif
+                                            <i class="fa fa-star-o"></i>
+                                            @endif
                                         @endfor
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
                                     </span>
                                     <div class="generic-gray">{{ $model->no_of_reviews }} Reviews</div>
                                 </div>
                             </div>
                         </div>
                     </li>
+                    @if ($key == 3)
+                        @break
+                    @endif
                 @endforeach
 
             </ul>
@@ -63,8 +62,7 @@
                                     value="&#x2713;" /></div>
                             <span>Sort By: </span>
                             <select name="sortby" id="sortby" required>
-                                <option value="">- Sort By -</option>
-                                <option value="DESC">Recent</option>
+                                <option selected value="DESC">Recent</option>
                                 <option value="ASC">Oldest</option>
                             </select>
                             <button type="submit">search</button>
@@ -79,23 +77,24 @@
 
                                 <div class="review-info row">
                                     <div class="col-md-3">
-                                        <a href="#"><img alt="United Us 100 Jazba User Review" class="img-polaroid"
-                                                src="{{ asset('storage') }}/images/bikemodels/{{ $review->model->image }}"
+                                        <a style="pointer-events: none" href=""><img alt="United Us 100 Jazba User Review" class="img-polaroid"
+                                                src="{{ asset('storage') }}/images/bikes/{{ $review->model->getImages()[0] }}"
                                                 title="United Us 100 Jazba User Review" /></a>
                                     </div>
                                     <div class="col-md-9">
 
-                                        <h3 class="nomargin"><a href="#" rel="nofollow">{{$review->title}}
+                                        <h3 class="nomargin"><a style="pointer-events: none" href="" rel="nofollow">{{$review->title}}
                                             </a>
                                         </h3>
                                         <span class="generic-gray" rel="nofollow">{{$review->model_year}} {{$review->model->name}} {{$review->company->name}}</span>
                                         <div><span class="rating generic-orange fs12 fs12">
-
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                @if($i<= $review->model->rating)
                                                 <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                @else
                                                 <i class="fas fa-star-o"></i>
+                                                @endif
+                                            @endfor
                                             </span></div>
 
                                         <p class="date">
@@ -128,7 +127,7 @@
                                     </li>
                                 </ul>
                                 <div class="control review-footer clearfix">
-                                    
+
                                     <div class="col-md-6">
                                     </div>
                                 </div>
@@ -137,7 +136,11 @@
                         @empty
                             <p>no reviews yet ..</p>
                         @endforelse
-                        
+
+                        <div class="col-12 p-0">
+                            {{ $reviews->links('pagination::bootstrap-4') }}
+                        </div>
+
 
                     </div>
 

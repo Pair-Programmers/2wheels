@@ -102,7 +102,7 @@
             <div class="collapse navbar-collapse" style="display: flex !important;" id="navbar4">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown d-menu">
-                        <a class="nav-link dropdown-toggle" href="usedbikes" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{ route('new_bike') }}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-inline-block d-lg-none icon-width"><i class="far fa-caret-square-down"></i>
                             </span>
                             New Bikes
@@ -111,17 +111,15 @@
                             </svg>
                         </a>
                         <div style="font-size: 1.6rem;margin:0px -30px;" class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="usedbikes">Find New Bikes</a>
+                            <a class="dropdown-item" href="{{ route('new_bike') }}">Find New Bikes</a>
                             <a class="dropdown-item" href="newbikeprices">On road price</a>
-                            <a class="dropdown-item" href="newbikeprices">Prices</a>
-                            <a class="dropdown-item" href="newbike">Find New Bikes</a>
-                            <a class="dropdown-item" href="bikecomparison">Bike Comparison</a>
-                            <a class="dropdown-item" href="bikereviews">Bike Reviews</a>
+                            <a class="dropdown-item" href="{{ route('bikecomperison') }}">Bike Comparison</a>
+                            <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
                             <a class="dropdown-item" href="newbikeprices">New Bike Prices</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown d-menu">
-                        <a class="nav-link dropdown-toggle" href="usedbikes" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{ route('used_bike') }}" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-inline-block d-lg-none icon-width"><i class="far fa-caret-square-down"></i>
                             </span>
                             Used Bikes
@@ -130,13 +128,11 @@
                             </svg>
                         </a>
                         <div style="font-size: 1.6rem;margin:0px -30px;" class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="usedbikes">Find Used Bikes</a>
-                            <a class="dropdown-item" href="featuredusedbikes">Featured Used Bikes</a>
-                            <a class="dropdown-item" href="sellyourbike">Sell Your Bike</a>
-                            <a class="dropdown-item" href="newbike">Find New Bikes</a>
-                            <a class="dropdown-item" href="bikecomparison">Bike Comparison</a>
-                            <a class="dropdown-item" href="bikereviews">Bike Reviews</a>
-                            <a class="dropdown-item" href="newbikeprices">New Bike Prices</a>
+                            <a class="dropdown-item" href="{{ route('used_bike') }}">Find Used Bikes</a>
+                            <a class="dropdown-item" href="{{ route('used_bike') }}">Featured Used Bikes</a>
+                            <a class="dropdown-item" href="{{ route('bike.create') }}">Sell Your Bike</a>
+                            <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
+                            <a class="dropdown-item" href="newbikeprices">Bike Prices</a>
                         </div>
                     </li>
                     <!-- <li class="nav-item dropdown d-menu">
@@ -198,7 +194,7 @@
                     @if (Auth::check())
                     <!-- <li class="nav-item"></li> -->
                     <!-- <li class="nav-item"><a class="btn p-0 px-4 py-2" href="{{ route('login') }}">Profile</a>
-      
+
                           <div style="font-size: 1.6rem;" class="dropdown-menu shadow-sm sm-menu3"
                               aria-labelledby="dropdown02">
                               <a class="btn p-0 px-4 py-2 dropdown-item" onclick="event.preventDefault();
@@ -326,7 +322,7 @@
                     <div class="search-page-new">
                         <div class="row">
                             <div class="col-md-2 accessory-refine-search">
-                            <form style="width: 100%;display:block;" action="bike_search_result_sidebar_index" method="POST">
+                            <form style="width: 100%;display:block;" action="{{route('bike_search_result_sidebar_bikelisting')}}" method="POST">
                                         @csrf
                                         <div class="row m-0 w-100">
                                             <div class="col-md-12 col-2 p-0 w-100">
@@ -432,7 +428,7 @@
                                                     </div>
                                                     @endforeach
                                                 </div>
-                                 
+
                                                 <h4 data-toggle="collapse" data-target="#demo11" class="pt-3" style="cursor: pointer;">Year</h4>
                                                 <div id="demo11" class="collaps">
                                                     <div class="row m-0">
@@ -456,11 +452,68 @@
                             </div>
                             <!-- copy here -->
                             <div class="col-md-10 search-listing">
+                            <!-- search start -->
+                            <div class="col-12 p-0 mb-3">
+                                <!-- {{route('bike_search_result_bikelisting')}} -->
+                                <form action="{{route('bike_search_result_bikelisting')}}" method="POST">
+                                    @csrf
+                                    <div class="row m-0 w-100">
 
+                                        <div class="col-md-6 my-1 col-12 pl-md-5 ">
+                                            <input type="text" name="keyword" placeholder="Search Here" class="custom-control w-100 ">
+                                        </div>
+                                        <div class="col-md-2 my-1 col-12 px-md-0">
+                                            <input type="text" name="min_price" value="{{old('min_price')}}" list="MinPrice" placeholder="Min Price" />
+                                            <datalist id="MinPrice">
+                                                <option value="" selected disabled>Min Rs</option>
+                                                <option value='10000'>10,000 Pk</option>
+                                                <option value='20000'>20,000 Pk</option>
+                                                <option value='30000'>30,000 Pk</option>
+                                                <option value='40000'>40,000 Pk</option>
+                                                <option value='50000'>50,000 Pk</option>
+                                                <option value='60000'>60,000 Pk</option>
+                                                <option value='70000'>70,000 Pk</option>
+                                                <option value='80000'>80,000 Pk</option>
+                                                <option value='90000'>90,000 Pk</option>
+                                                <option value='100000'>100,000 Pk</option>
+                                                <option value='125000'>125,000 Pk</option>
+                                                <option value='150000'>150,000 Pk</option>
+                                                <option value='175000'>175,000 Pk</option>
+                                                <option value='200000'>200,000 Pk</option>
+                                            </datalist>
+                                        </div>
+                                        <div class="col-md-2 my-1 col-12 px-md-0 pr-md-3">
+                                            <input type="text" name="max_price" list="MaxPrice" placeholder="Max Price" />
+                                            <datalist id="MaxPrice">
+                                                <option value="" selected disabled>Min Rs</option>
+                                                <option value='10000'>10,000 Pk</option>
+                                                <option value='20000'>20,000 Pk</option>
+                                                <option value='30000'>30,000 Pk</option>
+                                                <option value='40000'>40,000 Pk</option>
+                                                <option value='50000'>50,000 Pk</option>
+                                                <option value='60000'>60,000 Pk</option>
+                                                <option value='70000'>70,000 Pk</option>
+                                                <option value='80000'>80,000 Pk</option>
+                                                <option value='90000'>90,000 Pk</option>
+                                                <option value='100000'>100,000 Pk</option>
+                                                <option value='125000'>125,000 Pk</option>
+                                                <option value='150000'>150,000 Pk</option>
+                                                <option value='175000'>175,000 Pk</option>
+                                                <option value='200000'>200,000 Pk</option>
+                                            </datalist>
+                                        </div>
+                                        <div class="col-md-2 my-1 col-12 pl-md-0 pr-md-5 pb-1">
+                                            <button class="btn common-btn-clr w-100 h-100">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <!-- search end -->
                                 <div class="well search-heading">
                                     <div class="organize-results">
                                         <div class="col-md-8">
-                                            <div class="col-md-8" data-pjax-enable>
+                                            {{-- <div class="col-md-8" data-pjax-enable>
                                                 <span class="form-horizontal sort-by">
                                                     <span class="sort-by-text">Sort By: </span>
                                                     <select id="sortby" name="sortby" onchange="sortProduct()">
@@ -472,7 +525,7 @@
                                                         <option value="price-desc">Price: High to Low</option>
                                                     </select>
                                                 </span>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
 
@@ -490,64 +543,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- search start -->
-                                <div class="col-12 p-0 mb-3">
-                                    <!-- {{route('bike_search_result_index')}} -->
-                                    <form action="{{route('bike_search_result_index')}}" method="POST">
-                                        @csrf
-                                        <div class="row m-0 w-100">
 
-                                            <div class="col-md-6 my-1 col-12 pl-md-5 ">
-                                                <input type="text" name="keyword" placeholder="Search Here" class="custom-control w-100 ">
-                                            </div>
-                                            <div class="col-md-2 my-1 col-12 px-md-0">
-                                                <input type="text" name="min_price" list="MinPrice" placeholder="Min Price" />
-                                                <datalist id="MinPrice">
-                                                    <option value="" selected disabled>Min Rs</option>
-                                                    <option value='10000'>10,000 Pk</option>
-                                                    <option value='20000'>20,000 Pk</option>
-                                                    <option value='30000'>30,000 Pk</option>
-                                                    <option value='40000'>40,000 Pk</option>
-                                                    <option value='50000'>50,000 Pk</option>
-                                                    <option value='60000'>60,000 Pk</option>
-                                                    <option value='70000'>70,000 Pk</option>
-                                                    <option value='80000'>80,000 Pk</option>
-                                                    <option value='90000'>90,000 Pk</option>
-                                                    <option value='100000'>100,000 Pk</option>
-                                                    <option value='125000'>125,000 Pk</option>
-                                                    <option value='150000'>150,000 Pk</option>
-                                                    <option value='175000'>175,000 Pk</option>
-                                                    <option value='200000'>200,000 Pk</option>
-                                                </datalist>
-                                            </div>
-                                            <div class="col-md-2 my-1 col-12 px-md-0 pr-md-3">
-                                                <input type="text" name="max_price" list="MaxPrice" placeholder="Max Price" />
-                                                <datalist id="MaxPrice">
-                                                    <option value="" selected disabled>Min Rs</option>
-                                                    <option value='10000'>10,000 Pk</option>
-                                                    <option value='20000'>20,000 Pk</option>
-                                                    <option value='30000'>30,000 Pk</option>
-                                                    <option value='40000'>40,000 Pk</option>
-                                                    <option value='50000'>50,000 Pk</option>
-                                                    <option value='60000'>60,000 Pk</option>
-                                                    <option value='70000'>70,000 Pk</option>
-                                                    <option value='80000'>80,000 Pk</option>
-                                                    <option value='90000'>90,000 Pk</option>
-                                                    <option value='100000'>100,000 Pk</option>
-                                                    <option value='125000'>125,000 Pk</option>
-                                                    <option value='150000'>150,000 Pk</option>
-                                                    <option value='175000'>175,000 Pk</option>
-                                                    <option value='200000'>200,000 Pk</option>
-                                                </datalist>
-                                            </div>
-                                            <div class="col-md-2 my-1 col-12 pl-md-0 pr-md-5 pb-1">
-                                                <button class="btn common-btn-clr w-100 h-100">Search</button>
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                </div>
-                                <!-- search end -->
                                 <div class="fitmen-listing well p10 clearfix mb40">
                                     <div class="dropdown pull-right">
                                         <div class="fitment-list-footer">
@@ -555,8 +551,7 @@
                                         </div>
                                     </div>
                                     <p class="generic-gray fs16 nomargin mt5">
-                                        <strong class="generic-blue">Select a vehicle to check if these parts
-                                            fit</strong>
+                                        <strong class="generic-blue">Select a vehicle to check Detail</strong>
                                     </p>
                                 </div>
 
@@ -606,15 +601,9 @@
                                                             {{ $product->reg_city_id }}</strong>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-12 text-right p-0">
-                                                    <form action="{{ route('add_to_wishlist') }}" method="POST">
-                                                        @csrf
-                                                        {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
-                                                        <input type="hidden" name="for_favourite" value="{{ $product->for_favourite }}">
-                                                        <input type="hidden" name="product_or_bike_id" value="{{ $product->id }}">
-                                                        <!-- <span><i class="icofont icofont-heart-alt"></i></span> -->
-                                                        <span style="font-size: 21px;">&#9825;</span>
-                                                    </form>
+                                                <div class="col-md-12 text-right p-0" style="margin-bottom: 5px">
+                                                    <button type="button" onclick="addtoWishlist({{$product->id}})" class="btn btn-light" style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
+
                                                 </div>
                                                 <div class="search-bottom clearfix">
                                                     <div>
@@ -624,13 +613,15 @@
                                                         </div>
                                                         <div>
                                                             <span class="rating generic-orange fs12 fs12">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                                <i class="fa fa-star-o"></i>
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if($i<= $product->rating)
+                                                                    <i class="fas fa-star"></i>
+                                                                    @else
+                                                                    <i class="fas fa-star-o"></i>
+                                                                    @endif
+                                                                @endfor
                                                             </span>
-                                                            <span class="fs14 generic-gray ml5 dib">Reviews</span>
+                                                            <span class="fs14 generic-gray ml5 dib">{{ $product->no_of_reviews }} Reviews</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -640,6 +631,10 @@
                                     @endforeach
                                     <!-- singal product end -->
                                 </ul>
+
+                                <div class="col-12 p-0">
+                                    {{ $bikes->links('pagination::bootstrap-4') }}
+                                </div>
 
                                 {{-- <div data-pjax-enable>
                                     <ul class="pagination search-pagi">
@@ -965,346 +960,313 @@
     </footer>
 </body>
 <script>
+    function addtoWishlist(id){
+        alert(id);
+        $.ajax({
+            type: "GET",
+            url: {{url('/addToWishlist2/')}} + id,
+            success: function(data)
+            {
+                alert('asd');
+            }
+        });
+    }
     function sortProduct() {
         $('#accessory-results-container').html('');
         if ($('#sortby').find(":selected").val() == "bumped_at-desc") {
             $('#accessory-results-container').append(`
                                                 @foreach ($bikesDateRecent as $product)
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
+                                        <div class="well search-list clearfix ad-container page-">
+                                            <div class="col-md-3 grid-style">
+                                                <div class="img-box">
+                                                    <div id="gallery-3307129">
+                                                        <ul class="gallery list-unstyled image-gallery page-">
+                                                            <li class="total-pictures-bar-outer img-content img-valign">
+                                                                <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" class="lazy pic" src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}" title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
+                                                                <div class="total-pictures-bar fs12">
+                                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                                    {{ count($product->getImages()) }}
+                                                                </div>
+                                                            </li>
 
-<div class="well search-list clearfix ad-container page-">
-    <div class="col-md-3 grid-style">
-        <div class="img-box">
-            <div id="gallery-3307129">
-                <ul class="gallery list-unstyled image-gallery page-">
-                    <li
-                        class="total-pictures-bar-outer img-content img-valign">
-                        <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi"
-                            class="lazy pic"
-                            src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}"
-                            title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
-                        <div class="total-pictures-bar fs12">
-                            <i class="fa fa-picture-o"
-                                aria-hidden="true"></i>
-                            {{ count($product->getImages()) }}
-                        </div>
-                    </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 grid-style">
+                                                <div class="">
+                                                    <div class="search-title-row">
+                                                        <div class="search-title">
+                                                            <div class="right">
+                                                                <div class="price-details generic-dark-grey">PKR
+                                                                    {{ $product->price }}
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path" title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)' current-index='0' target='_blank'>
+                                                                <h3>{{ $product->model->name }}
+                                                                    {{ $product->engin_type }}
 
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-9 grid-style">
-        <div class="">
-            <div class="search-title-row">
-                <div class="search-title">
-                    <div class="right">
-                        <div class="price-details generic-dark-grey">PKR
-                            {{ $product->price }}</div>
-                    </div>
-                    <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path"
-                        title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)'
-                        current-index='0' target='_blank'>
-                        <h3>{{ $product->model->name }}
-                            {{ $product->engin_type }}
-                        </h3>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row ad-mt10">
-            <div class="col-md-3 right-container pos-rel">
-                <strong class="free-shipping-listing">
-                    {{ $product->reg_city_id }}</strong>
-            </div>
-        </div>
-        <div class="search-bottom clearfix">
-            <div>
-                <div style="margin-bottom: 20px"
-                    class="quantizer-info links-container pull-right mr5 clearfix">
-                    <a href="{{ route('bike.show', $product->id) }}"
-                        class="btn btn-secondary pull-right gtm-buynow">
-                        <i class="icon-shopping-cart"></i>View Detail</a>
-                    <form action="{{ route('add_to_wishlist') }}"
-                        method="POST">
-                        @csrf
-                        {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
-                        <input type="hidden" name="for_favourite"
-                            value="{{ $product->for_favourite }}">
-                        <input type="hidden" name="product_or_bike_id"
-                            value="{{ $product->id }}">
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row ad-mt10">
+                                                    <div class="col-md-12 right-container pos-rel">
+                                                        <strong class="free-shipping-listing">
+                                                            {{ $product->reg_city_id }}</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-right p-0" style="margin-bottom: 5px">
+                                                    <button type="button" onclick="addtoWishlist({{$product->id}})" class="btn btn-light" style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
 
-                        <button
-                            class="btn btn-secondary pull-right gtm-buynow"
-                            style="margin-top: 5px">Add to Favorite</button>
-
-                    </form>
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</li>
+                                                </div>
+                                                <div class="search-bottom clearfix">
+                                                    <div>
+                                                        <div style="margin-bottom: 10px" class="quantizer-info links-container pull-right mr5 clearfix">
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="btn common-btn-clr pull-right gtm-buynow">
+                                                                <i class="icon-shopping-cart"></i>View Detail</a>
+                                                        </div>
+                                                        <div>
+                                                            <span class="rating generic-orange fs12 fs12">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if($i<= $product->rating)
+                                                                    <i class="fas fa-star"></i>
+                                                                    @else
+                                                                    <i class="fas fa-star-o"></i>
+                                                                    @endif
+                                                                @endfor
+                                                            </span>
+                                                            <span class="fs14 generic-gray ml5 dib">{{ $product->no_of_reviews }} Reviews</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                                 @endforeach
                                                 `);
         } else if ($('#sortby').find(":selected").val() == "bumped_at-asc") {
             $('#accessory-results-container').append(`
                                                 @foreach ($bikesDateOld as $product)
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
+                                        <div class="well search-list clearfix ad-container page-">
+                                            <div class="col-md-3 grid-style">
+                                                <div class="img-box">
+                                                    <div id="gallery-3307129">
+                                                        <ul class="gallery list-unstyled image-gallery page-">
+                                                            <li class="total-pictures-bar-outer img-content img-valign">
+                                                                <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" class="lazy pic" src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}" title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
+                                                                <div class="total-pictures-bar fs12">
+                                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                                    {{ count($product->getImages()) }}
+                                                                </div>
+                                                            </li>
 
-<div class="well search-list clearfix ad-container page-">
-    <div class="col-md-3 grid-style">
-        <div class="img-box">
-            <div id="gallery-3307129">
-                <ul class="gallery list-unstyled image-gallery page-">
-                    <li
-                        class="total-pictures-bar-outer img-content img-valign">
-                        <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi"
-                            class="lazy pic"
-                            src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}"
-                            title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
-                        <div class="total-pictures-bar fs12">
-                            <i class="fa fa-picture-o"
-                                aria-hidden="true"></i>
-                            {{ count($product->getImages()) }}
-                        </div>
-                    </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 grid-style">
+                                                <div class="">
+                                                    <div class="search-title-row">
+                                                        <div class="search-title">
+                                                            <div class="right">
+                                                                <div class="price-details generic-dark-grey">PKR
+                                                                    {{ $product->price }}
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path" title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)' current-index='0' target='_blank'>
+                                                                <h3>{{ $product->model->name }}
+                                                                    {{ $product->engin_type }}
 
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-9 grid-style">
-        <div class="">
-            <div class="search-title-row">
-                <div class="search-title">
-                    <div class="right">
-                        <div class="price-details generic-dark-grey">PKR
-                            {{ $product->price }}</div>
-                    </div>
-                    <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path"
-                        title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)'
-                        current-index='0' target='_blank'>
-                        <h3>{{ $product->model->name }}
-                            {{ $product->engin_type }}
-                        </h3>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row ad-mt10">
-            <div class="col-md-3 right-container pos-rel">
-                <strong class="free-shipping-listing">
-                    {{ $product->reg_city_id }}</strong>
-            </div>
-        </div>
-        <div class="search-bottom clearfix">
-            <div>
-                <div style="margin-bottom: 20px"
-                    class="quantizer-info links-container pull-right mr5 clearfix">
-                    <a href="{{ route('bike.show', $product->id) }}"
-                        class="btn btn-secondary pull-right gtm-buynow">
-                        <i class="icon-shopping-cart"></i>View Detail</a>
-                    <form action="{{ route('add_to_wishlist') }}"
-                        method="POST">
-                        @csrf
-                        {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
-                        <input type="hidden" name="for_favourite"
-                            value="{{ $product->for_favourite }}">
-                        <input type="hidden" name="product_or_bike_id"
-                            value="{{ $product->id }}">
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row ad-mt10">
+                                                    <div class="col-md-12 right-container pos-rel">
+                                                        <strong class="free-shipping-listing">
+                                                            {{ $product->reg_city_id }}</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-right p-0" style="margin-bottom: 5px">
+                                                    <button type="button" onclick="addtoWishlist({{$product->id}})" class="btn btn-light" style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
 
-                        <button
-                            class="btn btn-secondary pull-right gtm-buynow"
-                            style="margin-top: 5px">Add to Favorite</button>
-
-                    </form>
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</li>
+                                                </div>
+                                                <div class="search-bottom clearfix">
+                                                    <div>
+                                                        <div style="margin-bottom: 10px" class="quantizer-info links-container pull-right mr5 clearfix">
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="btn common-btn-clr pull-right gtm-buynow">
+                                                                <i class="icon-shopping-cart"></i>View Detail</a>
+                                                        </div>
+                                                        <div>
+                                                            <span class="rating generic-orange fs12 fs12">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if($i<= $product->rating)
+                                                                    <i class="fas fa-star"></i>
+                                                                    @else
+                                                                    <i class="fas fa-star-o"></i>
+                                                                    @endif
+                                                                @endfor
+                                                            </span>
+                                                            <span class="fs14 generic-gray ml5 dib">{{ $product->no_of_reviews }} Reviews</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                                 @endforeach
                                                 `);
         } else if ($('#sortby').find(":selected").val() == "price-asc") {
             $('#accessory-results-container').append(`
                                                 @foreach ($bikesPriceLowToHigh as $product)
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
+                                        <div class="well search-list clearfix ad-container page-">
+                                            <div class="col-md-3 grid-style">
+                                                <div class="img-box">
+                                                    <div id="gallery-3307129">
+                                                        <ul class="gallery list-unstyled image-gallery page-">
+                                                            <li class="total-pictures-bar-outer img-content img-valign">
+                                                                <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" class="lazy pic" src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}" title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
+                                                                <div class="total-pictures-bar fs12">
+                                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                                    {{ count($product->getImages()) }}
+                                                                </div>
+                                                            </li>
 
-<div class="well search-list clearfix ad-container page-">
-    <div class="col-md-3 grid-style">
-        <div class="img-box">
-            <div id="gallery-3307129">
-                <ul class="gallery list-unstyled image-gallery page-">
-                    <li
-                        class="total-pictures-bar-outer img-content img-valign">
-                        <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi"
-                            class="lazy pic"
-                            src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}"
-                            title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
-                        <div class="total-pictures-bar fs12">
-                            <i class="fa fa-picture-o"
-                                aria-hidden="true"></i>
-                            {{ count($product->getImages()) }}
-                        </div>
-                    </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 grid-style">
+                                                <div class="">
+                                                    <div class="search-title-row">
+                                                        <div class="search-title">
+                                                            <div class="right">
+                                                                <div class="price-details generic-dark-grey">PKR
+                                                                    {{ $product->price }}
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path" title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)' current-index='0' target='_blank'>
+                                                                <h3>{{ $product->model->name }}
+                                                                    {{ $product->engin_type }}
 
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-9 grid-style">
-        <div class="">
-            <div class="search-title-row">
-                <div class="search-title">
-                    <div class="right">
-                        <div class="price-details generic-dark-grey">PKR
-                            {{ $product->price }}</div>
-                    </div>
-                    <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path"
-                        title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)'
-                        current-index='0' target='_blank'>
-                        <h3>{{ $product->model->name }}
-                            {{ $product->engin_type }}
-                        </h3>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row ad-mt10">
-            <div class="col-md-3 right-container pos-rel">
-                <strong class="free-shipping-listing">
-                    {{ $product->reg_city_id }}</strong>
-            </div>
-        </div>
-        <div class="search-bottom clearfix">
-            <div>
-                <div style="margin-bottom: 20px"
-                    class="quantizer-info links-container pull-right mr5 clearfix">
-                    <a href="{{ route('bike.show', $product->id) }}"
-                        class="btn btn-secondary pull-right gtm-buynow">
-                        <i class="icon-shopping-cart"></i>View Detail</a>
-                    <form action="{{ route('add_to_wishlist') }}"
-                        method="POST">
-                        @csrf
-                        {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
-                        <input type="hidden" name="for_favourite"
-                            value="{{ $product->for_favourite }}">
-                        <input type="hidden" name="product_or_bike_id"
-                            value="{{ $product->id }}">
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row ad-mt10">
+                                                    <div class="col-md-12 right-container pos-rel">
+                                                        <strong class="free-shipping-listing">
+                                                            {{ $product->reg_city_id }}</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-right p-0" style="margin-bottom: 5px">
+                                                    <button type="button" onclick="addtoWishlist({{$product->id}})" class="btn btn-light" style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
 
-                        <button
-                            class="btn btn-secondary pull-right gtm-buynow"
-                            style="margin-top: 5px">Add to Favorite</button>
-
-                    </form>
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</li>
+                                                </div>
+                                                <div class="search-bottom clearfix">
+                                                    <div>
+                                                        <div style="margin-bottom: 10px" class="quantizer-info links-container pull-right mr5 clearfix">
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="btn common-btn-clr pull-right gtm-buynow">
+                                                                <i class="icon-shopping-cart"></i>View Detail</a>
+                                                        </div>
+                                                        <div>
+                                                            <span class="rating generic-orange fs12 fs12">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if($i<= $product->rating)
+                                                                    <i class="fas fa-star"></i>
+                                                                    @else
+                                                                    <i class="fas fa-star-o"></i>
+                                                                    @endif
+                                                                @endfor
+                                                            </span>
+                                                            <span class="fs14 generic-gray ml5 dib">{{ $product->no_of_reviews }} Reviews</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                                 @endforeach
                                                 `);
         } else if ($('#sortby').find(":selected").val() == "price-desc") {
             $('#accessory-results-container').append(`
                                                 @foreach ($bikesPriceHighToLow as $product)
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
+                                        <div class="well search-list clearfix ad-container page-">
+                                            <div class="col-md-3 grid-style">
+                                                <div class="img-box">
+                                                    <div id="gallery-3307129">
+                                                        <ul class="gallery list-unstyled image-gallery page-">
+                                                            <li class="total-pictures-bar-outer img-content img-valign">
+                                                                <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" class="lazy pic" src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}" title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
+                                                                <div class="total-pictures-bar fs12">
+                                                                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                                                    {{ count($product->getImages()) }}
+                                                                </div>
+                                                            </li>
 
-<div class="well search-list clearfix ad-container page-">
-    <div class="col-md-3 grid-style">
-        <div class="img-box">
-            <div id="gallery-3307129">
-                <ul class="gallery list-unstyled image-gallery page-">
-                    <li
-                        class="total-pictures-bar-outer img-content img-valign">
-                        <img alt="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi"
-                            class="lazy pic"
-                            src="{{ asset('storage') }}/images/bikes/{{ $product->getImages()[0] }}"
-                            title="Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22) in Karachi" />
-                        <div class="total-pictures-bar fs12">
-                            <i class="fa fa-picture-o"
-                                aria-hidden="true"></i>
-                            {{ count($product->getImages()) }}
-                        </div>
-                    </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9 grid-style">
+                                                <div class="">
+                                                    <div class="search-title-row">
+                                                        <div class="search-title">
+                                                            <div class="right">
+                                                                <div class="price-details generic-dark-grey">PKR
+                                                                    {{ $product->price }}
+                                                                </div>
+                                                            </div>
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path" title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)' current-index='0' target='_blank'>
+                                                                <h3>{{ $product->model->name }}
+                                                                    {{ $product->engin_type }}
 
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-9 grid-style">
-        <div class="">
-            <div class="search-title-row">
-                <div class="search-title">
-                    <div class="right">
-                        <div class="price-details generic-dark-grey">PKR
-                            {{ $product->price }}</div>
-                    </div>
-                    <a href="{{ route('bike.show', $product->id) }}" class="car-name ad-detail-path"
-                        title='Denso Spark Plug Daihatsu Mira Iradium - 3 Pcs (IXUH 22)'
-                        current-index='0' target='_blank'>
-                        <h3>{{ $product->model->name }}
-                            {{ $product->engin_type }}
-                        </h3>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row ad-mt10">
-            <div class="col-md-3 right-container pos-rel">
-                <strong class="free-shipping-listing">
-                    {{ $product->reg_city_id }}</strong>
-            </div>
-        </div>
-        <div class="search-bottom clearfix">
-            <div>
-                <div style="margin-bottom: 20px"
-                    class="quantizer-info links-container pull-right mr5 clearfix">
-                    <a href="{{ route('bike.show', $product->id) }}"
-                        class="btn btn-secondary pull-right gtm-buynow">
-                        <i class="icon-shopping-cart"></i>View Detail</a>
-                    <form action="{{ route('add_to_wishlist') }}"
-                        method="POST">
-                        @csrf
-                        {{-- <input type="hidden" name="user_id" value="{{Auth::user()->id}}"> --}}
-                        <input type="hidden" name="for_favourite"
-                            value="{{ $product->for_favourite }}">
-                        <input type="hidden" name="product_or_bike_id"
-                            value="{{ $product->id }}">
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row ad-mt10">
+                                                    <div class="col-md-12 right-container pos-rel">
+                                                        <strong class="free-shipping-listing">
+                                                            {{ $product->reg_city_id }}</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-right p-0" style="margin-bottom: 5px">
+                                                    <button type="button" onclick="addtoWishlist({{$product->id}})" class="btn btn-light" style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
 
-                        <button
-                            class="btn btn-secondary pull-right gtm-buynow"
-                            style="margin-top: 5px">Add to Favorite</button>
-
-                    </form>
-
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</li>
+                                                </div>
+                                                <div class="search-bottom clearfix">
+                                                    <div>
+                                                        <div style="margin-bottom: 10px" class="quantizer-info links-container pull-right mr5 clearfix">
+                                                            <a href="{{ route('bike.show', $product->id) }}" class="btn common-btn-clr pull-right gtm-buynow">
+                                                                <i class="icon-shopping-cart"></i>View Detail</a>
+                                                        </div>
+                                                        <div>
+                                                            <span class="rating generic-orange fs12 fs12">
+                                                                @for ($i = 1; $i <= 5; $i++)
+                                                                    @if($i<= $product->rating)
+                                                                    <i class="fas fa-star"></i>
+                                                                    @else
+                                                                    <i class="fas fa-star-o"></i>
+                                                                    @endif
+                                                                @endfor
+                                                            </span>
+                                                            <span class="fs14 generic-gray ml5 dib">{{ $product->no_of_reviews }} Reviews</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                                 @endforeach
                                                 `);
         }

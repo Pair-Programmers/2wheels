@@ -19,16 +19,10 @@
         </div>
     </div>
 
-    @if (\Session::has('success'))
-        <div class="alert alert-success">
-            <ul>
-                <li>{!! \Session::get('success') !!}</li>
-            </ul>
-        </div>
-    @endif
-    
+
+
     <div class="contact-area pt-130">
-        
+
         <div class="all-info ptb-130">
             <div class="container">
                 <div class="row">
@@ -76,6 +70,13 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
+                        @if (\Session::has('success'))
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{!! \Session::get('success') !!}</li>
+                                </ul>
+                            </div>
+                        @endif
                         <div class="contact-message-wrapper">
                             <h4 class="contact-title">GET IN TOUCH</h4>
                             <div class="contact-message">
@@ -126,7 +127,7 @@
         </div>
 
     </div>
-    
+
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMlLa3XrAmtemtf97Z2YpXwPLlimRK7Pk"></script>
     <script>
@@ -135,7 +136,7 @@
                 zoom: 11,
                 scrollwheel: false,
                 center: new google.maps.LatLng(40.709896, -73.995481),
-                styles: 
+                styles:
                 [
                 {
                     "featureType": "all",

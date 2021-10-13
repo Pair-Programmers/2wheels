@@ -22,6 +22,7 @@ class BikeModel extends Model
         'clutch',
         'transmission',
         'price',
+        'body_type',
     ];
 
     public function company(){
@@ -34,5 +35,10 @@ class BikeModel extends Model
 
     public function bikes(){
         return $this->hasMany(Bike::class, 'model_id');
+    }
+
+    public function getImages()
+    {
+        return json_decode($this->image);
     }
 }

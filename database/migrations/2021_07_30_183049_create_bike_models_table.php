@@ -28,7 +28,8 @@ class CreateBikeModelsTable extends Migration
             $table->string('clutch')->nullable();
             $table->string('transmission')->nullable();
             $table->integer('price')->nullable();
-    
+            $table->string('body_type')->nullable();
+
             $table->timestamps();
         });
 
@@ -53,7 +54,7 @@ class CreateBikeModelsTable extends Migration
             $count = $count + 1;
             foreach ($company as $key2 => $model) {
                 BikeModel::create(['name'=>$model, 'company_id'=>$count, 'image'=>'bike.png']);
-                
+
             }
 
         }

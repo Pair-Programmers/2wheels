@@ -63,11 +63,11 @@ function removeCookies() {
                     <meta content='https://www.pakwheels.com/bikes/compare/' itemprop='item'>
                     <meta content="3" itemprop="position">
                 </li>
-                
+
             </ul>
 
 
-            <h1>{{$model1->name}} {{$model1->company->name}} vs. {{$model2->name}} {{$model2->company->name}}  @if($count > 2)  {{$model3->name}} {{$model3->company->name}} @endif</h1>
+            <h1>{{$model1->name}} {{$model1->company->name}} vs. {{$model2->name}} {{$model2->company->name}}  @if($count > 2)  vs. {{$model3->name}} {{$model3->company->name}} @endif</h1>
 
             <table class="table vehicle-compare-head text-center well">
                 <tbody>
@@ -77,7 +77,7 @@ function removeCookies() {
                             <a href="/bikes/honda/cg-125--2/">
                                 <div class="img-box">
                                     <img alt="Bike_honda_125_cover" class="img-content pic"
-                                        src="{{ asset('storage') }}/images/bikemodels/{{ $model1->image }}" />
+                                        src="{{ asset('storage') }}/images/bikes/{{ $model1->getImages()[0] }}" />
                                 </div>
                                 <h3 class="mt10 mb10"> {{$model1->name}} {{$model1->company->name}}  <br /></h3>
 
@@ -88,7 +88,7 @@ function removeCookies() {
                             <a href="/bikes/yamaha/ybr-125g/">
                                 <div class="img-box">
                                     <img alt="Honda_freed_(14)" class="img-content pic"
-                                        src="{{ asset('storage') }}/images/bikemodels/{{ $model2->image }}" />
+                                        src="{{ asset('storage') }}/images/bikes/{{ $model2->getImages()[0] }}" />
                                 </div>
                                 <h3 class="mt10 mb10">{{$model2->name}} {{$model2->company->name}} <br /></h3>
 
@@ -99,14 +99,14 @@ function removeCookies() {
                             <a href="/bikes/super-power/sp-100/">
                                 <div class="img-box">
                                     <img alt="1" class="img-content pic"
-                                        src="{{ asset('storage') }}/images/bikemodels/{{ $model3->image }}" />
+                                        src="{{ asset('storage') }}/images/bikes/{{ $model3->getImages()[0] }}" />
                                 </div>
                                 <h3 class="mt10 mb10"> {{$model3->name}} {{$model3->company->name}} <br /></h3>
 
                             </a>
                         </td>
                         @endif
-                        
+
                     </tr>
 
                     <tr>
@@ -150,8 +150,8 @@ function removeCookies() {
                         @endif
                     </tr>
 
-                    
-                    
+
+
 
                 </tbody>
             </table>

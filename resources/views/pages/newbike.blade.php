@@ -511,14 +511,14 @@
                                     <option value='200000'>200,000 KM</option>
                                 </select>
                             </li>
-    
+
                         </ul>
                     </div>
                 </div>
-    
-    
+
+
                 <div class="search-functions clearfix nomargin">
-                
+
                     <div class="pull-right" id="search-row">
                         <button type="submit" class="btn btn-success btn-lg btn-block" style="height: 50px;"
                             id="used-bikes-search-btn">Search</button>
@@ -564,7 +564,7 @@
                                                     </span>
                                                 </div>
                                             </div>
-                                            
+
 
                                         </a>
                                     </div>
@@ -575,9 +575,9 @@
                                 <ul class="nomargin list-unstyled item  clearfix">
                                 @endif
                                 @endforeach
-                                
-                                
-                                
+
+
+
                             </ul>
                         </div>
 
@@ -606,7 +606,7 @@
                     data-ride="carousel" data-interval="false">
                     <div id="slider1" class="carousel-inner" style="overflow: hidden;">
                         <div class="vehicle-model-0 list-unstyled item active clearfix">
-    
+
                             @foreach ($companies as $key => $company)
                             @php
                             $key++;
@@ -624,20 +624,20 @@
                                         itemprop="relatedLink">{{$model->name}}</a></li>
                                     @endforeach
                                 </ul>
-    
+
                                 @if($key%6 == 0)
                                     </div>
                                     <div class="vehicle-model-1 list-unstyled item  clearfix">
                                 @endif
-    
-                                
-    
+
+
+
                             @endforeach
-    
+
                         </div>
-                        
+
                     </div>
-    
+
                     <div class="carousel-control-outer">
                         <a class="carousel-control left" href="#browse-by-brand_used-bikes" data-slide="prev">
                             <i class="fa fa-chevron-left"></i>
@@ -646,12 +646,12 @@
                             <i class="fa fa-chevron-right"></i>
                         </a>
                     </div>
-    
+
                 </div>
-    
-    
+
+
             </div>
-    
+
         </section>
 
         <section style="padding-bottom: 24px;">
@@ -715,7 +715,7 @@
 
                             <div class="car-review-head clearfix">
                                 <div class="well pull-left mr20 nopad">
-                                    <img alt="Gixxer-sf-blue" src="{{ asset('storage') }}/images/bikemodels/{{ $review->model->image }}"
+                                    <img alt="Gixxer-sf-blue" src="{{ asset('storage') }}/images/bikes/{{ $review->model->getImages()[0] }}"
                                         width="120" />
                                 </div>
                                 <h3 class="nomargin mb5 fwm">
@@ -729,11 +729,13 @@
                                 </div>
                                 <span class="rating generic-orange fs12 fs16 mr5">
 
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        @if($i<= $review->model->rating)
+                                        <i class="fas fa-star"></i>
+                                        @else
+                                        <i class="fas fa-star-o"></i>
+                                        @endif
+                                    @endfor
                                 </span>
                                 <div class="dib">
                                     {{$review->user->name}}
@@ -743,9 +745,9 @@
                             <p class="description nomargin mt10">{{$review->comment}}</p>
                         </div>
                         @empty
-                            
+
                         @endforelse
-                        
+
                     </div>
                 </div>
 

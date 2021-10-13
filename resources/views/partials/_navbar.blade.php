@@ -90,8 +90,6 @@
                         <a class="dropdown-item" href="{{ route('used_bike') }}">Find Used Bikes</a>
                         <a class="dropdown-item" href="{{ route('used_bike') }}">Featured Used Bikes</a>
                         <a class="dropdown-item" href="{{ route('bike.create') }}">Sell Your Bike</a>
-                        <a class="dropdown-item" href="newbike">Find New Bikes</a>
-                        <!-- <a class="dropdown-item" href="bikecomparison">Bike Comparison</a> -->
                         <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
                         <a class="dropdown-item" href="newbikeprices">Bike Prices</a>
                     </div>
@@ -155,7 +153,7 @@
                 @if (Auth::check())
                 <!-- <li class="nav-item"></li> -->
                 <!-- <li class="nav-item"><a class="btn p-0 px-4 py-2" href="{{ route('login') }}">Profile</a>
-      
+
                           <div style="font-size: 1.6rem;" class="dropdown-menu shadow-sm sm-menu3"
                               aria-labelledby="dropdown02">
                               <a class="btn p-0 px-4 py-2 dropdown-item" onclick="event.preventDefault();

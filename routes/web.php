@@ -35,8 +35,10 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/index', [LandingController::class, 'index'])->name('index');
 Route::post('/bike_search_result', [LandingController::class, 'searchBike'])->name('bike_search_result');
-Route::post('/bike_search_result_index', [LandingController::class, 'searchBikeIndex'])->name('bike_search_result_index');
-Route::post('/bike_search_result_sidebar_index', [LandingController::class, 'searchBikeSidebarIndex'])->name('bike_search_result_sidebar_index');
+Route::any('/bike_search_result_index', [LandingController::class, 'searchBikeIndex'])->name('bike_search_result_index');
+Route::any('/bike_search_result_sidebar_index', [LandingController::class, 'searchBikeSidebarIndex'])->name('bike_search_result_sidebar_index');
+Route::any('/bike_search_result_bikelisting', [LandingController::class, 'searchBikeBikelisting'])->name('bike_search_result_bikelisting');
+Route::any('/bike_search_result_sidebar_bikelisting', [LandingController::class, 'searchBikeSidebarBikelisting'])->name('bike_search_result_sidebar_bikelisting');
 Route::get('/', [LandingController::class, 'index']);
 
 
@@ -50,9 +52,7 @@ Route::get('my_page', function () {
     return view('pages/my_page');
 });
 
-Route::get('usedbikes', function () {
-    return view('pages/usedbikes');
-});
+
 
 Route::get('postandadd', function () {
     return view('pages/postandadd');
@@ -222,6 +222,7 @@ Route::post('/update_cart', [ProductController::class, 'updateCart'])->name('car
 
 //add to wishlist
 Route::post('/addToWishlist', [WishlistController::class, 'store'])->name('add_to_wishlist');
+Route::get('/addToWishlist2/{id}', [WishlistController::class, 'addToWishlist'])->name('add_to_wishlist2');
 Route::get('/removeToWishlist/{id}', [WishlistController::class, 'destroy'])->name('remove_to_wishlist');
 
 //blog
@@ -253,10 +254,10 @@ Route::post('/model_update/{id}', [BikeModelController::class, 'update'])->name(
 Route::get('/model_destroy/{id}', [BikeModelController::class, 'destroy'])->name('model.destroy');
 
 //review
-Route::get('/review', [ReviewController::class, 'index'])->name('review.index');
+Route::any('/review', [ReviewController::class, 'index'])->name('review.index');
 Route::get('/review_create', [ReviewController::class, 'create'])->name('review.create');
 Route::post('/review_store', [ReviewController::class, 'store'])->name('review.store');
-Route::post('/review_order', [ReviewController::class, 'searchByReviewOrder'])->name('review_order');
+Route::any('/review_order', [ReviewController::class, 'searchByReviewOrder'])->name('review_order');
 Route::get('/review_edit/{id}', [ReviewController::class, 'edit'])->name('review.edit');
 Route::post('/review_update/{id}', [ReviewController::class, 'update'])->name('review.update');
 Route::get('/review_destroy/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
