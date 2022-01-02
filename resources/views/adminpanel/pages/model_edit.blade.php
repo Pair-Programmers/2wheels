@@ -25,7 +25,7 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Edit Bike Model</h2>
@@ -59,7 +59,7 @@
                                         <input type="text" class="form-control" name="name" value="{{$model->name}}">
                                     </div>
 
-                                    
+
                                 </div>
 
                                 <div class="form-group">
@@ -72,11 +72,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Courses</label>
+                                    <label class="col-sm-2 control-label">Company</label>
 
                                     <div class="col-sm-4">
                                         <select class="form-control" name="company_id" required>
-                                            
+
                                             @foreach ($companies as $company)
                                                 @if ($model->company_id == $company->id)
                                                     <option selected value="{{$company->id}}">{{$company->name}}</option>
@@ -85,12 +85,12 @@
                                                 @endif
 
                                             @endforeach
-                                           
-                                        </select> 
-                                    </div>
-                                    
 
-                                    
+                                        </select>
+                                    </div>
+
+
+
                                 </div>
 
                                 <div class="form-group">
@@ -108,7 +108,7 @@
 
                                 </div>
 
-                               
+
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Bore & Stroke</label>
@@ -125,7 +125,7 @@
 
                                 </div>
 
-                                
+
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Clutch</label>
@@ -143,30 +143,126 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Price</label>
+                                    <label class="col-sm-2 control-label">Dimension</label>
 
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control" name="price" required value="{{$model->price}}">
+                                        <input type="text" class="form-control" name="dimension" value="{{$model->dimension}}" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Starting</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="starting" value="{{$model->starting}}" required>
                                     </div>
 
                                 </div>
 
-                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Top Speed</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="top_speed" value="{{$model->top_speed}}" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Petrol Capacity</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="petrol_capacity" value="{{$model->petrol_capacity}}" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Fuel Average</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="fuel_average" value="{{$model->fuel_average}}" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Dry Weight</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="dry_weight" value="{{$model->dry_weight}}" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Frame</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="frame" value="{{$model->frame}}" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Ground Clearance</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="ground_clearance" value="{{$model->ground_clearance}}" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Wheel Size</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="wheel_size" value="{{$model->wheel_size}}" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Tyre At Back</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="tyre_at_back" value="{{$model->tyre_at_back}}" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Tyre At Front</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="tyre_at_front" value="{{$model->tyre_at_front}}" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Horsepower</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="horsepower" value="{{$model->horsepower}}" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Torque</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="torque" value="{{$model->torque}}" required>
+                                    </div>
+                                    <label class="col-sm-2 control-label">Price</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" name="price" value="{{$model->price}}" required>
+                                    </div>
+
+
+                                </div>
+
+
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button class="btn btn-primary" type="submit">Save</button>
                                     </div>
                                 </div>
 
-                                
+
                             </form>
                         </div>
                         <br>
-                
+
             </div>
         </div>
 
-        
+
 
 
         <div class="footer">

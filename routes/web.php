@@ -112,7 +112,7 @@ Route::get('bikereviews', function () {
 });
 Route::get('newbikeprices', function () {
     return view('pages/newbikeprices');
-});
+})->name('newbikeprices');
 Route::get('findautoparts', function () {
     return view('pages/findautoparts');
 });
@@ -131,6 +131,10 @@ Route::get('bikeinsurance', function () {
 
 Route::get('currentfuelprice', function () {
     return view('pages/currentfuelprice');
+});
+
+Route::get('abc', function () {
+    return view('pages/bike_new_show');
 });
 
 //user

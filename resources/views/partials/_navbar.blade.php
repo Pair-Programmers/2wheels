@@ -71,10 +71,10 @@
                     </a>
                     <div style="font-size: 1.6rem;margin:0px -30px;" class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="{{ route('new_bike') }}">Find New Bikes</a>
-                        <a class="dropdown-item" href="newbikeprices">On road price</a>
+                        <a class="dropdown-item" href="{{route('newbikeprices')}}">On road price</a>
                         <a class="dropdown-item" href="{{ route('bikecomperison') }}">Bike Comparison</a>
                         <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
-                        <a class="dropdown-item" href="newbikeprices">New Bike Prices</a>
+                        <a class="dropdown-item" href="{{route('newbikeprices')}}">New Bike Prices</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown d-menu">
@@ -91,7 +91,7 @@
                         <a class="dropdown-item" href="{{ route('used_bike') }}">Featured Used Bikes</a>
                         <a class="dropdown-item" href="{{ route('bike.create') }}">Sell Your Bike</a>
                         <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
-                        <a class="dropdown-item" href="newbikeprices">Bike Prices</a>
+                        <a class="dropdown-item" href="{{route('newbikeprices')}}">Bike Prices</a>
                     </div>
                 </li>
                 <!-- <li class="nav-item dropdown d-menu">
@@ -121,8 +121,8 @@
                         </svg>
                     </a>
                     <div style="font-size: 1.6rem;" class="dropdown-menu shadow-sm sm-menu2" aria-labelledby="dropdown02">
-                        <a class="dropdown-item" href="{{ route('product.index') }}">Find Auto Parts</a>
-                        <a class="dropdown-item" href="{{ route('product.index') }}">Buy Now Auto Parts </a>
+                        {{-- <a class="dropdown-item" href="{{ route('product.index') }}">Find Auto Parts</a> --}}
+                        <a class="dropdown-item" href="{{ route('product.index') }}">Buy Auto Parts </a>
                         <a class="dropdown-item" href="{{ route('product.create') }}">Sell Bike Parts</a>
                     </div>
                 </li>

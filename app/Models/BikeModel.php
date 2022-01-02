@@ -23,6 +23,19 @@ class BikeModel extends Model
         'transmission',
         'price',
         'body_type',
+        'dimension',
+        'starting',
+        'top_speed',
+        'petrol_capacity',
+        'fuel_average',
+        'dry_weight',
+        'frame',
+        'ground_clearance',
+        'wheel_size',
+        'tyre_at_back',
+        'tyre_at_front',
+        'horsepower',
+        'torque',
     ];
 
     public function company(){

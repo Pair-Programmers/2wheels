@@ -219,6 +219,132 @@ function removeCookies() {
                                     <td>{{$model3->transmission}}</td>
                                     @endif
                                 </tr>
+
+                                <tr>
+                                    <td>Body Type</td>
+                                    <td>{{$model1->body_type}}</td>
+                                    <td>{{$model2->body_type}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->body_type}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Dimension</td>
+                                    <td>{{$model1->dimension}}</td>
+                                    <td>{{$model2->dimension}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->dimension}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Starting</td>
+                                    <td>{{$model1->starting}}</td>
+                                    <td>{{$model2->starting}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->starting}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Top Speed</td>
+                                    <td>{{$model1->top_speed}}</td>
+                                    <td>{{$model2->top_speed}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->top_speed}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Petrol Capacity</td>
+                                    <td>{{$model1->petrol_capacity}}</td>
+                                    <td>{{$model2->petrol_capacity}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->petrol_capacity}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Fuel Average</td>
+                                    <td>{{$model1->fuel_average}}</td>
+                                    <td>{{$model2->fuel_average}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->fuel_average}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Dry Weight</td>
+                                    <td>{{$model1->dry_weight}}</td>
+                                    <td>{{$model2->dry_weight}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->dry_weight}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Frame</td>
+                                    <td>{{$model1->frame}}</td>
+                                    <td>{{$model2->frame}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->frame}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Ground Clearance</td>
+                                    <td>{{$model1->ground_clearance}}</td>
+                                    <td>{{$model2->ground_clearance}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->ground_clearance}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Wheel Size</td>
+                                    <td>{{$model1->wheel_size}}</td>
+                                    <td>{{$model2->wheel_size}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->wheel_size}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Tyre At Back</td>
+                                    <td>{{$model1->tyre_at_back}}</td>
+                                    <td>{{$model2->tyre_at_back}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->tyre_at_back}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Tyre At Front</td>
+                                    <td>{{$model1->tyre_at_front}}</td>
+                                    <td>{{$model2->tyre_at_front}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->tyre_at_front}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Horsepower</td>
+                                    <td>{{$model1->horsepower}}</td>
+                                    <td>{{$model2->horsepower}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->horsepower}}</td>
+                                    @endif
+                                </tr>
+
+                                <tr>
+                                    <td>Torque</td>
+                                    <td>{{$model1->torque}}</td>
+                                    <td>{{$model2->torque}}</td>
+                                    @if($count > 2)
+                                    <td>{{$model3->torque}}</td>
+                                    @endif
+                                </tr>
                             </tbody>
                         </table>
                         {{-- <table class="table table-bordered table-striped table-styled well nomargin mt-1"

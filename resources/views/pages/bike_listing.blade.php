@@ -112,10 +112,10 @@
                         </a>
                         <div style="font-size: 1.6rem;margin:0px -30px;" class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="{{ route('new_bike') }}">Find New Bikes</a>
-                            <a class="dropdown-item" href="newbikeprices">On road price</a>
+                            <a class="dropdown-item" href="{{route('newbikeprices')}}">On road price</a>
                             <a class="dropdown-item" href="{{ route('bikecomperison') }}">Bike Comparison</a>
                             <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
-                            <a class="dropdown-item" href="newbikeprices">New Bike Prices</a>
+                            <a class="dropdown-item" href="{{route('newbikeprices')}}">New Bike Prices</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown d-menu">
@@ -162,8 +162,8 @@
                             </svg>
                         </a>
                         <div style="font-size: 1.6rem;" class="dropdown-menu shadow-sm sm-menu2" aria-labelledby="dropdown02">
-                            <a class="dropdown-item" href="{{ route('product.index') }}">Find Auto Parts</a>
-                            <a class="dropdown-item" href="{{ route('product.index') }}">Buy Now Auto Parts </a>
+                            {{-- <a class="dropdown-item" href="{{ route('product.index') }}">Find Auto Parts</a> --}}
+                            <a class="dropdown-item" href="{{ route('product.index') }}">Buy Auto Parts </a>
                             <a class="dropdown-item" href="{{ route('product.create') }}">Sell Bike Parts</a>
                         </div>
                     </li>
@@ -578,7 +578,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-9 grid-style">
-                                                <div class="">
+                                                <div>
                                                     <div class="search-title-row">
                                                         <div class="search-title">
                                                             <div class="right">
@@ -629,6 +629,7 @@
                                         </div>
                                     </li>
                                     @endforeach
+
                                     <!-- singal product end -->
                                 </ul>
 
@@ -686,7 +687,7 @@
     </div>
     <div class="header-space"></div>
     <div class="header-space"></div>
-    <script>
+    {{-- <script>
         function handle_version_select(version_li) {
             var version_id = $(version_li).attr('version_id');
             $('#ride_car_version_id').val(version_id);
@@ -750,7 +751,7 @@
             });
             return sanitized_url.join('/');
         }
-    </script>
+    </script> --}}
     <script>
         allow_make_model_change = true;
 

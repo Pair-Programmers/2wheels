@@ -17,7 +17,7 @@ class CreateBikesTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('company_id');
-            $table->string('model_year');
+            $table->integer('model_year');
             $table->integer('model_id');
             $table->string('images');
             $table->longText('description')->nullable();

@@ -493,22 +493,22 @@
                                 </select>
                             </li>
                             <li class="range-widget">
-                                <select name="price_range" id="UsedCity" class="chzn-select" >
+                                <select name="price_range" id="UsedCity" class="chzn-select">
                                     <option  value="">Price Range</option>
-                                    <option value='10000'>10,000 KM</option>
-                                    <option value='20000'>20,000 KM</option>
-                                    <option value='30000'>30,000 KM</option>
-                                    <option value='40000'>40,000 KM</option>
-                                    <option value='50000'>50,000 KM</option>
-                                    <option value='60000'>60,000 KM</option>
-                                    <option value='70000'>70,000 KM</option>
-                                    <option value='80000'>80,000 KM</option>
-                                    <option value='90000'>90,000 KM</option>
-                                    <option value='100000'>100,000 KM</option>
-                                    <option value='125000'>125,000 KM</option>
-                                    <option value='150000'>150,000 KM</option>
-                                    <option value='175000'>175,000 KM</option>
-                                    <option value='200000'>200,000 KM</option>
+                                    <option value='10000'>10,000 Rs</option>
+                                    <option value='20000'>20,000 Rs</option>
+                                    <option value='30000'>30,000 Rs</option>
+                                    <option value='40000'>40,000 Rs</option>
+                                    <option value='50000'>50,000 Rs</option>
+                                    <option value='60000'>60,000 Rs</option>
+                                    <option value='70000'>70,000 Rs</option>
+                                    <option value='80000'>80,000 Rs</option>
+                                    <option value='90000'>90,000 Rs</option>
+                                    <option value='100000'>100,000 Rs</option>
+                                    <option value='125000'>125,000 Rs</option>
+                                    <option value='150000'>150,000 Rs</option>
+                                    <option value='175000'>175,000 Rs</option>
+                                    <option value='200000'>200,000 Rs</option>
                                 </select>
                             </li>
 

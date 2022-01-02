@@ -101,7 +101,7 @@
 
 
 
-                                    <div class="form-group mt20">
+                                    {{-- <div class="form-group mt20">
                                         <label class="col-md-3" for="city"> <span id="city_label_id"> Name </span><span
                                                 class="text-error">*</span></label>
                                         <div class="col-md-5">
@@ -109,7 +109,7 @@
                                                 required />
                                         </div>
 
-                                    </div>
+                                    </div> --}}
 
 
 
@@ -466,8 +466,8 @@
                                             <select data-parsley-error-message="Please select engine type"
                                                 data-parsley-required="true" data-parsley-trigger="change"
                                                 id="used_bike_ca" name="category" required>
-                                                <option value='New Bike'>New Bike</option>
-                                                <option value='Used Bike'>Used Bike</option>
+                                                {{-- <option value='New Bike'>New Bike</option> --}}
+                                                <option value='Used Bike' selected>Used Bike</option>
                                             </select>
 
                                             <script>

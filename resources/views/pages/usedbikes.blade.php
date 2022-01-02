@@ -521,20 +521,20 @@
                         <li class="range-widget">
                             <select name="price_range" id="UsedCity" class="chzn-select" >
                                 <option  value="">Price Range</option>
-                                <option value='10000'>10,000 KM</option>
-                                <option value='20000'>20,000 KM</option>
-                                <option value='30000'>30,000 KM</option>
-                                <option value='40000'>40,000 KM</option>
-                                <option value='50000'>50,000 KM</option>
-                                <option value='60000'>60,000 KM</option>
-                                <option value='70000'>70,000 KM</option>
-                                <option value='80000'>80,000 KM</option>
-                                <option value='90000'>90,000 KM</option>
-                                <option value='100000'>100,000 KM</option>
-                                <option value='125000'>125,000 KM</option>
-                                <option value='150000'>150,000 KM</option>
-                                <option value='175000'>175,000 KM</option>
-                                <option value='200000'>200,000 KM</option>
+                                <option value='10000'>10,000 Rs</option>
+                                <option value='20000'>20,000 Rs</option>
+                                <option value='30000'>30,000 Rs</option>
+                                <option value='40000'>40,000 Rs</option>
+                                <option value='50000'>50,000 Rs</option>
+                                <option value='60000'>60,000 Rs</option>
+                                <option value='70000'>70,000 Rs</option>
+                                <option value='80000'>80,000 Rs</option>
+                                <option value='90000'>90,000 Rs</option>
+                                <option value='100000'>100,000 Rs</option>
+                                <option value='125000'>125,000 Rs</option>
+                                <option value='150000'>150,000 Rs</option>
+                                <option value='175000'>175,000 Rs</option>
+                                <option value='200000'>200,000 Rs</option>
                             </select>
                         </li>
 
@@ -644,13 +644,13 @@
                             </div>
                         </div>
                       </li>
-                      
+
                       @if($key%4 == 0)
                       </ul>
                       <ul class="list-unstyled fs12 bike-featured-used-bike-home bike-slide-1 item  clearfix">
                       @endif
-                       @endforeach 
-                       
+                       @endforeach
+
                     </ul>
 
                 </div>
@@ -671,7 +671,7 @@
 
 
 
-    <section>
+    {{-- <section>
         <div class="container">
             <h2>Most Rated Used Bikes</h2>
             <div class="pos-rel">
@@ -707,9 +707,9 @@
                           <ul class="nomargin list-unstyled item active clearfix">
                              @endif
                           @endforeach
-                            
+
                         </ul>
-                        
+
                     </div>
                 </div>
 
@@ -727,6 +727,76 @@
             <div class="clearfix"></div>
 
         </div>
+    </section> --}}
+
+    <section>
+        <div class="container">
+            <h2>
+                Most Rated Used Bikes
+
+                <div id="type-featured-used-bike-home" class="clear-link">
+                    <a href="/used-bikes/search/-/featured_1/" class="more-link">View all Most Rated Used Bikes</a>
+                </div>
+
+            </h2>
+
+
+            <div id="bikeSliderWrapper" class="carousel slide pos-rel lazy-slider" data-interval="false"
+                data-ride="carousel" dir="ltr">
+                <div id="slider" class="carousel-inner" style="max-height: 290px; overflow: hidden;">
+                    <ul class="list-unstyled fs12 bike-featured-used-bike-home bike-slide-0 item active clearfix">
+                       @foreach ($usedBikes as $key=>$bike)
+                       @php
+                      $key++;
+                      @endphp
+                       <li class="col-md-3">
+
+                        <div class="cards">
+
+
+                            <div class="img-box featured-listing">
+
+
+                                <a href="{{route('bike.show', $bike->id)}}"
+                                    rel="nofollow" title="Hi Speed Infinity 150 2021 for Sale">
+                                    <div class="img-content img-valign">
+                                        <img alt="Hi Speed Infinity 150 2021 for Sale"
+                                            data-original="assests/img/image1.jpg"
+                                            src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}"
+                                            title="Hi Speed Infinity 150 2021 for Sale" />
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cards-content">
+                                <h3 class="nomargin truncate"><a href="#" rel="nofollow">{{$bike->name}} {{$bike->company->name}}</a></h3>
+                                <div class="generic-green">
+                                    PKR {{$bike->price}}
+                                </div>
+                            </div>
+                        </div>
+                      </li>
+
+                      @if($key%4 == 0)
+                      </ul>
+                      <ul class="list-unstyled fs12 bike-featured-used-bike-home bike-slide-1 item  clearfix">
+                      @endif
+                       @endforeach
+
+                    </ul>
+
+                </div>
+
+                <div class="carousel-control-outer">
+                    <a class="carousel-control left" href="#bikeSliderWrapper" data-slide="prev">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                    <a class="carousel-control right" href="#bikeSliderWrapper" data-slide="next">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 
@@ -735,7 +805,7 @@
             <h2>Used Bikes by Make</h2>
             <div class="clearfix pos-rel carousel slide lazy-slider" id="browse-by-brand_used-bikes" dir="ltr"
                 data-ride="carousel" data-interval="false">
-                <div id="slider1" class="carousel-inner" style="overflow: hidden;">
+                <div id="slider2" class="carousel-inner" style="overflow: hidden;">
                     <div class="vehicle-model-0 list-unstyled item active clearfix">
 
                         @foreach ($companies as $key => $company)
@@ -761,12 +831,12 @@
                                 <div class="vehicle-model-1 list-unstyled item  clearfix">
                             @endif
 
-                            
+
 
                         @endforeach
 
                     </div>
-                    
+
                 </div>
 
                 <div class="carousel-control-outer">
@@ -887,7 +957,7 @@
                 <div id="browse-by-city-carousel" class="carousel slide lazy-slider browse-left" data-ride="carousel"
                     data-interval="false">
                     <div class="carousel-inner">
-                        
+
                         <ul class="browse-listing item active browse-auto-link clearfix" id="browse-by-city-bike">
                             <li class="col-md-3">
                                 <a href="{{route('used_bike_by_city', 'Lahore')}}" id="ct_lahore" title="Bikes for sale in Lahore">

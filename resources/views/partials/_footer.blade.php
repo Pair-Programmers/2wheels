@@ -14,7 +14,7 @@
                       </div>
                       <div id="mc_embed_signup" class="subscribe-form">
                           <form action="{{route('newsletter.store')}}" method="post" id="#" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                            @csrf  
+                            @csrf
                             <div id="mc_embed_signup_scroll" class="mc-form">
                                   <input type="email" value="" name="email" class="email" placeholder="Enter your email here..." required>
                                   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -74,15 +74,15 @@
           </div>
           <div class="food-widget-content pr-30">
             <div class="single-tweet">
-              <p><a href="#">@Smith,</a> the most latgest bike store in the wold can serve you 
+              <p><a href="#">@Smith,</a> the most latgest bike store in the wold can serve you
               10 min ago</p>
             </div>
             <div class="single-tweet">
-              <p><a href="#">@Smith,</a> the most latgest bike store in the wold can serve you 
+              <p><a href="#">@Smith,</a> the most latgest bike store in the wold can serve you
               10 min ago</p>
             </div>
             <div class="single-tweet">
-              <p><a href="#">@Smith,</a> the most latgest bike store in the wold can serve you 
+              <p><a href="#">@Smith,</a> the most latgest bike store in the wold can serve you
               10 min ago</p>
             </div>
           </div>
@@ -134,11 +134,11 @@
           <p>©Copyright, 2018 All Rights Reserved by <a href="#">2Wheels</a></p>
         </div>
       </div>
-      <div class="col-md-4 col-12">
+      {{-- <div class="col-md-4 col-12">
         <div class="footer-payment-method">
           <a href="#"><img alt="" src="{{asset('website')}}/assets/img/icon-img/payment.png"></a>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>

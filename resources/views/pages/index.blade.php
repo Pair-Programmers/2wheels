@@ -110,24 +110,44 @@
                 </div>
                 <h4 data-toggle="collapse" data-target="#demo2" class="pt-3" style="cursor: pointer;">Company / MAKE</h4>
                 <div id="demo2" class="collapse">
-                    <p>All Make</p>
+                    {{-- <p>All Make</p> --}}
                     @foreach ($companies as $key=>$company)
                     <div class="company-checkbox-block">
                         <label class="m-0" for="{{$company->id}}">{{$company->name}}</label>
-                        <input type="checkbox" name="companies[]" value="{{$company->id}}" id="{{$company->id}}" class="brand-checkbox" />
+                        <input  type="checkbox" name="companies[]" value="{{$company->id}}" id="company-checkbox-{{$company->id}}" class="brand-checkbox" />
+                        <script>
+
+                            $("#company-checkbox-{{$company->id}}").change(function() {
+                                var models = @json($models);
+                                if(this.checked) {
+                                    for(var i = 0; i < models.length; i++) {
+                                        if(models[i].company_id == {{$company->id}})
+                                        {$( "#demo33" ).append(
+                                            `<div class="company-checkbox-block" id="model-div-${models[i].id}">
+                                                <label class="m-0" for="${models[i].id}">${models[i].name}</label>
+                                                <input type="checkbox" name="modeles[]" value="${models[i].id}" id="${models[i].id}" class="brand-checkbox" />
+                                            </div>`
+                                        );}
+                                    }
+                                }
+                                else{
+                                    for(var i = 0; i < models.length; i++) {
+                                        if(models[i].company_id == {{$company->id}})
+                                        {
+                                            $(`#model-div-${models[i].id}`).remove();
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                     @endforeach
                 </div>
 
                 <h4 data-toggle="collapse" data-target="#demo33" class="pt-3" style="cursor: pointer;">Model</h4>
                 <div id="demo33" class="collapse">
-                    <p>All Models</p>
-                    @foreach ($models as $key=>$model)
-                    <div class="company-checkbox-block">
-                        <label class="m-0" for="{{$model->id}}">{{$model->name}}</label>
-                        <input type="checkbox" name="modeles[]" value="{{$model->id}}" id="{{$model->id}}" class="brand-checkbox" />
-                    </div>
-                    @endforeach
+                    {{-- <p>All Models</p> --}}
+
                 </div>
                 {{-- <h4 data-toggle="collapse" data-target="#demo5" class="pt-3" style="cursor: pointer;">PRICE</h4>
                 <div id="demo5" class="collapse">
@@ -172,10 +192,10 @@
                         <div class="col-12 p-0">
                             <div class="row m-0 align-items-center">
                                 <div class="col-12 p-0 my-2">
-                                    <input type="number" maxlength="4" minlength="4" min="1950" max="2021" name="price_from" min="0" class="custom-control" placeholder="From">
+                                    <input type="number"  min="1950" max="2022" name="price_from"  class="custom-control" placeholder="From">
                                 </div>
                                 <div class="col-12 p-0">
-                                    <input type="number" maxlength="4" minlength="4" min="1950" max="2021" name="price_to" min="0" class="custom-control" placeholder="To">
+                                    <input type="number"  min="1950" max="2022" name="price_to"  class="custom-control" placeholder="To">
                                 </div>
                             </div>
                         </div>
@@ -197,40 +217,40 @@
                     <input type="text" name="min_price" list="MinPrice" placeholder="Min Price"/>
                     <datalist id="MinPrice">
                         <option value="" selected disabled>Min Rs</option>
-                        <option value='10000'>10,000 Pk</option>
-                        <option value='20000'>20,000 Pk</option>
-                        <option value='30000'>30,000 Pk</option>
-                        <option value='40000'>40,000 Pk</option>
-                        <option value='50000'>50,000 Pk</option>
-                        <option value='60000'>60,000 Pk</option>
-                        <option value='70000'>70,000 Pk</option>
-                        <option value='80000'>80,000 Pk</option>
-                        <option value='90000'>90,000 Pk</option>
-                        <option value='100000'>100,000 Pk</option>
-                        <option value='125000'>125,000 Pk</option>
-                        <option value='150000'>150,000 Pk</option>
-                        <option value='175000'>175,000 Pk</option>
-                        <option value='200000'>200,000 Pk</option>
+                        <option value='10000'>10,000 Rs</option>
+                        <option value='20000'>20,000 Rs</option>
+                        <option value='30000'>30,000 Rs</option>
+                        <option value='40000'>40,000 Rs</option>
+                        <option value='50000'>50,000 Rs</option>
+                        <option value='60000'>60,000 Rs</option>
+                        <option value='70000'>70,000 Rs</option>
+                        <option value='80000'>80,000 Rs</option>
+                        <option value='90000'>90,000 Rs</option>
+                        <option value='100000'>100,000 Rs</option>
+                        <option value='125000'>125,000 Rs</option>
+                        <option value='150000'>150,000 Rs</option>
+                        <option value='175000'>175,000 Rs</option>
+                        <option value='200000'>200,000 Rs</option>
                     </datalist>
                 </div>
                 <div class="col-md-2 my-1 col-12 px-md-0 pr-md-3">
                     <input type="text" name="max_price" list="MaxPrice" placeholder="Max Price"/>
                     <datalist id="MaxPrice">
                         <option value="" selected disabled>Min Rs</option>
-                        <option value='10000'>10,000 Pk</option>
-                        <option value='20000'>20,000 Pk</option>
-                        <option value='30000'>30,000 Pk</option>
-                        <option value='40000'>40,000 Pk</option>
-                        <option value='50000'>50,000 Pk</option>
-                        <option value='60000'>60,000 Pk</option>
-                        <option value='70000'>70,000 Pk</option>
-                        <option value='80000'>80,000 Pk</option>
-                        <option value='90000'>90,000 Pk</option>
-                        <option value='100000'>100,000 Pk</option>
-                        <option value='125000'>125,000 Pk</option>
-                        <option value='150000'>150,000 Pk</option>
-                        <option value='175000'>175,000 Pk</option>
-                        <option value='200000'>200,000 Pk</option>
+                        <option value='10000'>10,000 Rs</option>
+                        <option value='20000'>20,000 Rs</option>
+                        <option value='30000'>30,000 Rs</option>
+                        <option value='40000'>40,000 Rs</option>
+                        <option value='50000'>50,000 Rs</option>
+                        <option value='60000'>60,000 Rs</option>
+                        <option value='70000'>70,000 Rs</option>
+                        <option value='80000'>80,000 Rs</option>
+                        <option value='90000'>90,000 Rs</option>
+                        <option value='100000'>100,000 Rs</option>
+                        <option value='125000'>125,000 Rs</option>
+                        <option value='150000'>150,000 Rs</option>
+                        <option value='175000'>175,000 Rs</option>
+                        <option value='200000'>200,000 Rs</option>
                     </datalist>
                 </div>
                 <div class="col-md-2 my-1 col-12 pl-md-0 pr-md-5 pb-1">
@@ -348,7 +368,7 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="{{route('bike.show', $bike->id)}}">
-                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:488px;width:370px;">
+                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:440px;width:370px;">
                                     </a>
                                     <div class="product-item-dec">
                                         <ul>
@@ -395,7 +415,7 @@
                             <div class="product-wrapper">
                                 <div class="product-img">
                                     <a href="{{route('bike.show', $bike->id)}}">
-                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:488px;width:370px;">
+                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:440px;width:370px;">
                                     </a>
                                     <div class="product-item-dec">
                                         <ul>
@@ -720,5 +740,11 @@
         </div>
     </div>
 </div>
-
+<script>
+    $('select').on('change', function() {
+        alert( this.value );
+    });
+</script>
 @endsection
+
+

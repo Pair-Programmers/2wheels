@@ -196,7 +196,7 @@ class LandingController extends Controller
                 $searchedbikes = Bike::where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
             else{
-                $searchedbikes = Bike::where('model_year', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+                $searchedbikes = Bike::where('model_year', '>=', $request->price_from)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
 
         }
@@ -210,7 +210,7 @@ class LandingController extends Controller
                 $searchedbikes = Bike::where('category', $request->category)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
             else{
-                $searchedbikes = Bike::where('category', $request->category)->where('model_year', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+                return $searchedbikes = Bike::where('category', $request->category)->where('model_year', '>=', $request->price_from)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
         }
 

@@ -25,7 +25,7 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Create Bike Model</h2>
@@ -76,12 +76,12 @@
                                             @foreach ($companies as $company)
                                                 <option value="{{$company->id}}">{{$company->name}}</option>
                                             @endforeach
-                                            
-                                        </select> 
-                                    </div>
-                                    
 
-                                    
+                                        </select>
+                                    </div>
+
+
+
                                 </div>
 
                                 <div class="form-group">
@@ -99,7 +99,7 @@
 
                                 </div>
 
-                               
+
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Bore & Stroke</label>
@@ -116,7 +116,7 @@
 
                                 </div>
 
-                                
+
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Clutch</label>
@@ -134,19 +134,117 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label">Dimension</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="dimension" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Starting</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="starting" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Top Speed</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="top_speed" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Petrol Capacity</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="petrol_capacity" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Fuel Average</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="fuel_average" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Dry Weight</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="dry_weight" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Frame</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="frame" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Ground Clearance</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="ground_clearance" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Wheel Size</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="wheel_size" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Tyre At Back</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="tyre_at_back" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Tyre At Front</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="tyre_at_front" required>
+                                    </div>
+
+                                    <label class="col-sm-2 control-label">Horsepower</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="horsepower" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Torque</label>
+
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" name="torque" required>
+                                    </div>
                                     <label class="col-sm-2 control-label">Price</label>
 
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control" name="price" required>
                                     </div>
 
+
                                 </div>
 
-                               
 
 
 
-                                
+
+
+
+
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button class="btn btn-primary" type="submit">Save</button>
@@ -155,7 +253,7 @@
                             </form>
                         </div>
                         <br>
-                
+
             </div>
         </div>
 
@@ -163,7 +261,7 @@
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
 
-                
+
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -201,14 +299,14 @@
                     <tbody>
                         @php
                         $counter = 1;
-                    @endphp 
-                    
+                    @endphp
+
                     @foreach($models as $model)
                         <tr class="gradeX">
                             <td>{{$counter}}</td>
                             <td class="center">{{$model->name}}</td>
                             <td class="center">{{$model->company->name}}</td>
-                            
+
                             <td>
                                 <a href="{{ route('model.edit', $model->id) }}">
                                     <small class="label label-primary"><i class="fa"></i>Edit</small>
@@ -221,10 +319,10 @@
 
                         @php
                             $counter = $counter + 1;
-                        @endphp 
+                        @endphp
                     @endforeach
-                    
-                    
+
+
                     </tbody>
                     <tfoot>
                     <tr>
