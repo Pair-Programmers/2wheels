@@ -111,9 +111,7 @@ Route::get('bikecomparison', function () {
 Route::get('bikereviews', function () {
     return view('pages/bikereviews');
 });
-Route::get('newbikeprices', function () {
-    return view('pages/newbikeprices');
-})->name('newbikeprices');
+
 Route::get('findautoparts', function () {
     return view('pages/findautoparts');
 });
@@ -176,6 +174,10 @@ Route::post('/search_by_price_range', [BikeController::class, 'search_by_price_r
 Route::get('/bikeimport', [BikeController::class, 'bikeimport'])->name('bikeimport');
 Route::get('/bikefinance', [BikeController::class, 'bikefinance'])->name('bikefinance');
 Route::get('/mtmispak', [BikeController::class, 'mtmispak'])->name('mtmispak');
+
+
+Route::get('newbikeprices/{company}', [BikeController::class, 'newbikeprices'])->name('newbikeprices');
+
 
 
 Route::get('/used_bike_by_make/{make}', [BikeController::class, 'usedBikesByMake'])->name('used_bike_by_make');

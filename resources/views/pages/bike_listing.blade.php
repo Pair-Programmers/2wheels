@@ -112,10 +112,10 @@
                         </a>
                         <div style="font-size: 1.6rem;margin:0px -30px;" class="dropdown-menu shadow-sm sm-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="{{ route('new_bike') }}">Find New Bikes</a>
-                            <a class="dropdown-item" href="{{route('newbikeprices')}}">On road price</a>
+                            <a class="dropdown-item" href="{{route('newbikeprices', ['all'])}}">On road price</a>
                             <a class="dropdown-item" href="{{ route('bikecomperison') }}">Bike Comparison</a>
                             <a class="dropdown-item" href="{{ route('review.index') }}">Bike Reviews</a>
-                            <a class="dropdown-item" href="{{route('newbikeprices')}}">New Bike Prices</a>
+                            <a class="dropdown-item" href="{{route('newbikeprices', ['all'])}}">New Bike Prices</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown d-menu">

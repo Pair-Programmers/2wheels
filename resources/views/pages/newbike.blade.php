@@ -655,47 +655,42 @@
         </section>
 
         <section style="padding-bottom: 24px;">
-            <div class="container" id="top-bike-manufacturers-new-home">
-                <h2>
-                    New Bikes Price List
-                    <div class="clear-link">
-                        <a title="View Prices" rel="nofollow" href="pricelist" class="more-link">View Prices</a>
-                    </div>
-                </h2>
-                <ul class="logo-listing logo-listing-price row clearfix mb0">
-                    <li class="col-md-2">
-                        <a href="pricelist" class="show" title="ZXMCO">
-                            <span class='bike-icons zxmco'></span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="pricelist" class="show" title="Aprilia">
-                            <span class='bike-icons aprilia'></span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="pricelist" class="show" title="Hero">
-                            <span class='bike-icons hero'></span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="pricelist" class="show" title="Metro">
-                            <span class='bike-icons metro'></span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="pricelist" class="show" title="KEEWAY">
-                            <span class='bike-icons keeway'></span>
-                        </a>
-                    </li>
-                    <li class="col-md-2">
-                        <a href="pricelist" class="show" title="U.M">
-                            <span class='bike-icons u-m'></span>
-                        </a>
-                    </li>
-                </ul>
+    <div class="container" id="top-bike-manufacturers-new-home">
+      <h2>
+        New Bikes Price List
+        <div class="clear-link">
+          <a title="View Prices" rel="nofollow" href="{{route('newbikeprices', 'all')}}" class="more-link">View Prices</a>
+        </div>
+      </h2>
+            <ul class="logo-listing logo-listing-price row clearfix mb0">
+            <li class="col-md-2">
+            <a href="{{route('newbikeprices', 'honda')}}" class="show" title="Honda">
+                <span class='bike-icons honda'></span>
+        </a>    </li>
+            <li class="col-md-2">
+            <a href="{{route('newbikeprices', 'suzuki')}}" class="show" title="Suzuki">
+                <span class='bike-icons suzuki'></span>
+        </a>    </li>
+            <li class="col-md-2">
+            <a href="{{route('newbikeprices', 'yamaha')}}" class="show" title="Yamaha">
+                <span class='bike-icons yamaha'></span>
+        </a>    </li>
+            <li class="col-md-2">
+            <a href="{{route('newbikeprices', 'pak-hero')}}" class="show" title="Pak Hero">
+                <span class='bike-icons pak-hero'></span>
+        </a>    </li>
+            <li class="col-md-2">
+            <a href="{{route('newbikeprices', 'ravi')}}" class="show" title="Ravi">
+                <span class='bike-icons ravi'></span>
+        </a>    </li>
+            <li class="col-md-2">
+            <a href="{{route('newbikeprices', 'hero')}}" class="show" title="Hero">
+                <span class='bike-icons hero'></span>
+        </a>    </li>
+        </ul>
             </div>
-        </section>
+  </section>
+       
 
         <section style="padding-bottom: 200px;">
             <div class="container">

@@ -19,9 +19,9 @@ class BikeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function newbikeprices($company='all')
     {
-        //
+        return view('pages/newbikeprices', compact('company'));
     }
 
     /**

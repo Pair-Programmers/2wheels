@@ -5,7 +5,38 @@
 @section('contents')
 
 <div class="" id="main-container">
-     
+     <script>
+       let company = `{{$company}}`;
+       if(company != 'all'){
+          if(company == 'honda'){
+            var elmntToView1 = document.getElementById('hondabikeprice');
+            elmntToView1.scrollIntoView();
+          }
+          else if(company == 'ravi'){
+            var elmntToView2 = document.getElementById('ravibikeprice');
+            elmntToView2.scrollIntoView();
+          }
+          else if(company == 'hero'){
+            var elmntToView3 = document.getElementById('herobikeprice');
+            elmntToView3.scrollIntoView();
+          }
+          else if(company == 'pak-hero'){
+            var elmntToView4 = document.getElementById('pak-herobikeprice');
+            elmntToView4.scrollIntoView();
+          }
+          else if(company == 'suzuki'){
+            var elmntToView5 = document.getElementById('suzukibikeprice');
+            elmntToView5.scrollIntoView();
+          }
+          else if(company == 'yamaha'){
+            var elmntToView6 = document.getElementById('yamahabikeprice');
+            elmntToView6.scrollIntoView();
+          }
+        
+       }
+       
+      
+     </script>
       
       <section>
   <div class="container">
@@ -15,7 +46,7 @@
 
 
     <div style="margin-top: 75px;" class="pb-4">
-      <div class="icn-cars"><a href="/new-cars/pricelist/" rel="nofollow">Looking for new car prices?</a></div>
+      <div class="icn-bikes"><a href="/new-cars/pricelist/" rel="nofollow">Looking for new Bike prices?</a></div>
       <h1>Motorcycle Prices</h1>
     </div>
 
@@ -66,7 +97,7 @@
             <a href="#chinese-bikes">
             
             <div class="logo">
-              <img alt="Chinese Bikes Prices" src="{{asset('website')}}/assets/img/chinse-bike.jpg" title="Chinese Bikes Prices" />
+              <img alt="Chinese Bikes Prices" src="{{asset('website')}}/assets/img/Chinese Bike.png" title="Chinese Bikes Prices" />
             </div>
             <div class="car-name">
               Chinese Bikes
@@ -156,7 +187,7 @@
             <a href="#hi-speed">
             
             <div class="logo">
-              <img alt="Hi Speed Prices" src="{{asset('website')}}/assets/img/hi-Speed.png" title="Hi Speed Prices" />
+              <img alt="Hi Speed Prices" src="{{asset('website')}}/assets/img/Hi Speed.png" title="Hi Speed Prices" />
             </div>
             <div class="car-name">
               Hi Speed
@@ -286,7 +317,7 @@
             <a href="#road-prince">
             
             <div class="logo">
-              <img alt="Road Prince Prices" src="{{asset('website')}}/assets/img/Road-prince.png" title="Road Prince Prices" />
+              <img alt="Road Prince Prices" src="{{asset('website')}}/assets/img/Road Prince.png" title="Road Prince Prices" />
             </div>
             <div class="car-name">
               Road Prince
@@ -296,7 +327,7 @@
             <a href="#super-power">
             
             <div class="logo">
-              <img alt="Super Power Prices" src="{{asset('website')}}/assets/img/Super-Power.png" title="Super Power Prices" />
+              <img alt="Super Power Prices" src="{{asset('website')}}/assets/img/Super Power.png" title="Super Power Prices" />
             </div>
             <div class="car-name">
               Super Power
@@ -306,7 +337,7 @@
             <a href="#suzuki">
             
             <div class="logo">
-              <img alt="Suzuki Prices" src="{{asset('website')}}/assets/img/Suzuki.png" title="Suzuki Prices" />
+              <img alt="Suzuki Prices" src="{{asset('website')}}/assets/img/Sazuki.png" title="Suzuki Prices" />
             </div>
             <div class="car-name">
               Suzuki
@@ -397,7 +428,7 @@
         <div class="clearfix"></div>
         <div class="manufacturer-price-list">
             <div id="aprilia">
-              <h2>
+              <h2 id="apriliabikeprice">
                 Aprilia Bike Prices
                 <div class="clear-link"><a href="/bikes/aprilia/" class="more-link">Learn More About Aprilia</a></div>
               </h2>
@@ -440,9 +471,9 @@
               </table>
             
 </div>            <div id="benelli">
-              <h2>
+              <h2 id="benalibikeprice">
                 Benelli Bike Prices
-                <div class="clear-link"><a href="/bikes/benelli/" class="more-link">Learn More About Benelli</a></div>
+                <div  class="clear-link"><a href="/bikes/benelli/" class="more-link">Learn More About Benelli</a></div>
               </h2>
               
               <table class="table table-striped table-bordered">
@@ -503,7 +534,7 @@
               </table>
             
 </div>            <div id="bml">
-              <h2>
+              <h2 id="benalibikeprice">
                 BML Bike Prices
                 <div class="clear-link"><a href="/bikes/bml/" class="more-link">Learn More About BML</a></div>
               </h2>
@@ -531,7 +562,7 @@
               </table>
             
 </div>            <div id="bmw">
-              <h2>
+              <h2 id="benalibikeprice">
                 BMW Bike Prices
                 <div class="clear-link"><a href="/bikes/bmw/" class="more-link">Learn More About BMW</a></div>
               </h2>
@@ -569,7 +600,7 @@
               </table>
             
 </div>            <div id="chinese-bikes">
-              <h2>
+              <h2 id="benalibikeprice">
                 Chinese Bikes Bike Prices
                 <div class="clear-link"><a href="/bikes/chinese-bikes/" class="more-link">Learn More About Chinese Bikes</a></div>
               </h2>
@@ -617,7 +648,7 @@
               </table>
             
 </div>            <div id="crown">
-              <h2>
+              <h2 id="benalibikeprice">
                 Crown Bike Prices
                 <div class="clear-link"><a href="/bikes/crown/" class="more-link">Learn More About Crown</a></div>
               </h2>
@@ -893,7 +924,7 @@
               </table>
             
 </div>            <div id="hero">
-              <h2>
+              <h2 id="herobikeprice">
                 Hero Bike Prices
                 <div class="clear-link"><a href="/bikes/hero/" class="more-link">Learn More About Hero</a></div>
               </h2>
@@ -954,7 +985,7 @@
               </table>
             
 </div>            <div id="honda">
-              <h2>
+              <h2 id="hondabikeprice">
                 Honda Bike Prices
                 <div class="clear-link"><a href="/bikes/honda/" class="more-link">Learn More About Honda</a></div>
               </h2>
@@ -1308,7 +1339,7 @@
               </table>
             
 </div>            <div id="pak-hero">
-              <h2>
+              <h2 id="pak-herobikeprice">
                 Pak Hero Bike Prices
                 <div class="clear-link"><a href="/bikes/pak-hero/" class="more-link">Learn More About Pak Hero</a></div>
               </h2>
@@ -1397,7 +1428,7 @@
               </table>
             
 </div>            <div id="ravi">
-              <h2>
+              <h2 id="ravibikeprice">
                 Ravi Bike Prices
                 <div class="clear-link"><a href="/bikes/ravi/" class="more-link">Learn More About Ravi</a></div>
               </h2>
@@ -1541,7 +1572,7 @@
               </table>
             
 </div>            <div id="suzuki">
-              <h2>
+              <h2 id="suzukibikeprice">
                 Suzuki Bike Prices
                 <div class="clear-link"><a href="/bikes/suzuki/" class="more-link">Learn More About Suzuki</a></div>
               </h2>
@@ -1766,7 +1797,7 @@
               </table>
             
 </div>            <div id="yamaha">
-              <h2>
+              <h2 id="yamahabikeprice">
                 Yamaha Bike Prices
                 <div class="clear-link"><a href="/bikes/yamaha/" class="more-link">Learn More About Yamaha</a></div>
               </h2>
@@ -1931,19 +1962,18 @@
 <section>
   <div class="container">
       <div class="gen_desc_large active " id="introduction" itemprop="description" style="height: 150px; overflow: hidden;">
-        <p>While buying new or used bike, the most important thing is to find out which bike is within your budget. 2Wheels helps you by providing detailed information about bikes prices, reviews, and comparisons. Price is the primary factor in consumer&#39;s buying decision. Reviews can be helpful in knowing about the right time to buy or sell bikes in Pakistan. You can find reviews published by bikes owners of different makes on our site. You can browse <a href="https://www.pakwheels.com/bikes/" title="Bikes on PakWheels"><strong>bikes</strong></a> prices of local manufacturers including Honda, Suzuki, Yamaha, ZXMCO, United, Unique, Super Power, Metro, Ravi, BMW, Road Prince, BML, Power, Pak Hero, etc. Moreover, you can also view prices and ads of bikes by body type &amp; categories on PakWheels:&nbsp;<strong><a href="https://www.pakwheels.com/used-bikes/heavy-bikes/156586" title="Heavy Bikes for Sale in Pakistan">Heavy Bikes</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/dirt-bikes/161468" title="Dirt Bikes for Sale in Pakistan">Dirt Bikes</a></strong>, <a href="https://pakwheels.com/used-bikes/"><strong>Motorcycles</strong></a>, <strong><a href="https://www.pakwheels.com/used-bikes/atv/161469" title="Quad Bikes for Sale in Pakistan">ATV</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/scooter/156972" title="Scooter for Sale in Pakistan">Scooters</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/trail-bikes/161467" title="Trail Bikes for Sale in Pakistan">Trail Bikes</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/chopper/165823" title="Choppers for Sale in Pakistan">Cruisers</a></strong> &amp; <strong><a href="https://www.pakwheels.com/used-bikes/sport-bikes/161194" title="Sports Bikes for Sale in Pakistan">Sports Bikes</a></strong>.</p>
+        <p>While buying new or used bike, the most important thing is to find out which bike is within your budget. 
+          2Wheels helps you by providing detailed information about bikes prices, reviews, and comparisons. Price is the 
+          primary factor in consumer&#39;s buying decision. Reviews can be helpful in knowing about the right time to buy 
+          or sell bikes in Pakistan. You can find reviews published by bikes owners of different makes on our site. 
+          You can browse <a href="https://www.pakwheels.com/bikes/" title="Bikes on PakWheels"><strong>bikes</strong></a> prices 
+          of local manufacturers including Honda, Suzuki, Yamaha, ZXMCO, United, Unique, Super Power, Metro, Ravi, BMW, Road 
+          Prince, BML, Power, Pak Hero, etc. Moreover, you can also view prices and ads of bikes by body type &amp; categories 
+          on PakWheels:&nbsp;<strong><a href="https://www.pakwheels.com/used-bikes/heavy-bikes/156586" title="Heavy Bikes for Sale in Pakistan">Heavy Bikes</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/dirt-bikes/161468" title="Dirt Bikes for Sale in Pakistan">Dirt Bikes</a></strong>, <a href="https://pakwheels.com/used-bikes/"><strong>Motorcycles</strong></a>, <strong><a href="https://www.pakwheels.com/used-bikes/atv/161469" title="Quad Bikes for Sale in Pakistan">ATV</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/scooter/156972" title="Scooter for Sale in Pakistan">Scooters</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/trail-bikes/161467" title="Trail Bikes for Sale in Pakistan">Trail Bikes</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/chopper/165823" title="Choppers for Sale in Pakistan">Cruisers</a></strong> &amp; <strong><a href="https://www.pakwheels.com/used-bikes/sport-bikes/161194" title="Sports Bikes for Sale in Pakistan">Sports Bikes</a></strong>.</p>
 
       </div>
-      <div class="text-right" id="show_more_link">
-        <a href="javascript:void(0);" onclick="$('#show_more_link').hide();$('#show_less_link').show();$('.gen_desc_large.active').animate({height: actual_height_for_write_up},actual_height_for_write_up);">
-          Show More <i class="fa fa-chevron-down"></i>
-        </a>
-      </div>
-      <div class="text-right" id="show_less_link" style="display: none">
-        <a href="javascript:void(0);" onclick="$('#show_less_link').hide();$('#show_more_link').show();$('.gen_desc_large.active').animate({height: '150px'},actual_height_for_write_up);">
-          Show Less <i class="fa fa-chevron-up"></i>
-        </a>
-      </div>
+      
+      
   </div>
 </section>
 

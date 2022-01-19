@@ -190,7 +190,7 @@ class LandingController extends Controller
             if($request->price_from == null && $request->price_to == null){
                 $searchedbikes = Bike::orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }elseif($request->price_from != null && $request->price_to == null){
-                $searchedbikes = Bike::where('model_year', '>=', $request->price_from)->orderby('created_at', 'DESC')->gpaginate($this->paginate_qty);
+                $searchedbikes = Bike::where('model_year', '>=', $request->price_from)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
             elseif($request->price_from == null && $request->price_to != null){
                 $searchedbikes = Bike::where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
