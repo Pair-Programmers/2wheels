@@ -335,7 +335,7 @@
                                     <label class="col-sm-2 control-label">Price</label>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" name="price" required>
+                                        <input type="number" class="form-control" name="price" required>
                                         <input type="hidden" class="form-control" name="category" value="New Bike" required>
                                     </div>
                                     
@@ -349,7 +349,7 @@
 
                                     <div class="col-sm-2">
                                         <div class="i-checks">
-                                            <label> <input type="checkbox" value="Anti Theft Lock" name="additional_info[]" > <i></i>Anti Theft Lock</label>
+                                            <label><input type="checkbox" value="Anti Theft Lock" name="additional_info[]" > <i></i>Anti Theft Lock</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-2">
@@ -374,7 +374,7 @@
                                     <label class="col-sm-2 control-label">Seller Name</label>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" name="fuel_average" required>
+                                        <input type="text" class="form-control" name="seller_name" required>
                                     </div>
 
                                     <label class="col-sm-2 control-label">Mobile Number</label>
@@ -389,7 +389,7 @@
                                     <label class="col-sm-2 control-label">Address</label>
 
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" name="seller_address" >
+                                        <input type="text" class="form-control" name="seller_address" required>
                                     </div>
 
                                     <label class="col-sm-2 control-label">Comment</label>

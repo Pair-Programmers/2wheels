@@ -53,7 +53,7 @@ class BikeAdminController extends Controller
      */
     public function store(Request $request)
     {
-        $inputs = $request->all();
+         $inputs = $request->all();
         //dd($inputs);
         if($request->hasfile('images'))
          {
@@ -71,14 +71,32 @@ class BikeAdminController extends Controller
          $company = Company::find($request->company_id);
          $model = BikeModel::find($request->model_id);
 
-         $no_of_posts = $user->no_of_post_bike;
         $inputs['name'] = $model->name . ' ' . $company->name . ' ' . $request->model_year;
-        $inputs['user_id'] = Auth::id();
+        $inputs['user_id'] = 1;
         $inputs['images'] = json_encode($data);
-        $inputs['additional_info'] = json_encode($request->additional_info);
+        $additionalInfoArray = ['0','0','0','0'];
+        if($request->additional_info == null){
+            $inputs['additional_info'] = json_encode($additionalInfoArray);
+        }
+        else{
+            foreach ($request->additional_info as $key => $value) {
+                if($value == 'Anti Theft Lock'){
+                    $additionalInfoArray[0] = $value;
+                }
+                elseif($value == 'Disc Brake'){
+                    $additionalInfoArray[1] = $value;
+                }
+                elseif($value == 'Led Light'){
+                    $additionalInfoArray[2] = $value;
+                }
+                elseif($value == 'Wind Shield'){
+                    $additionalInfoArray[3] = $value;
+                }
+            }
+        }
+        $inputs['additional_info'] = json_encode($additionalInfoArray);
         //return  $inputs;
         Bike::create($inputs);
-        $user->update(['no_of_post_bike'=>($no_of_posts+1)]);
         return redirect()->back()->with('success', 'Post Submitted Successfully');
 
 
@@ -107,7 +125,10 @@ class BikeAdminController extends Controller
         $bike = Bike::find($id);
         $models = BikeModel::all();
         $companies = Company::all();
-        return view('pages/bike_edit', compact('bike', 'models', 'companies'));
+        $view = View::make('adminpanel/pages/bike_edit', ['bike'=>$bike, 'models'=>$models, 'companies'=>$companies]);
+        $view->nest('sidebar','adminpanel/partials/sidebar');
+        $view->nest('header','adminpanel/partials/header');
+        return $view;
     }
 
     /**
@@ -135,15 +156,33 @@ class BikeAdminController extends Controller
             $inputs['images'] = json_encode($data);
          }
 
-         unset($inputs['user']);
-         unset($inputs['used_bike']);
 
          $company = Company::find($request->company_id);
          $model = BikeModel::find($request->model_id);
          $inputs['name'] = $model->name . ' ' . $company->name . ' ' . $request->model_year;
 
-        $inputs['user_id'] = Auth::id();
-        $inputs['additional_info'] = json_encode($request->additional_info);
+        $inputs['user_id'] = 1;
+        $additionalInfoArray = ['0','0','0','0'];
+        if($request->additional_info == null){
+            $inputs['additional_info'] = json_encode($additionalInfoArray);
+        }
+        else{
+            foreach ($request->additional_info as $key => $value) {
+                if($value == 'Anti Theft Lock'){
+                    $additionalInfoArray[0] = $value;
+                }
+                elseif($value == 'Disc Brake'){
+                    $additionalInfoArray[1] = $value;
+                }
+                elseif($value == 'Led Light'){
+                    $additionalInfoArray[2] = $value;
+                }
+                elseif($value == 'Wind Shield'){
+                    $additionalInfoArray[3] = $value;
+                }
+            }
+        }
+        $inputs['additional_info'] = json_encode($additionalInfoArray);
 
         $bike = Bike::find($id);
         $bike->update($inputs);

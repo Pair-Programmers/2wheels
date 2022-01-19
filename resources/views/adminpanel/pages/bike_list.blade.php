@@ -28,7 +28,7 @@
             <?=$header; ?>            
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>List of Bikes</h2>
+                    <h2>List of New Bikes</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.html">Home</a>
@@ -52,7 +52,7 @@
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>All Blogs are listed here..</h5>
+                        <h5>All New Bikes are listed here..</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -100,11 +100,11 @@
                             <td class="center">{{$bike->name}}</td>
                             <td class="center">{{$bike->company->name}}</td>
                             <td class="center">{{$bike->model->name}}</td>
+                            <td class="center">{{$bike->model_year}}</td>
                             <td class="center">{{$bike->reg_city_id}}</td>
                             <td class="center">{{$bike->category}}</td>
                             <td class="center">{{$bike->body_type}}</td>
                             <td class="center">{{$bike->price}}</td>
-                            <td class="center">{{$bike->created_at}}</td>
                             
                             <td>
                                 <a href="{{ route('admin.bike.edit', $bike->id) }}">
