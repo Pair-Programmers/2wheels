@@ -23,7 +23,13 @@
                         <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                         
                     </li>
-                    
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Bikes Management</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="{{route('admin.bike.create')}}">Create New Bike</a></li>
+                            <li><a href="{{route('admin.bike.index')}}">New Bike List</a></li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="{{route('company.create')}}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Manage Company</span><span class="fa arrow"></span></a>
                         

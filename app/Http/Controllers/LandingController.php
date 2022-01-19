@@ -210,7 +210,7 @@ class LandingController extends Controller
                 $searchedbikes = Bike::where('category', $request->category)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
             else{
-                return $searchedbikes = Bike::where('category', $request->category)->where('model_year', '>=', $request->price_from)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+                $searchedbikes = Bike::where('category', $request->category)->where('model_year', '>=', $request->price_from)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
             }
         }
 

@@ -17,6 +17,7 @@ use App\Http\Controllers\BikeModelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\BikeAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -186,6 +187,16 @@ Route::get('/bike_by_make/{make}', [BikeController::class, 'bikesByMake'])->name
 Route::get('/new_bike_by_model/{model}', [BikeController::class, 'newBikesByModel'])->name('new_bike_by_model');
 Route::get('/used_bike_by_model/{model}', [BikeController::class, 'usedBikesByModel'])->name('used_bike_by_model');
 Route::get('/bike_by_model/{model}', [BikeController::class, 'bikesByModel'])->name('bike_by_model');
+
+//admin
+Route::get('/bike_admin', [BikeAdminController::class, 'index'])->name('admin.bike.index');
+Route::get('/bike_create_admin', [BikeAdminController::class, 'create'])->name('admin.bike.create');
+Route::post('/bike_store_admin', [BikeAdminController::class, 'store'])->name('admin.bike.store');
+Route::get('/bike_show_admin/{id}', [BikeAdminController::class, 'show'])->name('admin.bike.show');
+Route::get('/get_bikes_admin/{id}', [BikeAdminController::class, 'getbike'])->name('admin.get_bike');
+Route::get('/bike_edit_admin/{id}', [BikeAdminController::class, 'edit'])->name('admin.bike.edit');
+Route::post('/bike_update_admin/{id}', [BikeAdminController::class, 'update'])->name('admin.bike.update');
+Route::get('/bike_destroy_admin/{id}', [BikeAdminController::class, 'destroy'])->name('admin.bike.destroy');
 
 
 //product

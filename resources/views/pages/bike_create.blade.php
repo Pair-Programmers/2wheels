@@ -513,7 +513,7 @@
                                                     <label class="d-flex align-items-center"><input id="used_bike_led_light"
                                                             name="additional_info[]" style="height: 15px;" type="checkbox"
                                                             value="Led Light" />
-                                                        <span style="width: 22vw;">Led Light</span></label>
+                                                        <span style="width: 22vw;">LED Light</span></label>
                                                 </li>
                                                 <li>
                                                     <label class="d-flex align-items-center"><input name="additional_info[]"
@@ -742,5 +742,6 @@
                    }
                })
             }
+            display_Models();
         </script>
 @endsection
