@@ -186,99 +186,33 @@ class LandingController extends Controller
         $newBikes = Bike::where('category', 'New Bike')->orderby('created_at', 'DESC')->get();
         $usedBikes = Bike::where('category', 'Used Bike')->orderby('created_at', 'DESC')->get();
 
-        if($request->category == 'Both'){
-            if($request->price_from == null && $request->price_to == null){
-                $searchedbikes = Bike::orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }elseif($request->price_from != null && $request->price_to == null){
-                $searchedbikes = Bike::where('model_year', '>=', $request->price_from)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }
-            elseif($request->price_from == null && $request->price_to != null){
-                $searchedbikes = Bike::where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }
-            else{
-                $searchedbikes = Bike::where('model_year', '>=', $request->price_from)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }
 
+        $searchedbikes = Bike::when($request->filled('city') , function ($query) use ($request){
+            return $query->whereIn('reg_city_id', $request->city);
+        })
+        ->when($request->filled('price_from') , function ($query) use ($request){
+            return $query->where('model_year' , '>=', $request->price_from);
+        })
+        ->when($request->filled('price_to') , function ($query) use ($request){
+            return $query->where('model_year' , '<=', $request->price_to);
+        })
+        ->when($request->filled('body_type') , function ($query) use ($request){
+            return $query->whereIn('body_type' , $request->body_type);
+        })
+        ->when($request->filled('companies') , function ($query) use ($request){
+            return $query->whereIn('company_id' , $request->companies);
+        })
+        ->when($request->filled('modeles') , function ($query) use ($request){
+            return $query->whereIn('model_id' , $request->modeles);
+        });
+
+        if($request->category != 'Both'){
+            $searchedbikes = $searchedbikes->where('category', $request->category)->paginate($this->paginate_qty);
         }
         else{
-            if($request->price_from == null && $request->price_to == null){
-                $searchedbikes = Bike::where('category', $request->category)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }elseif($request->price_from != null && $request->price_to == null){
-                $searchedbikes = Bike::where('category', $request->category)->where('model_year', '>=', $request->price_from)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }
-            elseif($request->price_from == null && $request->price_to != null){
-                $searchedbikes = Bike::where('category', $request->category)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }
-            else{
-                $searchedbikes = Bike::where('category', $request->category)->where('model_year', '>=', $request->price_from)->where('model_year', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            }
+            $searchedbikes = $searchedbikes->paginate($this->paginate_qty);
         }
 
-
-        foreach ($searchedbikes as $key => $value) {
-
-            $is_body_type_found = true;
-            $is_city_found = true;
-            $is_make_found = true;
-            $is_model_found = true;
-
-            if($request->has('city')){
-                foreach ($request->city as $city) {
-                    if($value->reg_city_id == $city){
-                        $is_city_found = true;
-                        break;
-                    }
-                    else{
-                        $is_city_found = false;
-                    }
-                }
-
-
-            }
-
-
-            if($request->has('body_type')){
-                foreach ($request->body_type as $body_type) {
-                    if($value->body_type == $body_type){
-                        $is_body_type_found = true;
-                        break;
-                    }
-                    else{
-                        $is_body_type_found = false;
-                    }
-                }
-
-            }
-
-            if($request->has('companies')){
-                foreach ($request->companies as $company) {
-                    if($value->company_id == $company){
-                        $is_body_type_found = true;
-                        break;
-                    }
-                    else{
-                        $is_body_type_found = false;
-                    }
-                }
-
-            }
-
-
-
-
-
-            if($is_city_found && $is_body_type_found && $is_body_type_found && $is_model_found){
-
-            }
-            else{
-                $searchedbikes->forget($key);
-            }
-
-
-
-
-
-        }
 
         $latestProducts = Product::orderby('created_at', 'DESC')->get();
         $blogs = Blog::orderby('created_at', 'DESC')->paginate(3);
