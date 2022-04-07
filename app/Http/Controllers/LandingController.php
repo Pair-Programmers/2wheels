@@ -38,73 +38,92 @@ class LandingController extends Controller
         $companies = Company::all();
         $search_result = $request->company_model . '  '. $request->city . '  ' . $request->price_range;
 
-        if($request->city != null && $request->price_range != null && $request->company_model != null){
-            $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
-        elseif($request->city == null && $request->price_range != null && $request->company_model != null){
-            $bikes = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
-        elseif($request->city != null && $request->price_range == null && $request->company_model != null){
-            $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
-        elseif($request->city != null && $request->price_range != null && $request->company_model == null){
-            $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
+        $bikes = Bike::where('category', $request->category)
+        ->when($request->filled('keyword') , function ($query) use ($request){
+            return $query->where('name', 'like', '%'.$request->keyword.'%');
+        })
+        ->when($request->filled('min_price') , function ($query) use ($request){
+            return $query->where('price' , '>=', $request->min_price);
+        })
+        ->when($request->filled('max_price') , function ($query) use ($request){
+            return $query->where('price' , '<=', $request->max_price);
+        })->paginate($this->paginate_qty);
 
-        elseif($request->city == null && $request->price_range != null && $request->company_model == null){
-            $bikes = Bike::where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
-        elseif($request->city != null && $request->price_range == null && $request->company_model == null){
-            $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
-        elseif($request->city == null && $request->price_range == null && $request->company_model != null){
-            $bikes = Bike::where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
-            $bikesPriceHighToLow = Bike::where('name', 'like', '%'.$request->company_model.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
-            $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
-            $bikesDateOld = Bike::where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
-            $bikesDateRecent = Bike::where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
-            return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-            'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
-        }
-        elseif($request->city == null && $request->price_range == null && $request->company_model == null){
-            return redirect()->back();
-        }
+        $bikesPriceHighToLow = $bikes;
+        $bikesPriceLowToHigh = $bikes;
+        $bikesDateOld = $bikes;
+        $bikesPriceLowToHigh = $bikes;
+        $bikesDateRecent = $bikes;
+
+        return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // if($request->city != null && $request->price_range != null && $request->company_model != null){
+        //     $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+        // elseif($request->city == null && $request->price_range != null && $request->company_model != null){
+        //     $bikes = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+        // elseif($request->city != null && $request->price_range == null && $request->company_model != null){
+        //     $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+        // elseif($request->city != null && $request->price_range != null && $request->company_model == null){
+        //     $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+
+        // elseif($request->city == null && $request->price_range != null && $request->company_model == null){
+        //     $bikes = Bike::where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('price', '<=', $request->price_range)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('price', '<=', $request->price_range)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+        // elseif($request->city != null && $request->price_range == null && $request->company_model == null){
+        //     $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+        // elseif($request->city == null && $request->price_range == null && $request->company_model != null){
+        //     $bikes = Bike::where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
+        //     $bikesPriceHighToLow = Bike::where('name', 'like', '%'.$request->company_model.'%')->orderby('price', 'DESC')->paginate($this->paginate_qty);
+        //     $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->company_model.'%')->paginate($this->paginate_qty);
+        //     $bikesDateOld = Bike::where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
+        //     $bikesDateRecent = Bike::where('name', 'like', '%'.$request->company_model.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+        //     return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
+        //     'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        // }
+        // elseif($request->city == null && $request->price_range == null && $request->company_model == null){
+        //     return redirect()->back();
+        // }
     }
 
     public function searchBikeIndex(Request $request)

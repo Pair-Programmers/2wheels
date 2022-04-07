@@ -15,7 +15,7 @@
             <div class="search-main">
 
                 <div class="" tabindex="0">
-                    <form action="{{route('bike_search_result')}}" method="POST">
+                    {{-- <form action="{{route('bike_search_result')}}" method="POST">
                         @csrf
                     <div id="used-cars">
                         <ul class="list-unstyled search-fields search-fields3 mt20 clearfix">
@@ -524,6 +524,59 @@
                             id="used-bikes-search-btn">Search</button>
                     </div>
                 </div>
+            </form> --}}
+            <form action="{{route('bike_search_result')}}" method="POST">
+                @csrf
+                <div class="row m-0 w-100">
+
+                    <div class="col-md-6 my-1 col-12 pl-md-5 ">
+                        <input type="text"  name="keyword" placeholder="Search Here" class="custom-control w-100 ">
+                        <input type="hidden"  name="category" value="New Bike">
+                    </div>
+                    <div class="col-md-2 my-1 col-12 px-md-0">
+                        <input type="text" name="min_price" list="MinPrice" placeholder="Min Price"/>
+                        <datalist id="MinPrice">
+                            <option value="" selected disabled>Min Rs</option>
+                            <option value='10000'>10,000 Rs</option>
+                            <option value='20000'>20,000 Rs</option>
+                            <option value='30000'>30,000 Rs</option>
+                            <option value='40000'>40,000 Rs</option>
+                            <option value='50000'>50,000 Rs</option>
+                            <option value='60000'>60,000 Rs</option>
+                            <option value='70000'>70,000 Rs</option>
+                            <option value='80000'>80,000 Rs</option>
+                            <option value='90000'>90,000 Rs</option>
+                            <option value='100000'>100,000 Rs</option>
+                            <option value='125000'>125,000 Rs</option>
+                            <option value='150000'>150,000 Rs</option>
+                            <option value='175000'>175,000 Rs</option>
+                            <option value='200000'>200,000 Rs</option>
+                        </datalist>
+                    </div>
+                    <div class="col-md-2 my-1 col-12 px-md-0 pr-md-3">
+                        <input type="text" name="max_price" list="MaxPrice" placeholder="Max Price"/>
+                        <datalist id="MaxPrice">
+                            <option value="" selected disabled>Min Rs</option>
+                            <option value='10000'>10,000 Rs</option>
+                            <option value='20000'>20,000 Rs</option>
+                            <option value='30000'>30,000 Rs</option>
+                            <option value='40000'>40,000 Rs</option>
+                            <option value='50000'>50,000 Rs</option>
+                            <option value='60000'>60,000 Rs</option>
+                            <option value='70000'>70,000 Rs</option>
+                            <option value='80000'>80,000 Rs</option>
+                            <option value='90000'>90,000 Rs</option>
+                            <option value='100000'>100,000 Rs</option>
+                            <option value='125000'>125,000 Rs</option>
+                            <option value='150000'>150,000 Rs</option>
+                            <option value='175000'>175,000 Rs</option>
+                            <option value='200000'>200,000 Rs</option>
+                        </datalist>
+                    </div>
+                    <div class="col-md-2 my-1 col-12 pl-md-0 pr-md-5 pb-1">
+                        <button class="btn common-btn-clr w-100 h-100">Search</button>
+                    </div>
+                </div>
             </form>
             </div>
         </section>
@@ -690,7 +743,7 @@
         </ul>
             </div>
   </section>
-       
+
 
         <section style="padding-bottom: 200px;">
             <div class="container">
