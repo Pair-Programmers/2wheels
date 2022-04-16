@@ -194,7 +194,7 @@
                 <div>
                     {{$bike->seller_comment}}
                     <br>
-                    <label class="detail-tip show">Mention PakWheels.com when calling Seller to get a good deal</label>
+                    <label class="detail-tip show">Mention 2heels.com when calling Seller to get a good deal</label>
                 </div>
 
             </div><!-- well -->

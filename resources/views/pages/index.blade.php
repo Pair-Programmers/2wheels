@@ -276,7 +276,7 @@
                                     <h3 class="nomargin truncate">{{ $bike->company->name }}
                                         {{ $bike->model->name }}
                                     </h3>
-                                    <div class="generic-green truncate fs14">PKR {{ $bike->price }} <span>k</span></div>
+                                    <div class="generic-green truncate fs14">PKR {{ $bike->price }}</div>
                                     <div class="mt10 mb10">
                                         <span class="rating generic-orange fs12 fs12">
                                             @for ($i = 1; $i <= 5; $i++)
