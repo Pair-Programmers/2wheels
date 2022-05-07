@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Post And Add")
+@section('title')
+<title> Product Create - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -86,7 +88,7 @@
                     <form accept-charset="UTF-8" action="{{route('product.store')}}" class="form-horizontal ga-used-bike-form"
                         data-parsley-validate="" enctype="multipart/form-data" id="submitAnad" method="post">
                         @csrf
-                        
+
                         <div class="linked-fields sell-form-main">
                             <div class="well">
                                 <fieldset class="nomargin sell-form">
@@ -125,7 +127,7 @@
                                                     @endforeach
                                                 </select>
                                         </div>
-                                        
+
                                     </div>
 
                                     <div class="form-group mt20">
@@ -138,24 +140,24 @@
                                                     @endforeach
                                                 </select>
                                         </div>
-                                        
+
                                     </div>
 
-                                    
+
                                     <div class="form-group">
                                         <label class="col-md-3" for="make">Description<span
                                                 class="text-error">*</span></label>
                                         <div class="col-md-9 car-select-parent">
                                             <input id="bike_selector" name="description" placeholder=""
                                                 type="text" value="" />
-                                        
+
                                             <ul class="parsley-errors-list">
                                                 <li id="car_selector_error"></li>
                                             </ul>
-                                            
+
                                         </div>
 
-                                        
+
                                     </div>
 
                                     <div class="form-group">
@@ -164,22 +166,22 @@
                                         <div class="col-md-9 car-select-parent">
                                             <input id="bike_selector" name="condition" placeholder=""
                                                 type="text" value="" />
-                                         
+
                                             <ul class="parsley-errors-list">
                                                 <li id="car_selector_error"></li>
                                             </ul>
-                                            
+
                                         </div>
 
-                                        
+
                                     </div>
 
-                                    
+
 
                                 </fieldset>
 
 
-                                
+
 
                             </div>
 
@@ -195,7 +197,7 @@
                                                 <input id="bike_selector" name="price" placeholder=""
                                                 type="number" value=""  required/>
                                         </div>
-                                        
+
                                         <div class="col-md-4">
                                             <div class="form-hint">
                                                 <img alt="Hint" class="hint-img"
@@ -212,7 +214,7 @@
                                                 <input id="bike_selector" min="0" name="quantity_available" placeholder=""
                                                 type="number" value=""  required/>
                                         </div>
-                                        
+
                                         <div class="col-md-4">
                                             <div class="form-hint">
                                                 <img alt="Hint" class="hint-img"
@@ -224,7 +226,7 @@
 
                                 </div>
 
-                                
+
                             </fieldset>
 
 
@@ -355,10 +357,10 @@
                                         </div>
                                     </div>
 
-                                    
 
 
-                                   
+
+
                                 </div>
                             </fieldset>
 

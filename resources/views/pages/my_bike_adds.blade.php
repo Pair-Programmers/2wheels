@@ -1,5 +1,8 @@
 @extends('layouts.main')
-@section('title', "whishlist")
+
+@section('title')
+<title> My Bike Adds - 2Wheels</title>
+@endsection
 @section('contents')
 <style>
 @media screen and (max-width:768px) {
@@ -76,7 +79,7 @@
                                                     src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}"
                                                     title="Universal PVC Plastic Car Mat - Black  in Karachi" />
                                                    </a>
-                                                    
+
                                                 </li>
 
                                             </ul>
@@ -138,9 +141,9 @@
                             </div>
                         </div>
                     </li>
-                    
+
                     @endforeach
-                    
+
                     <div class="header-space"></div>
                     <div class="header-space"></div>
                     @endsection

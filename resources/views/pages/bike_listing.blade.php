@@ -11,7 +11,7 @@
     <link rel="preload" href="https://wsa4.pakwheels.com/assets/Lato-Bold-a901503621ac1a177f5ef7b4c6e6671e.woff2" as="font" crossorigin>
     <link rel="preload" href="https://wsa1.pakwheels.com/assets/desktop/fonts-woff2-7f9fe6d80cdb7f20cc2bd69fcc60ea59.css" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="https://wsa2.pakwheels.com/assets/fonts-base64-woff-9009644a9b2e88f0d021717f9b557f80.css" as="style" onload="this.rel='stylesheet'">
-    <title>Buy Engine &amp; Mechanical Parts online in Pakistan | PakWheels</title>
+    <title> {{old('keyword')}} Bike List | 2Wheels</title>
     <script src="https://wsa2.pakwheels.com/assets/classified/top_javascript-0c9654bdb83d35bf1fa129a253ce6300.js" type="text/javascript"></script>
     <script src="{{ asset('website') }}/assets/js/search-add-list.js" type="text/javascript"></script>
 </head>
@@ -558,7 +558,7 @@
 
                                 <ul id="accessory-results-container" class="list-unstyled accessory search-results search-results-mid accessory-search-results grid-view">
                                     <!-- singal product -->
-                                    @foreach ($bikes as $product)
+                                    @forelse ($bikes as $product)
                                     <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
                                         <div class="well search-list clearfix ad-container page-">
                                             <div class="col-md-3 grid-style">
@@ -628,7 +628,11 @@
                                             </div>
                                         </div>
                                     </li>
-                                    @endforeach
+                                    @empty
+                                    <div class="mt-50 ml-50">
+                                        <h3>No Bikes to Show ...</h3>
+                                    </div>
+                                    @endforelse
 
                                     <!-- singal product end -->
                                 </ul>

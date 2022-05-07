@@ -1,5 +1,8 @@
 @extends('layouts.main')
-@section('title', "whishlist")
+
+@section('title')
+<title> Bike Whishlist - 2Wheels</title>
+@endsection
 @section('contents')
 <style>
 @media screen and (max-width:768px) {
@@ -133,7 +136,7 @@
                                     </div>
                                 </div>
 
-                              
+
                             </div>
                         </div>
                     </li>

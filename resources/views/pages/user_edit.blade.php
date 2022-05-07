@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Profile Setting")
+@section('title')
+<title> Profile Edit - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -33,7 +35,7 @@
 
                     </div>
                 </div>
-          
+
             <hr />
                 <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden"
                         value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input
@@ -63,7 +65,7 @@
                         <script>
 							let propertySelect = document.getElementById('user_gender');
 							propertySelect.value = `{{Auth::user()->gender}}`;
-                            
+
 						</script>
 
                     </div>
@@ -815,7 +817,7 @@
 							let citySelect = document.getElementById('user_city');
 							citySelect.value = `{{Auth::user()->city}}`;
 						</script>
-                        
+
                     </div>
 
                     <div class="form-group">

@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Bike Auto Parts - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -951,7 +953,7 @@
                                 <a href="/login-with-mobile" class="btn btn-social with-mobile btn-block"
                                     data-login-method="SignInWithMobileNumber"
                                     onclick="trackEvents(&#39;Login&#39;,&#39;viaPhone&#39;,&#39;users - edit&#39;); $(&#39;#screen_name&#39;).text(&#39;users - edit&#39;);"><i
-                                        class='fa fa-mobile'></i> Continue with Mobile Number</a> 
+                                        class='fa fa-mobile'></i> Continue with Mobile Number</a>
 
                                 <a href="/oauth/google" class="btn btn-block btn-social google"
                                     data-login-method="SignInWithGoogle"

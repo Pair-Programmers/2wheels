@@ -1,5 +1,8 @@
 @extends('layouts.main')
-@section('title', "Bike detail comparison")
+@section('title')
+<title> Bike Comparison - 2Wheels</title>
+@endsection
+
 @section('contents')
 <div class="header-space"></div>
 <!-- #TODO : Multiple checks for ad to not show -->

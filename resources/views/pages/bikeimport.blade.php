@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Bike Import")
+@section('title')
+<title> Bike Import - 2Wheels</title>
+@endsection
 
 @section('contents')
 <div class="header-space" ></div>
@@ -29,8 +31,8 @@
         <h4>Import Favourite Bike</h4>
       </div>
       <div class="modal-body">
-        
-          
+
+
     <div class="form-group" id="make"><label class="col-md-4 control-label">Make<span class="text-error">*</span></label><div class="col-md-8">
       <select name="Bike_import_lead[make_id]" id="Bike_import_lead_make_id" class="chzn-select" onchange="get_imported_models(this.value,'#Bike_import_lead_model_id');" data-parsley-required="true" data-parsley-trigger="change" data-parsley-error-message= "Please select make">
         <option value="">Make</option>
@@ -140,7 +142,7 @@
 </div></div>
     <div class="form-group" id="other"><label class="col-md-4 control-label">Bike Name<span class="text-error">*</span></label><div class="col-md-8">
       <input data-parsley-length="[2,30]" id="Bike_import_lead_Bike_name" name="Bike_import_lead[Bike_name]" placeholder="[Make] [Model]" size="30" type="text" />
-</div></div>    
+</div></div>
     <div class="form-group" id=""><label class="col-md-4 control-label">Year<span class="text-error">*</span></label><div class="col-md-8">
       <select data-parsley-error-message="Please Select Year" data-parsley-required="true" data-parsley-trigger="change" id="Bike_import_lead_model_year" name="Bike_import_lead[model_year]"><option value="">Year</option>
 <option value="2021">2021</option>
@@ -149,14 +151,14 @@
 <option value="2018">2018</option>
 <option value="2017">2017</option>
 <option value="2016">2016</option></select>
-</div></div>    
+</div></div>
     <div class="form-group" id=""><label class="col-md-4 control-label">Name<span class="text-error">*</span></label><div class="col-md-8">
       <input data-parsley-error-message="Enter valid name" data-parsley-length="[3,25]" data-parsley-pattern="^[A-Za-z ]{3,25}$" data-parsley-required="true" data-parsley-trigger="change" id="Bike_import_lead_name" name="Bike_import_lead[name]" size="30" type="text" value="Ahmad Ijaz" />
 </div></div>
-        
+
             <input id="user_email" name="user[email]" type="hidden" value="ahmadijaz385@gmail.com" />
 
-    
+
     <div class="form-group" id=""><label class="col-md-4 control-label">City<span class="text-error">*</span></label><div class="col-md-8">
       <select id="Bike_import_lead_city_id" name="Bike_import_lead[city_id]"><option value="409">Karachi</option>
 <option value="410">Lahore</option>
@@ -625,11 +627,11 @@
 </div></div>
     <div class="form-group" id=""><label class="col-md-4 control-label"></label><div class="col-md-8">
       <!-- <div> -->
-        <input checked="checked" id="checkboxmagazine" name="checkboxmagazine" type="checkbox" value="yes" /> 
+        <input checked="checked" id="checkboxmagazine" name="checkboxmagazine" type="checkbox" value="yes" />
         Send me updates and relevant news.
       <!-- </div> -->
-</div></div>  
-    <div class="disclaimer">I authorize PakWheels to share my contact information with its partners to get in touch with me through email, SMS or phone.</div>
+</div></div>
+    <div class="disclaimer">I authorize 2Wheels to share my contact information with its partners to get in touch with me through email, SMS or phone.</div>
 
       </div>
       <div class="modal-footer">
@@ -704,7 +706,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/Slide_chinese-bikes-ow-r3-400cc-2021-48793770.jpg" class="img-content" alt="Daihatsu Mira" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_0">Daihatsu Mira</h3>                
+                  <h3 class="nomargin mt10" id="mycurstodiv_0">Daihatsu Mira</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_121" onclick="return show_popup(8,305,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -713,7 +715,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/Slide_chinese-bikes-ow-r3-400cc-2021-48793770.jpg" class="img-content" alt="Toyota Vitz" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_1">Toyota Vitz</h3>                
+                  <h3 class="nomargin mt10" id="mycurstodiv_1">Toyota Vitz</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_139" onclick="return show_popup(42,294,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -722,7 +724,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/Slide_kawasaki-ninja-zx300-2019-32848196.jpg" class="img-content" alt="Toyota Passo" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_2">Toyota Passo</h3>                
+                  <h3 class="nomargin mt10" id="mycurstodiv_2">Toyota Passo</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_145" onclick="return show_popup(42,338,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -731,7 +733,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/honda_freed.jpg" class="img-content" alt="Honda Vezel" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_3">Honda Vezel</h3>                
+                  <h3 class="nomargin mt10" id="mycurstodiv_3">Honda Vezel</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_285" onclick="return show_popup(14,826,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -744,7 +746,7 @@
     <div class="Bikeure-detail auction-detail auction-pinch clearfix">
   <img alt="Buying a japanese Bike?" class="right-img pull-right" src="{{asset('website')}}/assets/img/360-Black-SE-30.png" />
   <h3 class="mt0 mb5">Buying a japanese Bike?</h3>
-  <p class="fs16 mb13">Get its verified auction sheet from PakWheels</p>
+  <p class="fs16 mb13">Get its verified auction sheet from 2Wheels</p>
 </div>
   </div>
 </section>
@@ -761,27 +763,27 @@
                 <div class="img-box">
                   <img src="{{asset('storage')}}/images/blogs/{{$news->image}}" class="img-content" alt="Daihatsu Mira" />
                 </div>
-                <h3 class="nomargin mt10" id="mycurstodiv_0">{{$news->name}}</h3>                
+                <h3 class="nomargin mt10" id="mycurstodiv_0">{{$news->name}}</h3>
               </a><p>{{$news->description}}</p></li>
             @empty
                 <p>no news yet ..</p>
             @endforelse
-                
+
           </ul>
         </div>
       </h2>
       <div class="blog-enteries clearfix primary-lang" dir="ltr">
         <div class="noborder nomargin">
         </div>
-      </div>      
+      </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      
+
     </div>
-  </section>      
+  </section>
 
 
 
@@ -789,7 +791,7 @@
     <div class="container related_searches primary-lang fwn">
       <h2>Looking to buy a used Bike?</h2>
       <hr class="mb0">
-          <div class='p15 fs12 '> 
+          <div class='p15 fs12 '>
             <h3 class="fwm generic-grey mt0">Used Bike by Make Model</h3>
             <ul class='list-unstyled nomargin row generic-light-grey'>
               @foreach ($models as $model)
@@ -798,11 +800,11 @@
                   ({{count($model->bikes)}}+)
               </li>
               @endforeach
-              
+
           </ul>
         </div>
         <hr class='nomargin'>
-          <div class='p15 fs12 '> 
+          <div class='p15 fs12 '>
             <h3 class="fwm generic-grey mt0">Used Bike by Companies</h3>
             <ul class='list-unstyled nomargin row generic-light-grey'>
               @foreach ($companies as $company)
@@ -813,7 +815,7 @@
               @endforeach
           </ul>
         </div>
-       
+
     </div>
   </section>
 
@@ -849,7 +851,7 @@
           </div>
 
           <div class="col-md-6 why-login-right">
-            
+
             <div class="registration-page registration-panel" style="min-height: auto;">
               <div class="registration-span">
                 <h2 class="text-center mb40">Sign in to continue</h2>
@@ -935,7 +937,7 @@
     function appendParam(url , key , value) {
         return url + (url.indexOf('?') != -1 ? "&" : "?") + key + "=" + value ;
     }
-   
+
     $('#sign_in_pop_up').on('show.bs.modal', function () {
         trackEvents('Login', 'LoginPopUp - Pitch',"Bike_import_leads - index");
     });

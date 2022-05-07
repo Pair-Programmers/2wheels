@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Post And Add")
+@section('title')
+<title> Sell Your Bike - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -3534,7 +3536,7 @@
 
 
                                 <fieldset>
-    
+
                                     <input id="used_bike_ad_listing_attributes_step"
                                         name="used_bike[ad_listing_attributes][step]" type="hidden" value="0" />
 
@@ -3572,7 +3574,7 @@
                                                 <option value='4-stroke'>4 Stroke</option>
                                             </select>
                                         </div>
-                                        
+
                                         <!--  -->
                                         <div class="col-md-4">
                                             <div class="form-hint">
@@ -3668,7 +3670,7 @@
                                                 </li>
                                                 <li>
                                                     <label class="d-flex align-items-center"><input id="used_bike_led_light"
-                                                            name="used_bike[led_light]" style="height: 15px;" type="checkbox" value="1" /> 
+                                                            name="used_bike[led_light]" style="height: 15px;" type="checkbox" value="1" />
                                                             <span style="width: 22vw;">Led Light</span></label>
                                                 </li>
                                                 <li>
@@ -3709,7 +3711,7 @@
                                                             <a id="pickfiles" style="height: 40px;" class="pickfiles btn btn-success"
                                                                 href="javascript:" style="display:inline-block;">+ Add
                                                                 Photos</a>
-                                                       
+
                                                             <div class="generic-gray mt5">
                                                                 (Max limit 5 MB per image)
                                                             </div>

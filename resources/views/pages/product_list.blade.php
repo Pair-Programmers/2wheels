@@ -19,7 +19,7 @@
         onload="this.rel='stylesheet'">
     <link rel="preload" href="https://wsa2.pakwheels.com/assets/fonts-base64-woff-9009644a9b2e88f0d021717f9b557f80.css"
         as="style" onload="this.rel='stylesheet'">
-    <title>Buy Engine &amp; Mechanical Parts online in Pakistan | PakWheels</title>
+    <title>Buy Bike Acessoriesc | 2Wheels</title>
     <script src="https://wsa2.pakwheels.com/assets/classified/top_javascript-0c9654bdb83d35bf1fa129a253ce6300.js"
         type="text/javascript"></script>
     <script src="{{ asset('website') }}/assets/js/search-add-list.js" type="text/javascript"></script>
@@ -193,7 +193,7 @@
                     @if (Auth::check())
                     <!-- <li class="nav-item"></li> -->
                     <!-- <li class="nav-item"><a class="btn p-0 px-4 py-2" href="{{ route('login') }}">Profile</a>
-      
+
                           <div style="font-size: 1.6rem;" class="dropdown-menu shadow-sm sm-menu3"
                               aria-labelledby="dropdown02">
                               <a class="btn p-0 px-4 py-2 dropdown-item" onclick="event.preventDefault();
@@ -305,7 +305,7 @@
                 <div class="accessory-search-results">
                     <h1>Engine &amp; Mechanical Spare Parts and Accessories for Sale in Pakistan <span
                             style="font-weight: normal;">({{count($products)}})</span></h1>
-                
+
 
                     <div class="search-page-new">
                         <div class="row">
@@ -944,7 +944,7 @@
                                                if($('#sortby').find(":selected").val() == "bumped_at-desc"){
                                                 $('#accessory-results-container').append(`
                                                 @foreach ($productsDateRecent as $product)
-                                        
+
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
 
 <div class="well search-list clearfix ad-container page-">
@@ -1053,7 +1053,7 @@
                                                else if($('#sortby').find(":selected").val() == "bumped_at-asc"){
                                                 $('#accessory-results-container').append(`
                                                 @foreach ($productsDateOld as $product)
-                                        
+
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
 
 <div class="well search-list clearfix ad-container page-">
@@ -1162,7 +1162,7 @@
                                                else if($('#sortby').find(":selected").val() == "price-asc"){
                                                 $('#accessory-results-container').append(`
                                                 @foreach ($productsPriceLowToHigh as $product)
-                                        
+
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
 
 <div class="well search-list clearfix ad-container page-">
@@ -1271,7 +1271,7 @@
                                                else if($('#sortby').find(":selected").val() == "price-desc"){
                                                 $('#accessory-results-container').append(`
                                                 @foreach ($productsPriceHighToLow as $product)
-                                       
+
                                                 <li id="main_ad_3307129" data-listing-id="3307129" class="classified-listing">
 
 <div class="well search-list clearfix ad-container page-">

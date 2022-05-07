@@ -11,14 +11,23 @@ use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
-    private $paginate_qty = 15;
+    private $paginate_qty = 16;
 
     public function index()
     {
 
+
         $models = BikeModel::all();
 
         $companies = Company::all();
+
+        // $bikes = Bike::all();
+        // foreach ($bikes as $key => $bike) {
+        //     $model = BikeModel::find($bike->model_id);
+        //     $company = Company::find($bike->company_id);
+        //     $bike->name = $company->name . ' ' . $model->name . ' ' . $bike->model_year;
+        //     $bike->save();
+        // }
 
         $newBikes = Bike::where('category', 'New Bike')->orderby('created_at', 'DESC')->get();
         $usedBikes = Bike::where('category', 'Used Bike')->orderby('created_at', 'DESC')->get();
@@ -49,6 +58,7 @@ class LandingController extends Controller
             return $query->where('price' , '<=', $request->max_price);
         })->paginate($this->paginate_qty);
 
+        $request->flash();
         $bikesPriceHighToLow = $bikes;
         $bikesPriceLowToHigh = $bikes;
         $bikesDateOld = $bikes;
@@ -153,7 +163,7 @@ class LandingController extends Controller
 
         $latestProducts = Product::orderby('created_at', 'DESC')->get();
         $blogs = Blog::orderby('created_at', 'DESC')->paginate(3);
-
+        $request->flash();
         return view('pages/index', compact('newBikes', 'usedBikes', 'latestProducts', 'blogs', 'searchedbikes', 'companies', 'models'));
     }
     public function searchBikeBikelisting(Request $request)
@@ -190,7 +200,7 @@ class LandingController extends Controller
         }
 
 
-
+        $request->flash();
         return view('pages/bike_listing', ['bikes'=>$searchedbikes, 'companies'=>$companies, 'models'=>$models, 'bikesPriceHighToLow'=>$bikesPriceHighToLow, 'bikesPriceLowToHigh'=>$bikesPriceLowToHigh, 'bikesDateOld'=>$bikesDateOld, 'bikesDateRecent'=>$bikesDateRecent]);
 
         //return view('pages/index', compact('newBikes', 'usedBikes', 'latestProducts', 'blogs', 'searchedbikes', 'companies', 'models'));
@@ -221,8 +231,8 @@ class LandingController extends Controller
         ->when($request->filled('companies') , function ($query) use ($request){
             return $query->whereIn('company_id' , $request->companies);
         })
-        ->when($request->filled('modeles') , function ($query) use ($request){
-            return $query->whereIn('model_id' , $request->modeles);
+        ->when($request->filled('models') , function ($query) use ($request){
+            return $query->whereIn('model_id' , $request->models);
         });
 
         if($request->category != 'Both'){
@@ -235,7 +245,7 @@ class LandingController extends Controller
 
         $latestProducts = Product::orderby('created_at', 'DESC')->get();
         $blogs = Blog::orderby('created_at', 'DESC')->paginate(3);
-
+        $request->flash();
         return view('pages/index', compact('newBikes', 'usedBikes', 'latestProducts', 'blogs', 'searchedbikes', 'models', 'companies'));
     }
 
@@ -378,7 +388,7 @@ class LandingController extends Controller
 
 
 
-
+        $request->flash();
         return view('pages/bike_listing', ['bikes'=>$searchedbikes, 'companies'=>$companies, 'models'=>$models, 'bikesPriceHighToLow'=>$bikesPriceHighToLow, 'bikesPriceLowToHigh'=>$bikesPriceLowToHigh, 'bikesDateOld'=>$bikesDateOld, 'bikesDateRecent'=>$bikesDateRecent]);
 
         //return view('pages/index', compact('newBikes', 'usedBikes', 'latestProducts', 'blogs', 'searchedbikes', 'models', 'companies'));

@@ -71,7 +71,7 @@ class BikeAdminController extends Controller
          $company = Company::find($request->company_id);
          $model = BikeModel::find($request->model_id);
 
-        $inputs['name'] = $model->name . ' ' . $company->name . ' ' . $request->model_year;
+        $inputs['name'] = $company->name . ' ' . $model->name . ' ' . $request->model_year;
         $inputs['user_id'] = 1;
         $inputs['images'] = json_encode($data);
         $additionalInfoArray = ['0','0','0','0'];
@@ -159,7 +159,7 @@ class BikeAdminController extends Controller
 
          $company = Company::find($request->company_id);
          $model = BikeModel::find($request->model_id);
-         $inputs['name'] = $model->name . ' ' . $company->name . ' ' . $request->model_year;
+         $inputs['name'] = $company->name . ' ' . $model->name . ' ' . $request->model_year;
 
         $inputs['user_id'] = 1;
         $additionalInfoArray = ['0','0','0','0'];

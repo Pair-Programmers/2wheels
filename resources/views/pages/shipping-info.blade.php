@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Product Details")
+@section('title')
+<title> Shipping Info - 2Wheels</title>
+@endsection
 <script src="https://wsa3.pakwheels.com/assets/top_javascript-3a5464eb855ccf252d2e545aeeb70e6d.js"
     type="text/javascript"></script>
 <script src="https://wsa4.pakwheels.com/assets/application-3c77711aad629fa4ed1e29d5a321c1f0.js" type="text/javascript">
@@ -67,7 +69,7 @@
                     <form action="{{url('add_order')}}" method="POST">
                                 @csrf
                         <div class="row">
-                           
+
                             <div class="col-sm-6">
 
                                 <fieldset class="nomargin pos-rel car-loan-divider shipping-divider">
@@ -621,8 +623,8 @@
 
 
                             </div>
-                        
-                           
+
+
 
                         </div>
                         <div class="checkout-footer row-placer mt30 clearfix">

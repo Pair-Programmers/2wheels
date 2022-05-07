@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Product Details")
+@section('title')
+<title> Order Summary - 2Wheels</title>
+@endsection
 <script src="https://wsa3.pakwheels.com/assets/top_javascript-3a5464eb855ccf252d2e545aeeb70e6d.js"
     type="text/javascript"></script>
 <script src="https://wsa4.pakwheels.com/assets/application-3c77711aad629fa4ed1e29d5a321c1f0.js" type="text/javascript">
@@ -61,7 +63,7 @@
                         <tr>
                             <td class="text-left-i">
                                 <div class="table-order-img">
-                                    
+
                                     @foreach ($product['product']->getImages() as $image)
                                     <img alt="Slide_5d-custom-floor-mats-black-for-honda-civic-2006-2012-38039373"
                                     src="{{ asset('storage') }}/images/products/{{ $image }}"

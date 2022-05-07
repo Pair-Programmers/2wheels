@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Checkout")
+@section('title')
+<title> New Bike Prices - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -32,15 +34,15 @@
             var elmntToView6 = document.getElementById('yamahabikeprice');
             elmntToView6.scrollIntoView();
           }
-        
+
        }
-       
-      
+
+
      </script>
-      
+
       <section>
   <div class="container">
-  
+
    <ul class="breadcrumb"></li><li><a href="/bikes/new-bikes/" itemprop="url"><span itemprop="name">New Bikes</span></a>
     </li><li class="active">Motorcycle Prices</span><meta content="3" itemprop="position"></li></ul>
 
@@ -55,7 +57,7 @@
         <ul class="list-unstyled pricelist-box mb30 clearfix row">
           <li class="col-md-3 mb20">
             <a href="#aprilia">
-            
+
             <div class="logo">
               <img alt="Aprilia Prices" src="{{asset('website')}}/assets/img/logo-aprilia-motor_2.png" title="Aprilia Prices" />
             </div>
@@ -65,7 +67,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#benelli">
-            
+
             <div class="logo">
               <img alt="Benelli Prices" src="{{asset('website')}}/assets/img/Benelli.png" title="Benelli Prices" />
             </div>
@@ -75,7 +77,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#bml">
-            
+
             <div class="logo">
               <img alt="BML Prices" src="{{asset('website')}}/assets/img/bml.png" title="BML Prices" />
             </div>
@@ -85,7 +87,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#bmw">
-            
+
             <div class="logo">
               <img alt="BMW Prices" src="{{asset('website')}}/assets/img/BMW.png" title="BMW Prices" />
             </div>
@@ -95,7 +97,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#chinese-bikes">
-            
+
             <div class="logo">
               <img alt="Chinese Bikes Prices" src="{{asset('website')}}/assets/img/Chinese Bike.png" title="Chinese Bikes Prices" />
             </div>
@@ -105,7 +107,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#crown">
-            
+
             <div class="logo">
               <img alt="Crown Prices" src="{{asset('website')}}/assets/img/crown.png" title="Crown Prices" />
             </div>
@@ -115,7 +117,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#derbi">
-            
+
             <div class="logo">
               <img alt="Derbi Prices" src="{{asset('website')}}/assets/img/derbi.png" title="Derbi Prices" />
             </div>
@@ -125,7 +127,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#ducati">
-            
+
             <div class="logo">
               <img alt="Ducati Prices" src="{{asset('website')}}/assets/img/ducati.png" title="Ducati Prices" />
             </div>
@@ -135,7 +137,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#dyl">
-            
+
             <div class="logo">
               <img alt="DYL Prices" src="{{asset('website')}}/assets/img/dyl.png" title="DYL Prices" />
             </div>
@@ -145,7 +147,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#eagle">
-            
+
             <div class="logo">
               <img alt="Eagle Prices" src="{{asset('website')}}/assets/img/eagle.png" title="Eagle Prices" />
             </div>
@@ -155,7 +157,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#fuego">
-            
+
             <div class="logo">
               <img alt="FUEGO Prices" src="{{asset('website')}}/assets/img/fuego-logo.jpg" title="FUEGO Prices" />
             </div>
@@ -165,7 +167,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#ghani">
-            
+
             <div class="logo">
               <img alt="Ghani Prices" src="{{asset('website')}}/assets/img/ghani_logo.png" title="Ghani Prices" />
             </div>
@@ -175,7 +177,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#hero">
-            
+
             <div class="logo">
               <img alt="Hero Prices" src="{{asset('website')}}/assets/img/hero.png" title="Hero Prices" />
             </div>
@@ -185,7 +187,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#hi-speed">
-            
+
             <div class="logo">
               <img alt="Hi Speed Prices" src="{{asset('website')}}/assets/img/Hi Speed.png" title="Hi Speed Prices" />
             </div>
@@ -195,7 +197,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#honda">
-            
+
             <div class="logo">
               <img alt="Honda Prices" src="{{asset('website')}}/assets/img/Honda.png" title="Honda Prices" />
             </div>
@@ -205,7 +207,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#kawasaki">
-            
+
             <div class="logo">
               <img alt="Kawasaki Prices" src="{{asset('website')}}/assets/img/Kawasaki.png" title="Kawasaki Prices" />
             </div>
@@ -215,7 +217,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#keeway">
-            
+
             <div class="logo">
               <img alt="KEEWAY Prices" src="{{asset('website')}}/assets/img/keeway.png" title="KEEWAY Prices" />
             </div>
@@ -225,7 +227,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#lifan">
-            
+
             <div class="logo">
               <img alt="Lifan Prices" src="{{asset('website')}}/assets/img/lifan.png" title="Lifan Prices" />
             </div>
@@ -235,7 +237,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#metro">
-            
+
             <div class="logo">
               <img alt="Metro Prices" src="{{asset('website')}}/assets/img/metro.png" title="Metro Prices" />
             </div>
@@ -245,7 +247,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#osaka">
-            
+
             <div class="logo">
               <img alt="Osaka Prices" src="{{asset('website')}}/assets/img/OSAKA.png" title="Osaka Prices" />
             </div>
@@ -255,7 +257,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#overdrive">
-            
+
             <div class="logo">
               <img alt="OVERDRIVE Prices" src="{{asset('website')}}/assets/img/over-drive-logo.jpg" title="OVERDRIVE Prices" />
             </div>
@@ -265,7 +267,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#ow">
-            
+
             <div class="logo">
               <img alt="OW Prices" src="{{asset('website')}}/assets/img/ow-motors-com.png" title="OW Prices" />
             </div>
@@ -275,7 +277,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#pak-hero">
-            
+
             <div class="logo">
               <img alt="Pak Hero Prices" src="{{asset('website')}}/assets/img/pak-hero.png" title="Pak Hero Prices" />
             </div>
@@ -285,7 +287,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#power">
-            
+
             <div class="logo">
               <img alt="Power Prices" src="{{asset('website')}}/assets/img/Power_Motorcycle_Logo.png" title="Power Prices" />
             </div>
@@ -295,7 +297,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#qingqi">
-            
+
             <div class="logo">
               <img alt="QINGQI Prices" src="{{asset('website')}}/assets/img/qingqi.png" title="QINGQI Prices" />
             </div>
@@ -305,7 +307,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#ravi">
-            
+
             <div class="logo">
               <img alt="Ravi Prices" src="{{asset('website')}}/assets/img/ravi.png" title="Ravi Prices" />
             </div>
@@ -315,7 +317,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#road-prince">
-            
+
             <div class="logo">
               <img alt="Road Prince Prices" src="{{asset('website')}}/assets/img/Road Prince.png" title="Road Prince Prices" />
             </div>
@@ -325,7 +327,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#super-power">
-            
+
             <div class="logo">
               <img alt="Super Power Prices" src="{{asset('website')}}/assets/img/Super Power.png" title="Super Power Prices" />
             </div>
@@ -335,7 +337,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#suzuki">
-            
+
             <div class="logo">
               <img alt="Suzuki Prices" src="{{asset('website')}}/assets/img/Sazuki.png" title="Suzuki Prices" />
             </div>
@@ -345,7 +347,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#u-m">
-            
+
             <div class="logo">
               <img alt="U.M Prices" src="{{asset('website')}}/assets/img/um-logo.jpg" title="U.M Prices" />
             </div>
@@ -355,7 +357,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#unique">
-            
+
             <div class="logo">
               <img alt="Unique Prices" src="{{asset('website')}}/assets/img/unique.png" title="Unique Prices" />
             </div>
@@ -365,7 +367,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#united">
-            
+
             <div class="logo">
               <img alt="United Prices" src="{{asset('website')}}/assets/img/United.png" title="United Prices" />
             </div>
@@ -375,7 +377,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#vespa">
-            
+
             <div class="logo">
               <img alt="Vespa Prices" src="{{asset('website')}}/assets/img/Vespa.png" title="Vespa Prices" />
             </div>
@@ -385,7 +387,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#yamaha">
-            
+
             <div class="logo">
               <img alt="Yamaha Prices" src="{{asset('website')}}/assets/img/Yamaha.png" title="Yamaha Prices" />
             </div>
@@ -395,7 +397,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#zongshen">
-            
+
             <div class="logo">
               <img alt="Zongshen Prices" src="{{asset('website')}}/assets/img/zongshen-logo.jpg" title="Zongshen Prices" />
             </div>
@@ -405,7 +407,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#zontes">
-            
+
             <div class="logo">
               <img alt="Zontes Prices" src="{{asset('website')}}/assets/img/zontes.png" title="Zontes Prices" />
             </div>
@@ -415,7 +417,7 @@
 </a>          </li>
           <li class="col-md-3 mb20">
             <a href="#zxmco">
-            
+
             <div class="logo">
               <img alt="ZXMCO Prices" src="{{asset('website')}}/assets/img/ZXMCO.png" title="ZXMCO Prices" />
             </div>
@@ -432,7 +434,7 @@
                 Aprilia Bike Prices
                 <div class="clear-link"><a href="/bikes/aprilia/" class="more-link">Learn More About Aprilia</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -469,13 +471,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="benelli">
               <h2 id="benalibikeprice">
                 Benelli Bike Prices
                 <div  class="clear-link"><a href="/bikes/benelli/" class="more-link">Learn More About Benelli</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -532,13 +534,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="bml">
               <h2 id="benalibikeprice">
                 BML Bike Prices
                 <div class="clear-link"><a href="/bikes/bml/" class="more-link">Learn More About BML</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -560,13 +562,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="bmw">
               <h2 id="benalibikeprice">
                 BMW Bike Prices
                 <div class="clear-link"><a href="/bikes/bmw/" class="more-link">Learn More About BMW</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -598,13 +600,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="chinese-bikes">
               <h2 id="benalibikeprice">
                 Chinese Bikes Bike Prices
                 <div class="clear-link"><a href="/bikes/chinese-bikes/" class="more-link">Learn More About Chinese Bikes</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -646,13 +648,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="crown">
               <h2 id="benalibikeprice">
                 Crown Bike Prices
                 <div class="clear-link"><a href="/bikes/crown/" class="more-link">Learn More About Crown</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -694,13 +696,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="derbi">
               <h2>
                 Derbi Bike Prices
                 <div class="clear-link"><a href="/bikes/derbi/" class="more-link">Learn More About Derbi</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -722,13 +724,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="ducati">
               <h2>
                 Ducati Bike Prices
                 <div class="clear-link"><a href="/bikes/ducati/" class="more-link">Learn More About Ducati</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -820,13 +822,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="dyl">
               <h2>
                 DYL Bike Prices
                 <div class="clear-link"><a href="/bikes/dyl/" class="more-link">Learn More About DYL</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -843,13 +845,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="eagle">
               <h2>
                 Eagle Bike Prices
                 <div class="clear-link"><a href="/bikes/eagle/" class="more-link">Learn More About Eagle</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -866,13 +868,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="fuego">
               <h2>
                 FUEGO Bike Prices
                 <div class="clear-link"><a href="/bikes/fuego/" class="more-link">Learn More About FUEGO</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -894,13 +896,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="ghani">
               <h2>
                 Ghani Bike Prices
                 <div class="clear-link"><a href="/bikes/ghani/" class="more-link">Learn More About Ghani</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -922,13 +924,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="hero">
               <h2 id="herobikeprice">
                 Hero Bike Prices
                 <div class="clear-link"><a href="/bikes/hero/" class="more-link">Learn More About Hero</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -960,13 +962,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="hi-speed">
               <h2>
                 Hi Speed Bike Prices
                 <div class="clear-link"><a href="/bikes/hi-speed/" class="more-link">Learn More About Hi Speed</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -983,13 +985,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="honda">
               <h2 id="hondabikeprice">
                 Honda Bike Prices
                 <div class="clear-link"><a href="/bikes/honda/" class="more-link">Learn More About Honda</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1066,13 +1068,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="kawasaki">
               <h2>
                 Kawasaki Bike Prices
                 <div class="clear-link"><a href="/bikes/kawasaki/" class="more-link">Learn More About Kawasaki</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1094,13 +1096,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="keeway">
               <h2>
                 KEEWAY Bike Prices
                 <div class="clear-link"><a href="/bikes/keeway/" class="more-link">Learn More About KEEWAY</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1122,13 +1124,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="lifan">
               <h2>
                 Lifan Bike Prices
                 <div class="clear-link"><a href="/bikes/lifan/" class="more-link">Learn More About Lifan</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1145,13 +1147,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="metro">
               <h2>
                 Metro Bike Prices
                 <div class="clear-link"><a href="/bikes/metro/" class="more-link">Learn More About Metro</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1193,13 +1195,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="osaka">
               <h2>
                 Osaka Bike Prices
                 <div class="clear-link"><a href="/bikes/osaka/" class="more-link">Learn More About Osaka</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1226,13 +1228,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="overdrive">
               <h2>
                 OVERDRIVE Bike Prices
                 <div class="clear-link"><a href="/bikes/overdrive/" class="more-link">Learn More About OVERDRIVE</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1249,13 +1251,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="ow">
               <h2>
                 OW Bike Prices
                 <div class="clear-link"><a href="/bikes/ow/" class="more-link">Learn More About OW</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1337,13 +1339,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="pak-hero">
               <h2 id="pak-herobikeprice">
                 Pak Hero Bike Prices
                 <div class="clear-link"><a href="/bikes/pak-hero/" class="more-link">Learn More About Pak Hero</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1360,13 +1362,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="power">
               <h2>
                 Power Bike Prices
                 <div class="clear-link"><a href="/bikes/power/" class="more-link">Learn More About Power</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1383,13 +1385,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="qingqi">
               <h2>
                 QINGQI Bike Prices
                 <div class="clear-link"><a href="/bikes/qingqi/" class="more-link">Learn More About QINGQI</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1426,13 +1428,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="ravi">
               <h2 id="ravibikeprice">
                 Ravi Bike Prices
                 <div class="clear-link"><a href="/bikes/ravi/" class="more-link">Learn More About Ravi</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1459,13 +1461,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="road-prince">
               <h2>
                 Road Prince Bike Prices
                 <div class="clear-link"><a href="/bikes/road-prince/" class="more-link">Learn More About Road Prince</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1512,13 +1514,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="super-power">
               <h2>
                 Super Power Bike Prices
                 <div class="clear-link"><a href="/bikes/super-power/" class="more-link">Learn More About Super Power</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1570,13 +1572,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="suzuki">
               <h2 id="suzukibikeprice">
                 Suzuki Bike Prices
                 <div class="clear-link"><a href="/bikes/suzuki/" class="more-link">Learn More About Suzuki</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1658,13 +1660,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="u-m">
               <h2>
                 U.M Bike Prices
                 <div class="clear-link"><a href="/bikes/u-m/" class="more-link">Learn More About U.M</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1691,13 +1693,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="unique">
               <h2>
                 Unique Bike Prices
                 <div class="clear-link"><a href="/bikes/unique/" class="more-link">Learn More About Unique</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1729,13 +1731,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="united">
               <h2>
                 United Bike Prices
                 <div class="clear-link"><a href="/bikes/united/" class="more-link">Learn More About United</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1772,13 +1774,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="vespa">
               <h2>
                 Vespa Bike Prices
                 <div class="clear-link"><a href="/bikes/vespa/" class="more-link">Learn More About Vespa</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1795,13 +1797,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="yamaha">
               <h2 id="yamahabikeprice">
                 Yamaha Bike Prices
                 <div class="clear-link"><a href="/bikes/yamaha/" class="more-link">Learn More About Yamaha</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1838,13 +1840,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="zongshen">
               <h2>
                 Zongshen Bike Prices
                 <div class="clear-link"><a href="/bikes/zongshen/" class="more-link">Learn More About Zongshen</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1861,13 +1863,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="zontes">
               <h2>
                 Zontes Bike Prices
                 <div class="clear-link"><a href="/bikes/zontes/" class="more-link">Learn More About Zontes</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1889,13 +1891,13 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>            <div id="zxmco">
               <h2>
                 ZXMCO Bike Prices
                 <div class="clear-link"><a href="/bikes/zxmco/" class="more-link">Learn More About ZXMCO</a></div>
               </h2>
-              
+
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
@@ -1947,12 +1949,12 @@
                   </tr>
                 </tbody>
               </table>
-            
+
 </div>        </div>
       </div>
       <div class="col-md-2 sidebar-ad">
   <div id="div-gpt-Vertical_Bar_160x600">
-  
+
     </div>
 </div>
     </div>
@@ -1962,18 +1964,18 @@
 <section>
   <div class="container">
       <div class="gen_desc_large active " id="introduction" itemprop="description" style="height: 150px; overflow: hidden;">
-        <p>While buying new or used bike, the most important thing is to find out which bike is within your budget. 
-          2Wheels helps you by providing detailed information about bikes prices, reviews, and comparisons. Price is the 
-          primary factor in consumer&#39;s buying decision. Reviews can be helpful in knowing about the right time to buy 
-          or sell bikes in Pakistan. You can find reviews published by bikes owners of different makes on our site. 
-          You can browse <a href="https://www.pakwheels.com/bikes/" title="Bikes on PakWheels"><strong>bikes</strong></a> prices 
-          of local manufacturers including Honda, Suzuki, Yamaha, ZXMCO, United, Unique, Super Power, Metro, Ravi, BMW, Road 
-          Prince, BML, Power, Pak Hero, etc. Moreover, you can also view prices and ads of bikes by body type &amp; categories 
+        <p>While buying new or used bike, the most important thing is to find out which bike is within your budget.
+          2Wheels helps you by providing detailed information about bikes prices, reviews, and comparisons. Price is the
+          primary factor in consumer&#39;s buying decision. Reviews can be helpful in knowing about the right time to buy
+          or sell bikes in Pakistan. You can find reviews published by bikes owners of different makes on our site.
+          You can browse <a href="https://www.pakwheels.com/bikes/" title="Bikes on PakWheels"><strong>bikes</strong></a> prices
+          of local manufacturers including Honda, Suzuki, Yamaha, ZXMCO, United, Unique, Super Power, Metro, Ravi, BMW, Road
+          Prince, BML, Power, Pak Hero, etc. Moreover, you can also view prices and ads of bikes by body type &amp; categories
           on PakWheels:&nbsp;<strong><a href="https://www.pakwheels.com/used-bikes/heavy-bikes/156586" title="Heavy Bikes for Sale in Pakistan">Heavy Bikes</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/dirt-bikes/161468" title="Dirt Bikes for Sale in Pakistan">Dirt Bikes</a></strong>, <a href="https://pakwheels.com/used-bikes/"><strong>Motorcycles</strong></a>, <strong><a href="https://www.pakwheels.com/used-bikes/atv/161469" title="Quad Bikes for Sale in Pakistan">ATV</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/scooter/156972" title="Scooter for Sale in Pakistan">Scooters</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/trail-bikes/161467" title="Trail Bikes for Sale in Pakistan">Trail Bikes</a></strong>, <strong><a href="https://www.pakwheels.com/used-bikes/chopper/165823" title="Choppers for Sale in Pakistan">Cruisers</a></strong> &amp; <strong><a href="https://www.pakwheels.com/used-bikes/sport-bikes/161194" title="Sports Bikes for Sale in Pakistan">Sports Bikes</a></strong>.</p>
 
       </div>
-      
-      
+
+
   </div>
 </section>
 

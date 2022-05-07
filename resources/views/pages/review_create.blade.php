@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Create Reviews - 2Wheels</title>
+@endsection
 
 @section('contents')
 

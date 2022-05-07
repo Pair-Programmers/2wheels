@@ -1,12 +1,14 @@
 =@extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Bike Finance - 2Wheels</title>
+@endsection
 
 @section('contents')
 
-<div class="header-space" ></div>   
+<div class="header-space" ></div>
 
- 
+
 <section>
   <div class="container">
     <ul class="breadcrumb" itemscope="itemscope" itemtype=""><li itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/" itemprop="url"><span itemprop="name">Home</span></a><meta content='https://www.2Wheels.com/' itemprop='item'><meta content="1" itemprop="position"></li><li class="active" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/Bike-finance/" itemprop="url"><span itemprop="name">Bike Financing in Pakistan - Bank Bike Financing</span></a><meta content='https://www.2Wheels.com/Bike-finance/' itemprop='item'><meta content="2" itemprop="position"></li></ul>
@@ -18,7 +20,7 @@
         <div class="col-md-6 left-panel">
           <h3 class="mb15 mt20 fs18">Find The Best Bike Finance Plans</h3>
           <p class="mb20">Let 2Wheels help you with Bike finance whether you are looking for a new Bike or used Bike. Calculate installments, compare banks and get connected to the best one with fastest processing times.</p>
-          
+
         </div>
         <div class="col-md-6">
           <img alt="BikeSure Checklist Points" src="{{asset('website')}}/assets/img/bike_honda_125_cover.jpg" />
@@ -146,7 +148,7 @@
   <div class="container related_searches primary-lang fwn">
     <h2>Looking to buy a used Bike?</h2>
     <hr class="mb0">
-        <div class='p15 fs12 '> 
+        <div class='p15 fs12 '>
           <h3 class="fwm generic-grey mt0">Used Bike by Make Model</h3>
           <ul class='list-unstyled nomargin row generic-light-grey'>
             @foreach ($models as $model)
@@ -155,11 +157,11 @@
                 ({{count($model->bikes)}}+)
             </li>
             @endforeach
-            
+
         </ul>
       </div>
       <hr class='nomargin'>
-        <div class='p15 fs12 '> 
+        <div class='p15 fs12 '>
           <h3 class="fwm generic-grey mt0">Used Bike by Companies</h3>
           <ul class='list-unstyled nomargin row generic-light-grey'>
             @foreach ($companies as $company)
@@ -170,7 +172,7 @@
             @endforeach
         </ul>
       </div>
-     
+
   </div>
 </section>
 
@@ -206,7 +208,7 @@
           </div>
 
           <div class="col-md-6 why-login-right">
-            
+
             <div class="registration-page registration-panel" style="min-height: auto;">
               <div class="registration-span">
                 <h2 class="text-center mb40">Sign in to continue</h2>

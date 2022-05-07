@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Sell Bike Parts - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -27,8 +29,8 @@
     	<script src="{{asset('website')}}/assets/js/ckeditor.js" type="text/javascript"></script>
 
 <form accept-charset="UTF-8" action="/accessories-spare-parts" class="form-horizontal ga-accessory-form" data-parsley-validate="" enctype="multipart/form-data" id="submitAnad" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7Hsojy4MNZ2A6qAHtT41LyIsKJ/0fiJGbreoapjo7xw=" /></div>
-    
-    
+
+
     <div class="linked-fields pos-rel sell-form-main">
 
       <div class="well">
@@ -43,7 +45,7 @@
             </div>
           </div>
           <input id="ad_listing_is_buyer" name="ad_listing[is_buyer]" type="hidden" value="false" />
-          
+
 <div class="form-group mt20">
   <label class="col-md-3" for="city"> <span id="city_label_id"> City </span><span class="text-error">*</span></label>
   <div class="col-md-5">
@@ -529,12 +531,12 @@
 </select>
   </div>
 </div>
-          
+
           <!-- Modal for select Category/Subcategory-->
 <script src="{{asset('website')}}/assets/js/category.js" type="text/javascript"></script>
 <div id="get-car-name" class="modal get-car-name" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
 <div class="modal-dialog" style="width:602px;">
-    <div class="modal-content">    
+    <div class="modal-content">
   <div class="modal-body clearfix">
     <div class="col col-2 cat-selection makes pull-left active">
       <div class="header-car-info arrow-right">Category</div>
@@ -776,7 +778,7 @@
               </ul>
               <input class="apply-parsley" data-parsley-error-message="Accessory Sub-Category is Required" data-parsley-errors-container="#category_selector_error" data-parsley-required="true" data-parsley-trigger="change" id="parent_category_id" name="parent_category_id" type="hidden" />
               <input class="apply-parsley" data-parsley-error-message="Accessory Sub-Category is Required" data-parsley-errors-container="#category_selector_error" data-parsley-required="true" data-parsley-trigger="change" id="ad_listing_category_id" name="ad_listing[category_id]" type="hidden" />
-              
+
             </div>
           </div>
 
@@ -797,7 +799,7 @@
               </div>
             </div>
 
-              
+
 
           <input id="ad_listing_step" name="ad_listing[step]" type="hidden" value="0" />
 
@@ -807,18 +809,18 @@
         Describe Your Accessory<span class="text-error">*</span></label>
         <div class="col-md-9">
     <textarea class="character-count ad_listing_description full-field" cols="40" columns="50" data-parsley-error-message="This value is required" data-parsley-pattern-message="Please remove any mobile or phone number from comments." data-parsley-pattern="^(?:(?![0-9]{3}[- ]*[0-9]{7})(.|\n|\r))*$" data-parsley-remote-validator="validateDescription" data-parsley-remote="1" data-parsley-required="true" data-parsley-trigger="change" id="ad_listing_description" maxlength="995" name="ad_listing[description]" onblur="return updateTextAreaCount(this, event,&#39;plus&#39;,&#39;.ad_listing_description&#39;,995, &#39;#remaining_chars_info&#39;); if(this.value==&#39;&#39;){this.style.fontStyle=&#39;italic&#39;;this.style.color=&#39;#7f7f7f&#39;;this.value=&#39;enter text&#39;;}" onchange="$(&#39;.parsley-errorField&#39;).remove();" onfocus="if(this.value==&#39;enter text&#39;){this.value=&#39;&#39;;this.style.color=&#39;#333&#39;;this.style.fontStyle=&#39;normal&#39;}" onkeydown="return updateTextAreaCount(this, event,&#39;plus&#39;,&#39;.ad_listing_description&#39;,995, &#39;#remaining_chars_info&#39;);" onkeypress="return updateTextAreaCount(this, event,&#39;plus&#39;,&#39;.ad_listing_description&#39;,995, &#39;#remaining_chars_info&#39;);" onkeyup="return updateTextAreaCount(this, event,&#39;plus&#39;,&#39;.ad_listing_description&#39;,995, &#39;#remaining_chars_info&#39;);" onpaste="return updateTextAreaCount(this, event,&#39;plus&#39;,&#39;.ad_listing_description&#39;,995, &#39;#remaining_chars_info&#39;);" placeholder="" rows="6"></textarea>
-      
+
   </div>
 </div>
 
 
         </fieldset>
       </div>
-      
+
       <fieldset>
         <div class="well">
           <legend class="noborder">Expected Selling Price</legend>
-          
+
   <div class="form-group">
     <label class="col-md-3" for="price" id="price-label"><span>Price<span class='text-error'>*</span> <span>(Rs.)</span></span></label>
     <div class="col-md-5">
@@ -861,13 +863,13 @@
 
       <div class="well">
         <fieldset>
-          
+
 
 <legend class="nomargin noborder">
   Upload Photos
   <span class="text-error"></span>
 </legend>
-<div class="upload-image-hint clearfix mt20 pos-rel" id="img_upload_tr">  
+<div class="upload-image-hint clearfix mt20 pos-rel" id="img_upload_tr">
   <div id="plupload_uploader" class="clearfix text-center">
     <div id="img_upload">
       <div id="moreUploads">
@@ -893,10 +895,10 @@
     </div>
     <div class="clear"></div>
   </div>
-  
+
   <div class="row fs13 generic-gray add-photo-info mt40 mb30">
     <div class="col-md-4 col-md-offset-1">
-      <i class="fa fa-check-circle-o"></i> 
+      <i class="fa fa-check-circle-o"></i>
       <strong class='generic-basic'>Adding at least 8 pictures</strong> improves the chances for a quick sale.
     </div>
     <div class="col-md-5 col-md-offset-1">
@@ -904,11 +906,11 @@
         <strong class='generic-basic'>Adding clear pictures</strong> from All Sides of your accessory increases the quality of your Ad and gets you noticed more.
     </div>
     <div class="col-md-5 col-md-offset-4 mt30">
-      <i class="fa fa-check-circle-o"></i> 
+      <i class="fa fa-check-circle-o"></i>
       <strong class='generic-basic'>Photos should be</strong>  in 'jpeg, jpg, png, gif' format only.
     </div>
   </div>
-  
+
 
 </div>
         </fieldset>
@@ -919,11 +921,11 @@
           <legend class="noborder">Contact Information</legend>
 <div id="contact_seller_div">
 
-  
+
 
     <input id="ad_listing_display_name" name="ad_listing[display_name]" type="hidden" value="Ahmad Ijaz" />
 
-    
+
       <input id="user_email" name="user[email]" type="hidden" />
 </div>
 
@@ -1009,7 +1011,7 @@
           </div>
 
           <div class="col-md-6 why-login-right">
-            
+
             <div class="registration-page registration-panel" style="min-height: auto;">
               <div class="registration-span">
                 <h2 class="text-center mb40">Sign in to continue</h2>

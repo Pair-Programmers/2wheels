@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Motor Transport Management Information System - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -11,8 +13,8 @@
     <ul class="breadcrumb" itemscope="itemscope"><li itemprop="itemListElement" itemscope="itemscope"><span itemprop="name">MTMIS - Motor Transport Management Information System</span><meta content="2" itemprop="position"></li></ul>
 
 
-    <h1>MTMIS - Motor Transport Management Information System</h1>    
-          
+    <h1>MTMIS - Motor Transport Management Information System</h1>
+
     <div class="well  clearfix">
       <div class="col-md-7">
           <h3 class="nomargin"><a href="#" id="Punjab" name="Punjab">MTMIS Punjab</a></h3>
@@ -54,12 +56,12 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h3 id="heading">Schedule 2Wheels Car Inspection</h3>
         </div>
-        <iframe style="margin-top: -260px;" id="datamain" src="#" width="100%" height="1160" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" frameborder="0"></iframe>  
+        <iframe style="margin-top: -260px;" id="datamain" src="#" width="100%" height="1160" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" frameborder="0"></iframe>
       </div>
     </div>
   </div>
 </section>
-        
+
   <section>
     <div class="container">
         <div class="gen_desc_large active " id="introduction" itemprop="description">
@@ -113,7 +115,7 @@
     <div class="container related_searches primary-lang fwn">
       <h2>Looking to buy a used Bike?</h2>
       <hr class="mb0">
-          <div class='p15 fs12 '> 
+          <div class='p15 fs12 '>
             <h3 class="fwm generic-grey mt0">Used Bike by Make Model</h3>
             <ul class='list-unstyled nomargin row generic-light-grey'>
               @foreach ($models as $model)
@@ -122,11 +124,11 @@
                   ({{count($model->bikes)}}+)
               </li>
               @endforeach
-              
+
           </ul>
         </div>
         <hr class='nomargin'>
-          <div class='p15 fs12 '> 
+          <div class='p15 fs12 '>
             <h3 class="fwm generic-grey mt0">Used Bike by Companies</h3>
             <ul class='list-unstyled nomargin row generic-light-grey'>
               @foreach ($companies as $company)
@@ -137,7 +139,7 @@
               @endforeach
           </ul>
         </div>
-       
+
     </div>
   </section>
 
@@ -171,7 +173,7 @@
           </div>
 
           <div class="col-md-6 why-login-right">
-            
+
             <div class="registration-page registration-panel" style="min-height: auto;">
               <div class="registration-span">
                 <h2 class="text-center mb40">Sign in to continue</h2>

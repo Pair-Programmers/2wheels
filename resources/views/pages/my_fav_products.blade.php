@@ -1,5 +1,7 @@
 @extends('layouts.main')
-@section('title', "whishlist")
+@section('title')
+<title> Auto Parts Whishlist - 2Wheels</title>
+@endsection
 @section('contents')
 <style>
 @media screen and (max-width:768px) {

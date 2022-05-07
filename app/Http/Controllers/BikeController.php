@@ -70,7 +70,7 @@ class BikeController extends Controller
          $model = BikeModel::find($request->model_id);
 
          $no_of_posts = $user->no_of_post_bike;
-        $inputs['name'] = $model->name . ' ' . $company->name . ' ' . $request->model_year;
+        $inputs['name'] = $company->name . ' ' . $model->name . ' ' . $request->model_year;
         $inputs['user_id'] = Auth::id();
         $inputs['images'] = json_encode($data);
         $inputs['additional_info'] = json_encode($request->additional_info);
@@ -154,7 +154,7 @@ class BikeController extends Controller
 
          $company = Company::find($request->company_id);
          $model = BikeModel::find($request->model_id);
-         $inputs['name'] = $model->name . ' ' . $company->name . ' ' . $request->model_year;
+         $inputs['name'] = $company->name . ' ' . $model->name . ' ' . $request->model_year;
 
         $inputs['user_id'] = Auth::id();
         $inputs['additional_info'] = json_encode($request->additional_info);

@@ -1,10 +1,12 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Current Fuel Prices - 2Wheels</title>
+@endsection
 
 @section('contents')
 
-<div class="header-space" ></div>   
+<div class="header-space" ></div>
 <section>
 <div class="container">
 <h1>Petrol Price in Pakistan Today -&nbsp;Diesel, CNG Fuel Rate</h1>
@@ -132,7 +134,7 @@
           </div>
 
           <div class="col-md-6 why-login-right">
-            
+
             <div class="registration-page registration-panel" style="min-height: auto;">
               <div class="registration-span">
                 <h2 class="text-center mb40">Sign in to continue</h2>

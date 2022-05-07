@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'view detail')
+@section('title')
+<title> {{$bike->name}} | Bike Detail - 2Wheels</title>
+@endsection
 
 @section('contents')
     <div class="" id="main-container" style="margin-top: 120px">

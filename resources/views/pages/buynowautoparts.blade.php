@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
 
+@section('title')
+<title> Bike Auto Parts - 2Wheels</title>
+@endsection
 @section('contents')
 
 
@@ -44,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-9 p-0">
-                  
+
                     <!--  -->
                     <div class="row m-0">
                     <div class="col-12 p-0">

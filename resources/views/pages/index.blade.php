@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title')
+<title> {{old('keyword')}} Bike List | Home - 2Wheels</title>
+@endsection
 
 @section('contents')
 <style>
@@ -32,89 +34,29 @@
                     <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
                     <div class="category-parts-checkbox-block">
                         <label class="m-0" for="category-parts">Used Bike</label>
-                        <input type="radio" name="category" value="Used Bike"  id="category-parts" class="category-checkbox" />
+                        <input type="radio" name="category" value="Used Bike" @if (old('category') == 'Used Bike')  checked @endif  id="category-parts" class="category-checkbox" />
                     </div>
                     <div class="category-parts-checkbox-block">
                         <label class="m-0" for="bicycles-parts">New Bike</label>
-                        <input type="radio" name="category" value="New Bike"  id="bicycles-parts" class="category-checkbox" />
+                        <input type="radio" name="category" value="New Bike" @if (old('category') == 'New Bike') checked @endif  id="bicycles-parts" class="category-checkbox" />
                     </div>
 
                     <div class="category-parts-checkbox-block">
                         <label class="m-0" for="bicycles-parts">Both</label>
-                        <input type="radio" name="category" value="Both" checked id="bicycles-parts" class="category-checkbox" />
-                    </div>
-                </div>
-                <h4 data-toggle="collapse" data-target="#demo" class="pt-3" style="cursor: pointer;">CATEGORIES</h4>
-                <div id="demo" class="collaps">
-                    <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="category-parts">Standard</label>
-                        <input type="checkbox" name="body_type[]" value="Standard" id="category-parts" class="category-checkbox" />
-                    </div>
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="bicycles-parts">Heavy Bike</label>
-                        <input type="checkbox" name="body_type[]" value="Heavy Bike" id="bicycles-parts" class="category-checkbox" />
-                    </div>
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="scooters-parts">Sports Bike</label>
-                        <input type="checkbox" name="body_type[]" value="Sports Bike" id="scooters-parts" class="category-checkbox" />
+                        <input type="radio" name="category" value="Both" @if (old('category') == 'Both') checked @endif {{old('category')? '' : 'checked' }}   id="bicycles-parts" class="category-checkbox" />
                     </div>
 
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="scooters-parts">Dirt Bike</label>
-                        <input type="checkbox" name="body_type[]" value="Dirt Bike" id="scooters-parts" class="category-checkbox" />
-                    </div>
-
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="category-parts">ATV</label>
-                        <input type="checkbox" name="body_type[]" value="ATV" id="category-parts" class="category-checkbox" />
-                    </div>
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="bicycles-parts">Chopper</label>
-                        <input type="checkbox" name="body_type[]" value="Chopper" id="bicycles-parts" class="category-checkbox" />
-                    </div>
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="scooters-parts">Scooter</label>
-                        <input type="checkbox" name="body_type[]" value="Scooter" id="scooters-parts" class="category-checkbox" />
-                    </div>
-
-                    <div class="category-parts-checkbox-block">
-                        <label class="m-0" for="scooters-parts">Trail</label>
-                        <input type="checkbox" name="body_type[]" value="Trail" id="scooters-parts" class="category-checkbox" />
-                    </div>
-                </div>
-                <h4 data-toggle="collapse" data-target="#demo3" class="pt-3" style="cursor: pointer;">LOCATIONS</h4>
-
-                <div id="demo3" class="collapse">
-                    <h6 class="py-2">FILTER </h6>
-                    <div class="location-checkbox-block">
-                        <label class="m-0" for="city_name_lahore">Lahore</label>
-                        <input type="checkbox" name="city[]" value="Lahore" id="city_name_lahore" class="location-checkbox" />
-                    </div>
-                    <div class="location-checkbox-block">
-                        <label class="m-0" for="city_name_karachi">Karachi</label>
-                        <input type="checkbox" name="city[]" value="Karachi" id="city_name_karachi" class="location-checkbox" />
-                    </div>
-                    <div class="location-checkbox-block">
-                        <label class="m-0" for="city_name_islamabad">Islamabad</label>
-                        <input type="checkbox" name="city[]" value="Islamabad" id="city_name_islamabad" class="location-checkbox" />
-                    </div>
-                    <div class="location-checkbox-block">
-                        <label class="m-0" for="city_name_rawalpindi">Rawalpindi</label>
-                        <input type="checkbox" name="city[]" value="Rawalpindi" id="city_name_rawalpindi" class="location-checkbox" />
-                    </div>
-                    <div class="location-checkbox-block">
-                        <label class="m-0" for="city_name_peshawar">Peshawar</label>
-                        <input type="checkbox" name="city[]" value="Peshawar" id="city_name_peshawar" class="location-checkbox" />
-                    </div>
                 </div>
                 <h4 data-toggle="collapse" data-target="#demo2" class="pt-3" style="cursor: pointer;">Company / MAKE</h4>
+                <script>
+
+                </script>
                 <div id="demo2" class="collapse">
                     {{-- <p>All Make</p> --}}
                     @foreach ($companies as $key=>$company)
                     <div class="company-checkbox-block">
                         <label class="m-0" for="{{$company->id}}">{{$company->name}}</label>
-                        <input  type="checkbox" name="companies[]" value="{{$company->id}}" id="company-checkbox-{{$company->id}}" class="brand-checkbox" />
+                        <input   type="checkbox" name="companies[]" value="{{$company->id}}" id="company-checkbox-{{$company->id}}" class="brand-checkbox" />
                         <script>
 
                             $("#company-checkbox-{{$company->id}}").change(function() {
@@ -139,14 +81,60 @@
                                     }
                                 }
                             });
+                            // var selectedCompanies = @json(old('companies'));
+                            // var currentComany = @json($company);
+                            // for (let index = 0; index < selectedCompanies.length; index++) {
+                            //     console.log(selectedCompanies[index]);
+                            //     if(selectedCompanies[index] == currentComany.id){
+                            //         $('#company-checkbox-' + currentComany.id).attr('checked', true);
+                            //         $('#company-checkbox-' + currentComany.id).trigger("change");
+                            //     }
+                            // }
                         </script>
                     </div>
                     @endforeach
+
+                    <script>
+                         var selectedCompanies = @json(old('companies'));
+                        for (let index = 0; index < selectedCompanies.length; index++) {
+                            $('#company-checkbox-' + selectedCompanies[index]).attr('checked', true);
+                            $('#company-checkbox-' + selectedCompanies[index]).trigger("change");
+                        }
+                        if(selectedCompanies.length > 0){
+                            $('#demo2').removeClass('collapse');
+                        }
+                        else{
+                            $('#demo2').addClass('collapse');
+                        }
+                    </script>
                 </div>
 
                 <h4 data-toggle="collapse" data-target="#demo33" class="pt-3" style="cursor: pointer;">Model</h4>
                 <div id="demo33" class="collapse">
-                    {{-- <p>All Models</p> --}}
+                    @if(old('companies'))
+                    @forelse (old('companies') as $oldCompany)
+                        @foreach ($models as $key=>$model)
+                            @if ($oldCompany == $model->company_id)
+                                <div class="company-checkbox-block" id="model-div-{{$model->id}}">
+                                    <label class="m-0" for="{{$model->id}}">{{$model->name}}</label>
+                                    <input   type="checkbox" name="models[]" value="{{$model->id}}" id="model-checkbox-{{$model->id}}" class="brand-checkbox" />
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
+                    @endif
+                    <script>
+                        var selectedModels = @json(old('models'));
+                        for (let index = 0; index < selectedModels.length; index++) {
+                            $('#model-checkbox-' + selectedModels[index]).attr('checked', true);
+                        }
+                        if(selectedModels.length > 0){
+                            $('#demo33').removeClass('collapse');
+                        }
+                        else{
+                            $('#demo33').addClass('collapse');
+                        }
+                    </script>
 
                 </div>
                 {{-- <h4 data-toggle="collapse" data-target="#demo5" class="pt-3" style="cursor: pointer;">PRICE</h4>
@@ -192,15 +180,106 @@
                         <div class="col-12 p-0">
                             <div class="row m-0 align-items-center">
                                 <div class="col-12 p-0 my-2">
-                                    <input type="text" title="enter 4 digit valid year"  maxlength="4" minlength="4" pattern="[0-9]{4}" name="price_from"  class="custom-control" placeholder="From">
+                                    <input type="text" value="{{old('price_from')}}" title="enter 4 digit valid year"  maxlength="4" minlength="4" pattern="[0-9]{4}" name="price_from"  class="custom-control" placeholder="From">
                                 </div>
                                 <div class="col-12 p-0">
-                                    <input type="text" title="enter 4 digit valid year" maxlength="4" minlength="4" pattern="[0-9]{4}" name="price_to"  class="custom-control" placeholder="To">
+                                    <input type="text" value="{{old('price_to')}}" title="enter 4 digit valid year" maxlength="4" minlength="4" pattern="[0-9]{4}" name="price_to"  class="custom-control" placeholder="To">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <h4 data-toggle="collapse" data-target="#demoBodyType" class="pt-3" style="cursor: pointer;">CATEGORIES</h4>
+                <div id="demoBodyType" class="collapse">
+                    <!-- <div class="py-1 curs"><b>-</b> Bikes</div> -->
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Standard">Standard</label>
+                        <input type="checkbox" name="body_type[]" value="Standard" id="bodytype-Standard" class="category-checkbox" />
+                    </div>
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Heavy Bike">Heavy Bike</label>
+                        <input type="checkbox" name="body_type[]" value="Heavy Bike" id="bodytype-Heavy Bike" class="category-checkbox" />
+                    </div>
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Sports Bike">Sports Bike</label>
+                        <input type="checkbox" name="body_type[]" value="Sports Bike" id="bodytype-Sports Bike" class="category-checkbox" />
+                    </div>
+
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Dirt Bike">Dirt Bike</label>
+                        <input type="checkbox" name="body_type[]" value="Dirt Bike" id="bodytype-Dirt Bike" class="category-checkbox" />
+                    </div>
+
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-ATV">ATV</label>
+                        <input type="checkbox" name="body_type[]" value="ATV" id="bodytype-ATV" class="category-checkbox" />
+                    </div>
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Chopper">Chopper</label>
+                        <input type="checkbox" name="body_type[]" value="Chopper" id="bodytype-Chopper" class="category-checkbox" />
+                    </div>
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Scooter">Scooter</label>
+                        <input type="checkbox" name="body_type[]" value="Scooter" id="bodytype-Scooter" class="category-checkbox" />
+                    </div>
+
+                    <div class="category-parts-checkbox-block">
+                        <label class="m-0" for="bodytype-Trail">Trail</label>
+                        <input type="checkbox" name="body_type[]" value="Trail" id="bodytype-Trail" class="category-checkbox" />
+                    </div>
+
+                    <script>
+                        var selectedBodyType = @json(old('body_type'));
+                       for (let index = 0; index < selectedBodyType.length; index++) {
+                           $('#bodytype-' + selectedBodyType[index]).attr('checked', true);
+                       }
+                       if(selectedBodyType.length > 0){
+                           $('#demoBodyType').removeClass('collapse');
+                       }
+                       else{
+                           $('#demoBodyType').addClass('collapse');
+                       }
+                   </script>
+                </div>
+                <h4 data-toggle="collapse" data-target="#democity" class="pt-3" style="cursor: pointer;">LOCATIONS</h4>
+
+                <div id="democity" class="collapse">
+                    <h6 class="py-2">FILTER </h6>
+                    <div class="location-checkbox-block">
+                        <label class="m-0" for="city_name-Lahore">Lahore</label>
+                        <input type="checkbox" name="city[]" value="Lahore" id="city_name-Lahore" class="location-checkbox" />
+                    </div>
+                    <div class="location-checkbox-block">
+                        <label class="m-0" for="city_name-Karachi">Karachi</label>
+                        <input type="checkbox" name="city[]" value="Karachi" id="city_name-Karachi" class="location-checkbox" />
+                    </div>
+                    <div class="location-checkbox-block">
+                        <label class="m-0" for="city_name-Islamabad">Islamabad</label>
+                        <input type="checkbox" name="city[]" value="Islamabad" id="city_name-Islamabad" class="location-checkbox" />
+                    </div>
+                    <div class="location-checkbox-block">
+                        <label class="m-0" for="city_name-Rawalpindi">Rawalpindi</label>
+                        <input type="checkbox" name="city[]" value="Rawalpindi" id="city_name-Rawalpindi" class="location-checkbox" />
+                    </div>
+                    <div class="location-checkbox-block">
+                        <label class="m-0" for="city_name-Peshawar">Peshawar</label>
+                        <input type="checkbox" name="city[]" value="Peshawar" id="city_name-Peshawar" class="location-checkbox" />
+                    </div>
+                </div>
+
+                <script>
+                    var selectedCity = @json(old('city'));
+                   for (let index = 0; index < selectedCity.length; index++) {
+                       $('#city_name-' + selectedCity[index]).attr('checked', true);
+                   }
+                   if(selectedCity.length > 0){
+                       $('#democity').removeClass('collapse');
+                   }
+                   else{
+                       $('#democity').addClass('collapse');
+                   }
+               </script>
+
                 <button class="btn common-btn-clr mt-5 text-right" type="submit"> Search</button>
             </div>
     </form>
@@ -211,10 +290,10 @@
             <div class="row m-0 w-100">
 
                 <div class="col-md-6 my-1 col-12 pl-md-5 ">
-                    <input type="text"  name="keyword" placeholder="Search Here" class="custom-control w-100 ">
+                    <input type="text" value="{{old('keyword')}}"  name="keyword" placeholder="Search Here" class="custom-control w-100 ">
                 </div>
                 <div class="col-md-2 my-1 col-12 px-md-0">
-                    <input type="text" name="min_price" list="MinPrice" placeholder="Min Price"/>
+                    <input type="text" name="min_price" value="{{old('min_price')}}" list="MinPrice" placeholder="Min Price"/>
                     <datalist id="MinPrice">
                         <option value="" selected disabled>Min Rs</option>
                         <option value='10000'>10,000 Rs</option>
@@ -234,7 +313,7 @@
                     </datalist>
                 </div>
                 <div class="col-md-2 my-1 col-12 px-md-0 pr-md-3">
-                    <input type="text" name="max_price" list="MaxPrice" placeholder="Max Price"/>
+                    <input type="text" name="max_price" value="{{old('max_price')}}" list="MaxPrice" placeholder="Max Price"/>
                     <datalist id="MaxPrice">
                         <option value="" selected disabled>Min Rs</option>
                         <option value='10000'>10,000 Rs</option>
@@ -295,10 +374,16 @@
                     </div>
                 </div>
                 @empty
+                <div class="mt-50 ml-50">
+                    <h3>No Bikes to Show ...</h3>
+                </div>
                 @endforelse
                 <!--  -->
                 <div class="col-12 p-0">
-                    {{ $searchedbikes->links('pagination::bootstrap-4') }}
+                    {{ $searchedbikes->appends(['keyword'=>old('keyword'), 'max_price'=>old('max_price'),
+                     'min_price'=>old('min_price'), 'companies[]'=>old('companies'), 'models[]'=>old('models'), 'city[]',
+                      'body_type[]'=>old('body_type'), 'category'=>old('category'), 'price_from'=>old('price_from'),
+                       'price_to'=>old('price_to')])->links('pagination::bootstrap-4') }}
                 </div>
             </div>
 
@@ -365,10 +450,10 @@
                             $number = 1;
                         @endphp
                         @foreach ($newBikes as $key=>$bike)
-                            <div class="product-wrapper">
-                                <div class="product-img">
+                            <div class="product-wrapper" style="height: 340px; width: 340px;">
+                                <div class="product-img" style="height: 340px; width: 340px;">
                                     <a href="{{route('bike.show', $bike->id)}}">
-                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:440px;width:370px;">
+                                        <img  src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height: 340px; width: 340px;">
                                     </a>
                                     <div class="product-item-dec">
                                         <ul>
@@ -412,10 +497,10 @@
                             $number = 1;
                         @endphp
                         @foreach ($usedBikes as $key=>$bike)
-                            <div class="product-wrapper">
-                                <div class="product-img">
+                            <div class="product-wrapper" style="height: 340px; width: 340px;">
+                                <div class="product-img" style="height: 340px; width: 340px;">
                                     <a href="{{route('bike.show', $bike->id)}}">
-                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height:440px;width:370px;">
+                                        <img src="{{asset('storage')}}/images/bikes/{{$bike->getImages()[0]}}" alt="" style="height: 340px; width: 340px;">
                                     </a>
                                     <div class="product-item-dec">
                                         <ul>
@@ -533,14 +618,14 @@
             <p><span>2 Wheels</span> the most latgest bike store in the wold can serve you latest qulity of motorcycle
                 also you can sell here your motorcycle</p>
         </div>
-        <div class="accessories-wrapper">
+        <div class="accessories-wrapper" >
             <div class="product-accessories-active owl-carousel">
                 @foreach ($latestProducts as $product)
 
-                <div class="product-wrapper">
-                    <div class="product-img">
+                <div class="product-wrapper" style="height: 340px; width: 340px;">
+                    <div class="product-img" style="height: 340px; width: 340px;">
                         <a href="#">
-                            <img src="{{asset('storage')}}/images/products/{{$product->getImages()[0]}}" alt="" style="height:450px;width:280px;">
+                            <img src="{{asset('storage')}}/images/products/{{$product->getImages()[0]}}" alt="" style="height: 340px; width: 340px;">
                         </a>
 
                         <div class="product-content-wrapper-2">

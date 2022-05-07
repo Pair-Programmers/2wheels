@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "About Us")
+@section('title')
+<title> About Us - 2Wheels</title>
+@endsection
 
 @section('contents')
 

@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Product Details")
+@section('title')
+<title> {{$product->anme }} | Product Detail - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -124,7 +126,7 @@
                                             class="icofont icofont-heart-alt"></i></span></button>
                                     </div>
                             </form>
-                            
+
                         </div>
                         <div class="product-categories">
                             <h5 class="pd-sub-title">Category</h5>

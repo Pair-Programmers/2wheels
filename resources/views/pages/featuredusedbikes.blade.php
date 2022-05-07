@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', "Bike Finance")
+@section('title')
+<title> Featured Used Bike - 2Wheels</title>
+@endsection
 
 @section('contents')
 
@@ -26,7 +28,7 @@
 
     <div class="" id="main-container">
 
-        <section class="nopad" style="margin-top: 100px ;"></section>      
+        <section class="nopad" style="margin-top: 100px ;"></section>
 
   <div class="container">
 
@@ -41,7 +43,7 @@
   <div class="filter-panel-new box" data-pjax-enable>
 
     <input id="selected_city_slug" name="selected_city_slug" type="hidden" />
-    
+
 
     <div class="accordion" id="sidebar">
 
@@ -84,14 +86,14 @@
           <div class="accordion-inner">
             <form id="search_key_form" action="/used-bikes/search/-/featured_1" method="get">
               <input class="pr35" id="q" name="q" placeholder="e.g. Honda in Lahore" type="text" />
-              
+
               <input class="btn btn-primary refine-go" type="submit" value="Go" />
             </form>
             <input id="query_params" name="query_params" type="hidden" value="" />
           </div>
         </div>
       </div>
-        
+
 
 
 
@@ -117,7 +119,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -141,7 +143,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -233,7 +235,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -325,7 +327,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -417,7 +419,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -450,7 +452,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -474,7 +476,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -498,7 +500,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -580,7 +582,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -627,7 +629,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -660,7 +662,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -707,7 +709,7 @@
             </div>
           </div>
         </div>
-        
+
 
 
 
@@ -743,7 +745,7 @@
 
     <div class='tlc google-ad-unit mt20'>
           <div id="div-gpt-2Wheels_UsedBikes_Search_ATF_VerticalBar_160x600">
-      
+
     </div>
     </div>
 
@@ -778,7 +780,7 @@
                   </div>
                 </div>
                   <ul class="list-unstyled search-results search-results-mid next-prev bike-search-results ">
-                    
+
 
 
 
@@ -829,8 +831,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -846,9 +848,9 @@
                   <h3 >Chinese Bikes Other  2020  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -868,10 +870,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -879,7 +881,7 @@
                 <div class="pull-left dated">Updated about 4 hours ago</div>
 
             <div class="pull-right">
-                  <button class="btn btn-success phone_number_btn pull-right" data-price="800000" data-ad-id="255871" 
+                  <button class="btn btn-success phone_number_btn pull-right" data-price="800000" data-ad-id="255871"
                           data-content="
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>SigmaMotorsports Pakistan</div>
@@ -888,17 +890,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4025735"  >
           <div class="listing-action mr5">
 
             <span id="ad_4025735" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -958,8 +960,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -975,9 +977,9 @@
                   <h3 >Sigma SCORPION 350 RR  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -997,10 +999,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1017,17 +1019,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5321056"  >
           <div class="listing-action mr5">
 
             <span id="ad_5321056" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1087,8 +1089,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1104,9 +1106,9 @@
                   <h3 >Chinese Bikes Other  2019  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1126,10 +1128,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1146,17 +1148,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4093505"  >
           <div class="listing-action mr5" >
 
             <span id="ad_4093505" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1216,8 +1218,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1233,9 +1235,9 @@
                   <h3 >Chinese Bikes Other  2019  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1255,10 +1257,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1275,17 +1277,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4964345"  >
           <div class="listing-action mr5">
 
             <span id="ad_4964345" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1345,8 +1347,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1362,9 +1364,9 @@
                   <h3 >Chinese Bikes Other  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1384,10 +1386,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1404,17 +1406,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5231164"  >
           <div class="listing-action mr5" >
 
             <span id="ad_5231164" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1474,8 +1476,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1491,9 +1493,9 @@
                   <h3 >Chinese Bikes 150cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1513,10 +1515,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1533,17 +1535,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5349039"  >
           <div class="listing-action mr5" >
 
             <span id="ad_5349039" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1603,8 +1605,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1620,9 +1622,9 @@
                   <h3 >Chinese Bikes Other  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1642,10 +1644,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1662,17 +1664,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5187428"  >
           <div class="listing-action mr5" >
 
             <span id="ad_5187428" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1732,8 +1734,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1749,9 +1751,9 @@
                   <h3 >Honda CB 150F  2018  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1767,8 +1769,8 @@
                   <li >2018</li>
                   <li >4,200 km</li>
                   <li >4 Stroke</li>
-                </ul>     
-            </div>   
+                </ul>
+            </div>
           </div>
           <div class="search-bottom clearfix">
                 <div class="pull-left dated">Updated about 7 hours ago</div>
@@ -1783,17 +1785,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5397948"  >
           <div class="listing-action mr5">
 
             <span id="ad_5397948" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1847,17 +1849,17 @@
 		<div class="inner">
     		FEATURED
     	</div>
-  	
-    
-    
-    
+
+
+
+
     </div>
 
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -1873,9 +1875,9 @@
                   <h3 >Yamaha YBR 125  2019  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -1895,10 +1897,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -1915,17 +1917,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5397609"  >
           <div class="listing-action mr5">
 
             <span id="ad_5397609" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -1984,8 +1986,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2001,9 +2003,9 @@
                   <h3 >Derbi ETX 150  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2023,10 +2025,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2043,17 +2045,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5397202"  >
           <div class="listing-action mr5">
 
             <span id="ad_5397202" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2112,8 +2114,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2129,9 +2131,9 @@
                   <h3 >Chinese Bikes OW R3 400cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2151,10 +2153,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2171,17 +2173,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_3997924"  >
           <div class="listing-action mr5">
 
             <span id="ad_3997924" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'>
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2240,8 +2242,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2257,9 +2259,9 @@
                   <h3 >OW Ninja 300cc  2020  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2279,10 +2281,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2299,17 +2301,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4014048"  >
           <div class="listing-action mr5">
 
             <span id="ad_4014048" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2331,7 +2333,7 @@
       <form accept-charset="UTF-8" action="" class="form-horizontal nomargin get-user-details" data-parsley-validate="" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7Hsojy4MNZ2A6qAHtT41LyIsKJ/0fiJGbreoapjo7xw=" /></div>
       <input id="sid" name="sid" type="hidden" value="baab766aea47f5c287a72e34ed66187e" />
       <input id="id" name="id" type="hidden" />
-      
+
       <div class="modal-body seller-form">
         <div class="form-group">
           <label class="col-md-4">Title: </label>
@@ -2406,13 +2408,13 @@
 
                     <li id="ad-in-search" class="tlc google-ad-unit">
                       <div id="div-gpt-2Wheels_UsedBikes_FullBanner_468x60">
-     
+
     </div>
                     </li>
                   </ul>
-                  
+
                   <ul class="list-unstyled search-results search-results-mid next-prev bike-search-results ">
-                    
+
 
 
 
@@ -2463,8 +2465,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2480,9 +2482,9 @@
                   <h3 >Chinese Bikes Other  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2502,10 +2504,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2522,17 +2524,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4006812"  >
           <div class="listing-action mr5">
 
             <span id="ad_4006812" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2592,8 +2594,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2609,9 +2611,9 @@
                   <h3 >Chinese Bikes OW R3 400cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2631,10 +2633,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2645,17 +2647,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="6700000" data-ad-id="317198"  rel="popover"
                           data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5396126"  >
           <div class="listing-action mr5">
 
             <span id="ad_5396126" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2714,8 +2716,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2731,9 +2733,9 @@
                   <h3 >Honda CB400  1996  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2753,10 +2755,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2773,17 +2775,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5335208"  >
           <div class="listing-action mr5">
 
             <span id="ad_5335208" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2842,8 +2844,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2859,9 +2861,9 @@
                   <h3 >Chinese Bikes Other  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -2881,10 +2883,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -2901,17 +2903,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5187434"  >
           <div class="listing-action mr5" >
 
             <span id="ad_5187434" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -2970,8 +2972,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -2987,9 +2989,9 @@
                   <h3 >Chinese Bikes Other  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3009,10 +3011,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3029,17 +3031,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_3592019"  >
           <div class="listing-action mr5">
 
             <span id="ad_3592019" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3098,8 +3100,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3115,9 +3117,9 @@
                   <h3 >Chinese Bikes Other  2020  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3137,10 +3139,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3151,17 +3153,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="650000" data-ad-id="294956" rel="popover"
                           data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4925581"  >
           <div class="listing-action mr5">
 
             <span id="ad_4925581" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3220,8 +3222,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3237,9 +3239,9 @@
                   <h3 >Kawasaki Ninja 250R  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3259,10 +3261,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3279,17 +3281,17 @@
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4009074"  >
           <div class="listing-action mr5" >
 
             <span id="ad_4009074" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'  >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3348,8 +3350,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3365,9 +3367,9 @@
                   <h3 >Chinese Bikes OW Ninja 250cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3387,10 +3389,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3401,17 +3403,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="430000" data-ad-id="264479"  rel="popover"
                            data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4238974"  >
           <div class="listing-action mr5">
 
             <span id="ad_4238974" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'  >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3470,8 +3472,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3487,9 +3489,9 @@
                   <h3 >Chinese Bikes Other  2020  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3509,10 +3511,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3523,17 +3525,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="460000" data-ad-id="227548"  rel="popover"
                          data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_3348034"  >
           <div class="listing-action mr5" >
 
             <span id="ad_3348034" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'  >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3592,8 +3594,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3609,9 +3611,9 @@
                   <h3 >OW Ducatin 250cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3631,10 +3633,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3645,17 +3647,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="470000" data-ad-id="260141" rel="popover"
                          data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_4126178"  >
           <div class="listing-action mr5" >
 
             <span id="ad_4126178" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'  >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3714,8 +3716,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3731,9 +3733,9 @@
                   <h3 >OW Ducatin 250cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3753,10 +3755,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3767,17 +3769,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="465000" data-ad-id="312579"rel="popover"
                           data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5295720"  >
           <div class="listing-action mr5" >
 
             <span id="ad_5295720" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip'  >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3836,8 +3838,8 @@
         </div>
         <div class="col-md-9 grid-style">
           <div>
-            <div class="search-title-row">  
-              
+            <div class="search-title-row">
+
               <div class="search-title">
                 <div class="right">
 
@@ -3853,9 +3855,9 @@
                   <h3 >OW Ducatin 250cc  2021  for Sale</h3>
                 </a>
               </div>
-              
+
             </div>
-            
+
           </div>
           <div class="row ">
 
@@ -3875,10 +3877,10 @@
 
 
                 </ul>
-                
+
             </div>
-            
-              
+
+
           </div>
           <div class="search-bottom clearfix">
 
@@ -3889,17 +3891,17 @@
                   <button class="btn btn-success phone_number_btn pull-right" data-price="465000" data-ad-id="312582" rel="popover"
                            data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
-              
+
 <div class="pull-right" id="div_action_5295740"  >
           <div class="listing-action mr5">
 
             <span id="ad_5295740" class="save-ad ">
               <div class= "not-saved-list logged-in-user" data-toggle = 'tooltip' style = "" >
-                <i class='fa fa-heart-o' title='Save this ad to review later'></i> 
+                <i class='fa fa-heart-o' title='Save this ad to review later'></i>
               </div>
 
               <div class= 'saved-list' data-toggle = 'tooltip' style = "display: none;">
-                <i class='fa fa-heart' title='Saved'></i> 
+                <i class='fa fa-heart' title='Saved'></i>
               </div>
             </span>
 
@@ -3910,7 +3912,7 @@
         </div>
       </div>
   </li>
-      <li class="alert-box-container alert-container">  
+      <li class="alert-box-container alert-container">
   <div class="well well-blue nomargin contact-us p30 ">
     <h3 class="nomargin mb5"><i class="fa fa-bell"></i>Notify Me</h3>
     <p class="mb20 generic-dark-grey ">Receive email notifications for the latest ads matching your search criteria</p>
@@ -3941,7 +3943,7 @@
       <form accept-charset="UTF-8" action="/conversations" class="form-horizontal nomargin get-user-details" data-parsley-validate="" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="7Hsojy4MNZ2A6qAHtT41LyIsKJ/0fiJGbreoapjo7xw=" /></div>
       <input id="sid" name="sid" type="hidden" value="baab766aea47f5c287a72e34ed66187e" />
       <input id="id" name="id" type="hidden" />
-      
+
       <div class="modal-body seller-form">
         <div class="form-group">
           <label class="col-md-4">Title: </label>
@@ -4022,8 +4024,8 @@
 
                 <div data-pjax-enable>
                   <ul class="pagination search-pagi">
-  
-  
+
+
       <li class="page active">
   <a href="/used-bikes/search/-/featured_1/">1</a>
 </li>
@@ -4065,7 +4067,7 @@
                 </div>
                 </div>
                 </div>
-              
+
 
 
 
@@ -4078,4 +4080,3 @@
 
 
                 @endsection
-                 

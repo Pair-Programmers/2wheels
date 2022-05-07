@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Post And Add')
+@section('title')
+<title> Bike Edit - 2Wheels</title>
+@endsection
 
 @section('contents')
 
