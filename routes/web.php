@@ -281,6 +281,7 @@ Route::get('/review_destroy/{id}', [ReviewController::class, 'destroy'])->name('
 
 
 Route::get('/admin', [DashboardController::class, 'index'])->name('admin_dashboard_page');
+Route::get('/admin/visitlog', [DashboardController::class, 'visitlog'])->name('admin_visitlog_page');
 
 //login//register//forget
 Route::get('/login_page', [LoginAdminController::class, 'create'])->name('admin_login_page');

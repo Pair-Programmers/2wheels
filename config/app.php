@@ -161,7 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        //custom
+        Sarfraznawaz2005\VisitLog\VisitLogServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -227,6 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //custom
+        'VisitLog' => Sarfraznawaz2005\VisitLog\Facades\VisitLog::class,
 
     ],
 

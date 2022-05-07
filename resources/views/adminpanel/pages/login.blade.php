@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Login 2</title>
+    <title>2Wheels | Login </title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">

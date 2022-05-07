@@ -10,6 +10,7 @@ use App\Models\Bike;
 use App\Models\Product;
 use View;
 use Session;
+use VisitLog;
 
 class DashboardController extends Controller
 {
@@ -28,8 +29,10 @@ class DashboardController extends Controller
             $count_bike_posts = Bike::count();
             $count_Models = BikeModel::count();
             $count_Company = Company::count();
+            $visitLog = VisitLog::all();
+            $count_VisitLog = count($visitLog);
 
-            $view = View::make('adminpanel/pages/dashboard', compact('count_Dealers', 'count_Non_Dealers', 'count_product_post',
+            $view = View::make('adminpanel/pages/dashboard', compact('count_VisitLog', 'count_Dealers', 'count_Non_Dealers', 'count_product_post',
              'count_bike_posts', 'count_Models', 'count_Company'));
             $view->nest('sidebar','adminpanel/partials/sidebar');
             $view->nest('header','adminpanel/partials/header');
@@ -46,9 +49,9 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function visitlog()
     {
-        //
+        return $visitLogs = VisitLog::all();
     }
 
     /**

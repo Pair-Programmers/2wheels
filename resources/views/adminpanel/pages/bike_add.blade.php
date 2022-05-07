@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>2Wheels | Bike Mode</title>
+    <title>2Wheels | Bike Add</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -84,7 +84,7 @@
 
                                     <div class="col-sm-4">
                                         <select class="form-control" name="model_id" id="model_select" required>
-                                        
+
                                         </select>
                                     </div>
 
@@ -338,9 +338,9 @@
                                         <input type="number" class="form-control" name="price" required>
                                         <input type="hidden" class="form-control" name="category" value="New Bike" required>
                                     </div>
-                                    
 
-                                    
+
+
 
                                 </div>
 
@@ -414,7 +414,7 @@
             </div>
         </div>
 
-       
+
 
 
 

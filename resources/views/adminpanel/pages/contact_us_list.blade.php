@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>El-Gymnasio | Services</title>
+    <title>2Wheels | Contact Us Messages</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>List of Contact Us</h2>
@@ -48,7 +48,7 @@
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
 
-                
+
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -89,8 +89,8 @@
                     <tbody>
                         @php
                         $counter = 1;
-                    @endphp 
-                    
+                    @endphp
+
                     @foreach($contacts as $contact)
                         <tr class="gradeX">
                             <td>{{$counter}}</td>
@@ -100,16 +100,16 @@
                             <td class="center">{{$contact->subject}}</td>
                             <td class="center">{{$contact->message}}</td>
                             <td class="center">{{$contact->created_at}}</td>
-                            
-                            
+
+
                         </tr>
 
                         @php
                             $counter = $counter + 1;
-                        @endphp 
+                        @endphp
                     @endforeach
-                    
-                    
+
+
                     </tbody>
                     <tfoot>
                     <tr>

@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>2Wheels | Bike Mode</title>
+    <title>2Wheels | Bike Edit</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -359,9 +359,9 @@
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control" name="price" value="{{$bike->price}}" required>
                                     </div>
-                                    
 
-                                    
+
+
 
                                 </div>
 
@@ -435,7 +435,7 @@
             </div>
         </div>
 
-       
+
 
 
 
@@ -495,7 +495,7 @@
                        console.log(error);
                    }
                });
-               
+
             }
             display_Models();
         </script>

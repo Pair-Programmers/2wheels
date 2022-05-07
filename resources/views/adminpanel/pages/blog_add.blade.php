@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>2Wheels | Blog</title>
+    <title>2Wheels | Blog Add</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Add Blog</h2>
@@ -51,18 +51,18 @@
                 <div class="ibox-content">
                             <form method="post" class="form-horizontal" action="{{route('blog.store')}}" enctype="multipart/form-data">
                                 @csrf
-                                
+
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Blog Name</label>
 
                                     <div class="col-sm-4">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="name" required> 
+                                            <input type="text" class="form-control" name="name" required>
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
 
                                 <div class="form-group">
@@ -70,27 +70,27 @@
 
                                     <div class="col-sm-4">
                                         <div class="input-group">
-                                            <input type="file"   class="form-control" name="image" required> 
+                                            <input type="file"   class="form-control" name="image" required>
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
 
 
 
 
-                                
+
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Description</label>
                                     <div class="col-sm-4">
                                         <textarea name="description" id="" cols="50" rows="5" required></textarea>
                                     </div>
-                                    
+
                                 </div>
-                                
-                                
+
+
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button class="btn btn-primary" type="submit">Save</button>
@@ -99,7 +99,7 @@
                             </form>
                         </div>
                         <br>
-                
+
             </div>
         </div>
         <div class="footer">

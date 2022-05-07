@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\BikeModel;
 
 use Illuminate\Http\Request;
+use VisitLog;
 
 class LandingController extends Controller
 {
@@ -16,7 +17,7 @@ class LandingController extends Controller
     public function index()
     {
 
-
+        VisitLog::save();
         $models = BikeModel::all();
 
         $companies = Company::all();

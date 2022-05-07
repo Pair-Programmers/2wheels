@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Dashboard v.2</title>
+    <title>2Wheels | Dashboard</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -23,7 +23,7 @@
         <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?> 
+            <?=$header; ?>
             <div class="wrapper wrapper-content">
         <div class="row">
                     <div class="col-lg-3">
@@ -120,17 +120,31 @@
                         </div>
                     </div>
 
-                   
+                    <div class="col-lg-3">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                {{-- <span class="label label-danger pull-right">Low value</span> --}}
+                                <h5>Unique Visitors</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h1 class="no-margins">{{$count_VisitLog}}</h1>
+                                {{-- <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i></div> --}}
+                                <small>Total Unique Visitors</small>
+                            </div>
+                        </div>
+                    </div>
+
+
         </div>
 
-        
 
 
-                
+
+
                 </div>
         <?=$footer; ?>
         </div>
-        
+
     </div>
 
     <!-- Mainly scripts -->

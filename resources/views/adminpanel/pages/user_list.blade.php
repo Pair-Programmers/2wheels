@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcademyWorld | Users List</title>
+    <title>2Wheels | Users List</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>List of Users</h2>
@@ -48,7 +48,7 @@
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
 
-                
+
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -88,8 +88,8 @@
                     <tbody>
                         @php
                         $counter = 1;
-                    @endphp 
-                    
+                    @endphp
+
                     @foreach($users as $user)
                         <tr class="gradeX">
                             <td>{{$counter}}</td>
@@ -98,9 +98,9 @@
                             <td class="center">{{$user->email}}</td>
                             <td class="center">{{$user->phone}}</td>
                             <td class="center">{{$user->created_at}}</td>
-                            
+
                             <td>
-                                
+
                                 {{-- <a href="{{ route('user.destroy', $user->id) }}">
                                     <small class="label label-danger"><i class="fa"></i>Delete</small>
                                 </a> --}}
@@ -109,10 +109,10 @@
 
                         @php
                             $counter = $counter + 1;
-                        @endphp 
+                        @endphp
                     @endforeach
-                    
-                    
+
+
                     </tbody>
                     <tfoot>
                     <tr>

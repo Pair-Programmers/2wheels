@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Byou Management | Order List</title>
+    <title>2Wheels | Order List</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -109,14 +109,14 @@
                                                 <td class="center">{{$order->total_quantity}}</td>
                                                 <td class="center">{{$order->total_ammount}}</td>
                                                 <td class="center">{{$order->status}}</td>
-                                                
+
                                             </tr>
 
                                             @php
                                             $counter = $counter + 1;
                                             @endphp
 
-                                            
+
                                             @endforeach
 
 
