@@ -16,9 +16,8 @@ class LandingController extends Controller
 
     public function index()
     {
-        Artisan::call('migrate');
 
-        //VisitLog::save();
+        VisitLog::save();
         $models = BikeModel::all();
 
         $companies = Company::all();
