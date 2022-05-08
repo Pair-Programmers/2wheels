@@ -25,19 +25,22 @@
 	<tbody>
 		<tr>
 			<td>Petrol (Super)</td>
-			<td>Rs.111.90/Ltr</td>
+			<td>Rs.
+                149.86/Ltr</td>
 		</tr>
 		<tr>
 			<td>High Speed Diesel</td>
-			<td>Rs.116.08/Ltr</td>
+			<td>Rs.
+                144.15/Ltr</td>
 		</tr>
 		<tr>
 			<td>Light Speed Diesel</td>
-			<td>Rs.79.23/Ltr</td>
+			<td>Rs.118.31/Ltr</td>
 		</tr>
 		<tr>
 			<td>Kerosene Oil</td>
-			<td>Rs.80.19/Ltr</td>
+			<td>Rs.
+                125.56/Ltr</td>
 		</tr>
 		<tr>
 			<td>CNG Region-I*&nbsp;</td>

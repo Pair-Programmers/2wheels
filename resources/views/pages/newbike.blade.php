@@ -8,7 +8,7 @@
 
     <div class="" id="main-container">
         <section class="search-main-outer" style="margin-top: 155px;">
-            <div id="top-search-heading" class="search-main-head">
+            <div id="top-search-heading" class="search-main-head" style="background-color: rgb(155, 154, 154)">
                 <div class="container">
                     <h1>Find New Bikes In Pakistan</h1>
                     <p>Find Information about the latest bikes in the market</p>

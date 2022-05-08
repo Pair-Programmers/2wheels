@@ -133,7 +133,7 @@
                     <div style="font-size: 1.6rem;" class="dropdown-menu shadow-sm sm-menu3" aria-labelledby="dropdown02">
                         <!--<a class="dropdown-item" href="{{route('coolrides')}}">Cool Rides</a>-->
                         <a class="dropdown-item" href="{{route('bikeimport')}}">Bike Import</a>
-                        <a class="dropdown-item" href="bikeinsurance">Bike Insurance</a>
+                        {{-- <a class="dropdown-item" href="bikeinsurance">Bike Insurance</a> --}}
                         <a class="dropdown-item" href="{{route('bikefinance')}}">Bike Finance</a>
                         <a class="dropdown-item" href="mtmispak">Mtmis Pakistan</a>
                         <a class="dropdown-item" href="currentfuelprice">Current Fuel Prices</a>

@@ -83,7 +83,12 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        $view = View::make('adminpanel/pages/order_show', ['order'=>$order]);
+        $view->nest('sidebar','adminpanel/partials/sidebar');
+        $view->nest('header','adminpanel/partials/header');
+        $view->nest('footer','adminpanel/partials/footer');
+        return $view;
     }
 
     /**
@@ -135,5 +140,19 @@ class OrderController extends Controller
         $view->nest('header','adminpanel/partials/header');
         $view->nest('footer','adminpanel/partials/footer');
         return $view;
+    }
+
+    public function changeStatus($id)
+    {
+        $order = Order::find($id);
+        if( $order->status == 'Pending'){
+            $order->status = 'Completed';
+        }
+        else{
+            $order->status = 'Pending';
+        }
+        $order->save();
+
+        return response()->json(['success'=>'done', 'status'=>$order->status]);
     }
 }

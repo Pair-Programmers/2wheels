@@ -706,7 +706,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/Slide_chinese-bikes-ow-r3-400cc-2021-48793770.jpg" class="img-content" alt="Daihatsu Mira" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_0">Daihatsu Mira</h3>
+                  <h3 class="nomargin mt10" id="mycurstodiv_0">Yamaha YZF-R6 2021</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_121" onclick="return show_popup(8,305,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -715,7 +715,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/Slide_chinese-bikes-ow-r3-400cc-2021-48793770.jpg" class="img-content" alt="Toyota Vitz" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_1">Toyota Vitz</h3>
+                  <h3 class="nomargin mt10" id="mycurstodiv_1">Yamaha YZF-R6 2021</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_139" onclick="return show_popup(42,294,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -724,7 +724,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/Slide_kawasaki-ninja-zx300-2019-32848196.jpg" class="img-content" alt="Toyota Passo" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_2">Toyota Passo</h3>
+                  <h3 class="nomargin mt10" id="mycurstodiv_2">Harley Davidson Night Rod Special 2021</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_145" onclick="return show_popup(42,338,'From - PopularModels');">Import This Bike</a>
               </li>
@@ -733,7 +733,7 @@
                   <div class="img-box">
                     <img src="{{asset('website')}}/assets/img/honda_freed.jpg" class="img-content" alt="Honda Vezel" />
                   </div>
-                  <h3 class="nomargin mt10" id="mycurstodiv_3">Honda Vezel</h3>
+                  <h3 class="nomargin mt10" id="mycurstodiv_3">Super Power Leo 200 2021</h3>
                 </a>
                 <a href="javascript:void;" data-toggle="modal" id="import_Bike_285" onclick="return show_popup(14,826,'From - PopularModels');">Import This Bike</a>
               </li>

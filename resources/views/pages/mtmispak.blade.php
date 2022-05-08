@@ -17,25 +17,25 @@
 
     <div class="well  clearfix">
       <div class="col-md-7">
-          <h3 class="nomargin"><a href="#" id="Punjab" name="Punjab">MTMIS Punjab</a></h3>
+          <h3 class="nomargin"><a href="https://mtmis.excise.punjab.gov.pk/" id="Punjab" name="Punjab">MTMIS Punjab</a></h3>
 
 <p>Online Vehicle Verification In Punjab<br />
 <a href="#" target="_blank" title="bike for sale in Punjab">Find Used bike in Punjab</a></p>
 
 <hr />
-<h3 class="nomargin"><a href="#" id="kpk" name="Khyber_Pakhtunkha">MTMIS KPK</a></h3>
+<h3 class="nomargin"><a href="https://www.kpexcise.gov.pk/mvrecords/" id="kpk" name="Khyber_Pakhtunkha">MTMIS KPK</a></h3>
 
 <p>Online Vehicle Verification In KPK<br />
 <a href="#" target="_blank" title="bike for sale in KPK">Find Used bike in KPK</a></p>
 
 <hr />
-<h3 class="nomargin"><a href="#" id="sindh" name="Sindh">MTMIS Sindh</a></h3>
+<h3 class="nomargin"><a href="https://tyrepoint.pk/mtmis-sindh/" id="sindh" name="Sindh">MTMIS Sindh</a></h3>
 
 <p>Online Vehicle Verification In Sindh<br />
 <a href="#" target="_blank" title="bike for sale in Sindh">Find Used bike in Sindh</a></p>
 
 <hr />
-<h3 class="nomargin"><a href="#" id="islamabad" name="islamabad">MTMIS Islamabad</a></h3>
+<h3 class="nomargin"><a href="http://www.islamabadexcise.gov.pk/" id="islamabad" name="islamabad">MTMIS Islamabad</a></h3>
 
 <p>Online Vehicle Verification In Islamabad<br />
 <a href="#" target="_blank" title="bike for sale in Islamabad">Find Used bike in Islamabad</a></p>

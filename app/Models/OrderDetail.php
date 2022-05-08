@@ -11,4 +11,8 @@ class OrderDetail extends Model
     public function orderDetailProduct(){
         return $this->hasOne(Product::class,'id','product_id');
     }
+
+    public function vendor(){
+        return $this->hasOne(User::class, 'id', 'vendor_id');
+    }
 }

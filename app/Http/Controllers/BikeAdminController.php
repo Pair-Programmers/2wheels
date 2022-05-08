@@ -29,6 +29,30 @@ class BikeAdminController extends Controller
         return $view;
     }
 
+    public function usedBikesIndex()
+    {
+        $bikes = Bike::where('category', 'Used Bike')->orderBy('id', 'desc')->get();
+        $view = View::make('adminpanel/pages/bike_list_used', ['bikes'=>$bikes]);
+        $view->nest('sidebar','adminpanel/partials/sidebar');
+        $view->nest('header','adminpanel/partials/header');
+        return $view;
+    }
+
+    public function approveBikePost($id)
+    {
+        $bike = Bike::find($id);
+        if( $bike->is_active){
+            $bike->is_active = false;
+        }
+        else{
+            $bike->is_active = true;
+        }
+        $bike->save();
+
+        return response()->json(['success'=>'done', 'status'=>$bike->is_active]);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

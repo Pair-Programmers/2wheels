@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>2Wheels | Order List</title>
+    <title>2Wheels | Order Detail</title>
 
     <link href="{{asset('adminpanel')}}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('adminpanel')}}/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -29,7 +29,7 @@
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <!-- List of Orders -->
-                    <h2>List of Order</h2>
+                    <h2>Order Detail</h2>
                     <ol class="breadcrumb">
                         <li>
                             <!-- Home -->
@@ -42,7 +42,7 @@
                         <li class="active">
                             <!-- List -->
                             <strong>
-                                List</strong>
+                                Detail</strong>
                         </li>
                     </ol>
                 </div>
@@ -50,6 +50,11 @@
 
                 </div>
             </div>
+
+            <h2>Order : <strong> {{$order->id}}</strong></h2>
+            <h2>Amount : <strong> {{$order->total_ammount}}</strong></h2>
+            <h2>Date : <strong> {{$order->created_at}}</strong></h2>
+            <h2>Status : <strong> {{$order->status}}</strong></h2>
             <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
 
@@ -84,13 +89,12 @@
                                     <table class="table table-striped table-bordered table-hover dataTables-example">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
-                                                <th>Customer</th>
-                                                <th>Date</th>
+                                                <th>No.</th>
+                                                <th>Product</th>
                                                 <th>Qty</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th>Unit Price</th>
+                                                <th>Total Amount</th>
+                                                <th>Vendor</th>
 
                                             </tr>
                                         </thead>
@@ -99,30 +103,16 @@
                                             $counter = 1;
                                             @endphp
 
-                                            @foreach($orders as $order)
+                                            @foreach($order->orderDetails as $order)
                                             <tr class="gradeX" id="orderRowAction{{$order->id}}">
-                                                {{-- <td>{{$counter}}</td> --}}
-                                                <td class="center">{{$order->id}}</td>
-                                                <td class="center">{{$order->customer->name}}</td>
-                                                <td class="center">{{$order->created_at}}</td>
-                                                <td class="center">{{$order->total_quantity}}</td>
+                                                <td>{{$counter}}</td>
+                                                <td class="center">{{$order->orderDetailProduct->name}}</td>
+                                                <td class="center">{{$order->quantity}}</td>
+                                                <td class="center">{{$order->unit_price}}</td>
                                                 <td class="center">{{$order->total_ammount}}</td>
-                                                <td class="center" id="action_no_{{$order->id}}">
-                                                    @if ($order->status == 'Pending')
-                                                    <small class="label label-danger"><i class="fa"></i>Pending</small>
-                                                    @else
-                                                    <small class="label label-primary"><i class="fa"></i>Completed</small>
-                                                    @endif
-                                                </td>
+                                                <td class="center">{{$order->vendor->name}}</td>
 
-                                                <td>
-                                                    <a target="_blank" href="{{ route('order.show', $order->id) }}">
-                                                        <small class="label label-primary"><i class="fa"></i>View</small>
-                                                    </a>
-                                                    <a onclick="changeStatus({{$order->id}})">
-                                                        <small id="" class="label label-warning">Change Status</small>
-                                                    </a>
-                                                </td>
+
 
                                             </tr>
 
@@ -137,13 +127,12 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Order #</th>
-                                                <th>Customer</th>
-                                                <th>Date</th>
+                                                <th>No.</th>
+                                                <th>Product</th>
                                                 <th>Qty</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th>Unit Price</th>
+                                                <th>Total Amount</th>
+                                                <th>Vendor</th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -235,18 +224,15 @@
         }
     </script>
 
-
     <script>
-        function changeStatus(id) {
+        function changeOrderStatusInDB(id) {
+            console.log(id);
             $.ajax({
                 method: 'GET',
-                url: `{{url('/order.change-status')}}/` + id,
+                url: `{{url('admin/change_order_status_admin')}}/` + id,
+
                 success: function(data) {
-                    if (data.status == 'Pending') {
-                        $('#action_no_' + id).html(`<small class="label label-danger"><i class="fa"></i>Pending</small>`);
-                    } else {
-                        $('#action_no_' + id).html(`<small id="" class="label label-primary">Completed</small>`);
-                    }
+                    $('#orderRowAction' + id).remove();
                 }
             });
         }

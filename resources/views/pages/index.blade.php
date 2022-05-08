@@ -48,9 +48,7 @@
 
                 </div>
                 <h4 data-toggle="collapse" data-target="#demo2" class="pt-3" style="cursor: pointer;">Company / MAKE</h4>
-                <script>
-
-                </script>
+                
                 <div id="demo2" class="collapse">
                     {{-- <p>All Make</p> --}}
                     @foreach ($companies as $key=>$company)

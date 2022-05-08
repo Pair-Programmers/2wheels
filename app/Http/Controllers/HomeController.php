@@ -33,10 +33,10 @@ class HomeController extends Controller
 
         $companies = Company::all();
 
-        $newBikes = Bike::where('category', 'New Bike')->orderby('created_at', 'DESC')->get();
-        $usedBikes = Bike::where('category', 'Used Bike')->orderby('created_at', 'DESC')->get();
+        $newBikes = Bike::where('is_active', true)->where('category', 'New Bike')->orderby('created_at', 'DESC')->get();
+        $usedBikes = Bike::where('is_active', true)->where('category', 'Used Bike')->orderby('created_at', 'DESC')->get();
 
-        $searchedbikes = Bike::orderby('created_at', 'DESC')->paginate(15);
+        $searchedbikes = Bike::where('is_active', true)->orderby('created_at', 'DESC')->paginate(16);
 
         $latestProducts = Product::orderby('created_at', 'DESC')->get();
         $blogs = Blog::orderby('created_at', 'DESC')->paginate(3);

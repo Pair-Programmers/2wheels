@@ -192,6 +192,7 @@ Route::get('/bike_by_model/{model}', [BikeController::class, 'bikesByModel'])->n
 
 //admin
 Route::get('/bike_admin', [BikeAdminController::class, 'index'])->name('admin.bike.index');
+Route::get('/bike_admin/used-bikes', [BikeAdminController::class, 'usedBikesIndex'])->name('admin.bike.posts-aproval');
 Route::get('/bike_create_admin', [BikeAdminController::class, 'create'])->name('admin.bike.create');
 Route::post('/bike_store_admin', [BikeAdminController::class, 'store'])->name('admin.bike.store');
 Route::get('/bike_show_admin/{id}', [BikeAdminController::class, 'show'])->name('admin.bike.show');
@@ -199,6 +200,7 @@ Route::get('/get_bikes_admin/{id}', [BikeAdminController::class, 'getbike'])->na
 Route::get('/bike_edit_admin/{id}', [BikeAdminController::class, 'edit'])->name('admin.bike.edit');
 Route::post('/bike_update_admin/{id}', [BikeAdminController::class, 'update'])->name('admin.bike.update');
 Route::get('/bike_destroy_admin/{id}', [BikeAdminController::class, 'destroy'])->name('admin.bike.destroy');
+Route::get('/approve-bike-post/{id}', [BikeAdminController::class, 'approveBikePost'])->name('admin.bike.approve-post');
 
 
 //product
@@ -231,6 +233,8 @@ Route::get('/product_category_destroy/{id}', [ProductCategoryController::class, 
 Route::post('/add_order', [OrderController::class, 'store'])->name('add_order');
 Route::get('/my_orders', [OrderController::class, 'myOrders'])->name('my_orders');
 Route::get('/orders_list', [OrderController::class, 'ordersList'])->name('orders_list');
+Route::get('/show/{id}', [OrderController::class, 'show'])->name('order.show');
+Route::get('/order.change-status/{id}', [OrderController::class, 'changeStatus'])->name('order.change-status');
 
 //add to cart
 Route::post('/addToCart', [ProductController::class, 'addToCart'])->name('cart.add_to_cart');

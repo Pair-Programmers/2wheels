@@ -32,8 +32,7 @@
         </section>
 
         <section class="search-main-outer">
-            <div id="top-search-heading" style="margin-top: 155px;
-    " class="search-main-head">
+            <div id="top-search-heading" style="margin-top: 155px; background-color: rgb(155, 154, 154)"  class="search-main-head">
                 <div class="container">
                     <h1>Find Used Bikes &amp; Motorcycles in Pakistan</h1>
                     <p>Used Honda, Suzuki, Yamaha &amp; More</p>
