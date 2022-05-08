@@ -22,13 +22,13 @@ class LandingController extends Controller
 
         $companies = Company::all();
 
-        $bikes = Bike::all();
-        foreach ($bikes as $key => $bike) {
-            $model = BikeModel::find($bike->model_id);
-            $company = Company::find($bike->company_id);
-            $bike->name = $company->name . ' ' . $model->name . ' ' . $bike->model_year;
-            $bike->save();
-        }
+        // $bikes = Bike::all();
+        // foreach ($bikes as $key => $bike) {
+        //     $model = BikeModel::find($bike->model_id);
+        //     $company = Company::find($bike->company_id);
+        //     $bike->name = $company->name . ' ' . $model->name . ' ' . $bike->model_year;
+        //     $bike->save();
+        // }
 
         $newBikes = Bike::where('is_active', true)->where('category', 'New Bike')->orderby('created_at', 'DESC')->get();
         $usedBikes = Bike::where('is_active', true)->where('category', 'Used Bike')->orderby('created_at', 'DESC')->get();
