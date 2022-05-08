@@ -18,7 +18,7 @@ class LandingController extends Controller
     {
         Artisan::call('migrate');
 
-        VisitLog::save();
+        //VisitLog::save();
         $models = BikeModel::all();
 
         $companies = Company::all();
