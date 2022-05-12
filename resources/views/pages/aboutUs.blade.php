@@ -7,7 +7,7 @@
 @section('contents')
 
 <div class="wrapper">
-    <div class="breadcrumb-area pt-255 pb-170" style="background-size:cover;background-image: url({{asset('website')}}/assets/img/header_slider/hondamodi.jpg);background-size:100% 100%;">
+    {{-- <div class="breadcrumb-area pt-255 pb-170" style="background-size:cover;background-image: url({{asset('website')}}/assets/img/header_slider/hondamodi.jpg);background-size:100% 100%;">
         <div class="container-fluid">
             <div class="breadcrumb-content text-center">
                 <h2>About Us</h2>
@@ -19,7 +19,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="about-us-area pt-125 pb-125">
         <div class="container">
             <div class="row">
@@ -35,7 +35,7 @@
                                     <i class="icofont icofont-phone"></i>
                                 </div>
                                 <div class="question-content-number">
-                                    <h6>+042 01245 658 698</h6>
+                                    <h6>+923124334928</h6>
                                 </div>
                             </div>
                         </div>
@@ -161,10 +161,10 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <div class="team-wrapper mb-30">
                         <div class="team-img">
-                            <img src="{{asset('website')}}/assets/img/header_slider/image.jpeg" alt="" style="height:310px;width:300px">
+                            <img src="{{asset('website')}}/assets/img/abdullah.png" alt="" style="height:310px;width:300px">
                         </div>
                         <div class="team-content">
-                            <h4>Zoe Jones</h4>
+                            <h4>Muhammad Abdullah Arshad</h4>
                             <span>Founder </span>
                         </div>
                     </div>
@@ -199,36 +199,6 @@
                         <div class="team-content">
                             <h4>Charlotte Taylor</h4>
                             <span>Chairmen </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="newsletter-area">
-        <div class="container">
-            <div class="newsletter-wrapper-all theme-bg-2">
-                <div class="row">
-                    <div class="col-lg-5 col-12 col-md-12">
-                        <div class="newsletter-img bg-img">
-                            <img alt="image" src="{{asset('website')}}/assets/img/header_slider/used5.jpg">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-12 col-md-12">
-                        <div class="newsletter-wrapper text-center">
-                            <div class="newsletter-title">
-                                <h3>Subscribe our newsletter</h3>
-                            </div>
-                            <div id="mc_embed_signup" class="subscribe-form">
-                                <form action="#" method="post" id="#" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div id="mc_embed_signup_scroll" class="mc-form">
-                                        <input type="email" value="" name="EMAIL" class="email" placeholder="Enter your email here..." required>
-                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                        <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
-                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>

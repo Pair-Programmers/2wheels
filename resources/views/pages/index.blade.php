@@ -48,7 +48,7 @@
 
                 </div>
                 <h4 data-toggle="collapse" data-target="#demo2" class="pt-3" style="cursor: pointer;">Company / MAKE</h4>
-                
+
                 <div id="demo2" class="collapse">
                     {{-- <p>All Make</p> --}}
                     @foreach ($companies as $key=>$company)
@@ -424,9 +424,9 @@
         </div>
     </div>
 </div>
-<div class="product-area pb-190">
+<div class="product-area pb-20">
     <div class="container">
-        <div class="section-title text-center mb-50">
+        <div class="section-title text-center mb-10">
             <h2>CHOOSE YOUR BIKE</h2>
             <p><span>2 Wheels</span> the most latgest bike store in the wold can serve you lateforst qulity of motorcycle
                 also you can sell here your motorcycle</p>
@@ -620,10 +620,10 @@
             <div class="product-accessories-active owl-carousel">
                 @foreach ($latestProducts as $product)
 
-                <div class="product-wrapper" style="height: 340px; width: 340px;">
-                    <div class="product-img" style="height: 340px; width: 340px;">
+                <div class="product-wrapper" style="height: 300px; width: 300px;">
+                    <div class="product-img" style="height: 300px; width: 300px;">
                         <a href="#">
-                            <img src="{{asset('storage')}}/images/products/{{$product->getImages()[0]}}" alt="" style="height: 340px; width: 340px;">
+                            <img src="{{asset('storage')}}/images/products/{{$product->getImages()[0]}}" alt="" style="height: 300px; width: 300px;">
                         </a>
 
                         <div class="product-content-wrapper-2">

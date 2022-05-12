@@ -44,7 +44,7 @@
             <p><span>2 Wheels</span> the most latgest bike store in the wold can serve you latest ulity of motorcycle soucan sell here your motorcycle it quo </p>
             <div class="footer-support">
               <h5>FOR SUPPORT</h5>
-              <span> +111 222 333 44 (Toll Free)</span>
+              <span> 0312-4334928</span>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@
                 <span>Address</span>
               </div>
               <div class="food-info-content">
-                <p>276 Jhilli Nogor, 4th folor, Momen Tower, Main Town, Lahore</p>
+                <p>Formanities society, M block, House no. 193, Near Lahore Leads University</p>
               </div>
             </div>
             <div class="food-address">
@@ -107,8 +107,8 @@
                 <span>Phone</span>
               </div>
               <div class="food-info-content">
-                <p>+042 12568 369 987</p>
-                <p>+042 12568 369 987</p>
+                <p>+923075143141</p>
+                <p>+923124334928</p>
               </div>
             </div>
             <div class="food-address">

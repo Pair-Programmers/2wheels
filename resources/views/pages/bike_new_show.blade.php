@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-<title> {{$bike->name}} | Bike Detail - 2Wheels</title>
+<title>  @if ($bike) {{$bike->name}} | @else  @endif  Bike Detail - 2Wheels</title>
 @endsection
 
 @section('contents')
@@ -328,7 +328,9 @@
 
 
             @else
-            <p>no data avaialble for this</p>
+            <div class="mt-50 mb-100 ml-20">
+                <h3>No data avaialble ..</h3>
+            </div>
             @endif
         </div>
 @endsection
