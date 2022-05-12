@@ -531,10 +531,10 @@
                         <p>Change a range below</p>
                         <div class="col-12 p-0">
                             <div class="row m-0 align-items-center">
-                                <div class="col-12 p-0 my-2">
+                                <div class="col-5 p-0 my-2 mr-10">
                                     <input type="text" value="{{old('price_from')}}" title="enter 4 digit valid year"  maxlength="4" minlength="4" pattern="[0-9]{4}" name="price_from"  class="custom-control" placeholder="From">
                                 </div>
-                                <div class="col-12 p-0">
+                                <div class="col-5 p-0">
                                     <input type="text" value="{{old('price_to')}}" title="enter 4 digit valid year" maxlength="4" minlength="4" pattern="[0-9]{4}" name="price_to"  class="custom-control" placeholder="To">
                                 </div>
                             </div>
