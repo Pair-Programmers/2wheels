@@ -25,13 +25,13 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>List of Blogs</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <a>Blogs</a>
@@ -48,7 +48,7 @@
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
 
-                
+
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
@@ -87,15 +87,15 @@
                     <tbody>
                         @php
                         $counter = 1;
-                    @endphp 
-                    
+                    @endphp
+
                     @foreach($blogs as $blog)
                         <tr class="gradeX">
                             <td>{{$counter}}</td>
                             <td class="center">{{$blog->name}}</td>
                             <td class="center">{{$blog->description}}</td>
                             <td class="center">{{$blog->created_at}}</td>
-                            
+
                             <td>
                                 <a href="{{ route('blog.edit', $blog->id) }}">
                                     <small class="label label-primary"><i class="fa"></i>Edit</small>
@@ -108,12 +108,12 @@
 
                         @php
                             $counter = $counter + 1;
-                        @endphp 
+                        @endphp
                     @endforeach
-                    
-                    
+
+
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                     <tr>
                         <th>No.</th>
                         <th>Name</th>
@@ -121,7 +121,7 @@
                         <th>Date Created</th>
                         <th>Action</th>
                     </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     </table>
                         </div>
 
@@ -135,7 +135,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
             </div>
         </div>
 

@@ -17,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        
+        $users = User::orderBy('id', 'desc')->get();
+
         $view = View::make('adminpanel/pages/user_list', ['users'=>$users]);
         $view->nest('sidebar','adminpanel/partials/sidebar');
         $view->nest('header','adminpanel/partials/header');
@@ -78,13 +78,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $inputs = $request->all();
-        
+
 
         if(!empty($request->image)){
             $image_name = time() . '_' . $request->image->getClientOriginalName();
-            $request->image->move(public_path().'/storage/images/users', $image_name); 
+            $request->image->move(public_path().'/storage/images/users', $image_name);
             $inputs['image'] = $image_name;
-            
+
         }
 
         if(empty($request->password)){

@@ -31,15 +31,15 @@
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <!-- List of Orders -->
-                    <h2>List of Order</h2>
+                    <h2>List of Users</h2>
                     <ol class="breadcrumb">
                         <li>
                             <!-- Home -->
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <!-- orders -->
-                            <a>Order</a>
+                            <a>Users</a>
                         </li>
                         <li class="active">
                             <!-- List -->
@@ -118,16 +118,7 @@
 
 
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Name</th>
-                                                <th>Type</th>
-                                                <th>email</th>
-                                                <th>phone</th>
-                                                <th>Date Registered</th>
-                                            </tr>
-                                        </tfoot>
+
                                     </table>
                                 </div>
 
@@ -141,7 +132,7 @@
                     10GB of <strong>250GB</strong> Free.
                 </div>
                 <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2015
+                    <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
                 </div>
             </div>
 

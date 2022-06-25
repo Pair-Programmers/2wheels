@@ -11,7 +11,7 @@
 
 <section>
   <div class="container">
-    <ul class="breadcrumb" itemscope="itemscope" itemtype=""><li itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/" itemprop="url"><span itemprop="name">Home</span></a><meta content='https://www.2Wheels.com/' itemprop='item'><meta content="1" itemprop="position"></li><li class="active" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/Bike-finance/" itemprop="url"><span itemprop="name">Bike Financing in Pakistan - Bank Bike Financing</span></a><meta content='https://www.2Wheels.com/Bike-finance/' itemprop='item'><meta content="2" itemprop="position"></li></ul>
+    <ul class="breadcrumb" itemscope="itemscope" itemtype=""><li itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/" itemprop="url"><span itemprop="name">Home</span></a><meta content='https://www.twowheelss.com/' itemprop='item'><meta content="1" itemprop="position"></li><li class="active" itemprop="itemListElement" itemscope="itemscope" itemtype="https://schema.org/ListItem"><a href="/Bike-finance/" itemprop="url"><span itemprop="name">Bike Financing in Pakistan - Bank Bike Financing</span></a><meta content='https://www.twowheelss.com/Bike-finance/' itemprop='item'><meta content="2" itemprop="position"></li></ul>
 
 
     <h1>Bike Financing in Pakistan - Bank Bike Financing</h1>

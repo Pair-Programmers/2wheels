@@ -28,10 +28,10 @@
             <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Create Course Company</h2>
+                    <h2>Create Company</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <a>Company</a>
@@ -139,13 +139,13 @@
 
 
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                     <tr>
                         <th>No.</th>
                         <th>Name</th>
                         <th>Action</th>
                     </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     </table>
                         </div>
 
@@ -163,7 +163,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
             </div>
         </div>
 

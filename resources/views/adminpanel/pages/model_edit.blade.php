@@ -31,7 +31,7 @@
                     <h2>Edit Bike Model</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <a>Bike Model</a>
@@ -270,7 +270,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
             </div>
         </div>
 

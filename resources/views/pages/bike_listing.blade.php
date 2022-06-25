@@ -1157,8 +1157,8 @@
                                         <span>Web</span>
                                     </div>
                                     <div class="food-info-content">
-                                        <a href="#">info@2wheels.com</a>
-                                        <a href="#">www.2wheels.com</a>
+                                        <a href="#">info@twowheelss.com</a>
+                                        <a href="#">www.twowheelss.com</a>
                                     </div>
                                 </div>
                             </div>

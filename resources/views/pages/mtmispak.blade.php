@@ -43,9 +43,9 @@
       </div>
       <div class="col-md-5 well well-blue pull-right nomargin">
         <h3>Important</h3>
-        <p>2Wheels.com provides this service to its users for their convenience and as value added service.</p>
+        <p>twowheelss.com provides this service to its users for their convenience and as value added service.</p>
         <p>All data presented here are sole property of their respective stake-holders.</p>
-        <p>2Wheels.com takes no responsibility in any kind of error in the information.</p>
+        <p>twowheelss.com takes no responsibility in any kind of error in the information.</p>
       </div>
     </div>
   </div>

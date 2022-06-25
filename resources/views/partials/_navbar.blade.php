@@ -136,7 +136,7 @@
                         {{-- <a class="dropdown-item" href="bikeinsurance">Bike Insurance</a> --}}
                         <a class="dropdown-item" href="{{route('bikefinance')}}">Bike Finance</a>
                         <a class="dropdown-item" href="mtmispak">Mtmis Pakistan</a>
-                        <a class="dropdown-item" href="currentfuelprice">Current Fuel Prices</a>
+                        <a class="dropdown-item" href="{{route('currentfuelprice')}}">Current Fuel Prices</a>
                     </div>
 
                 </li>

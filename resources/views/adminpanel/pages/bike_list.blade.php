@@ -31,7 +31,7 @@
                     <h2>List of New Bikes</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <a>Bikes</a>
@@ -123,7 +123,7 @@
 
 
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                     <tr>
                     <th>No.</th>
                         <th>Name</th>
@@ -136,7 +136,7 @@
                         <th>Price</th>
                         <th>Action</th>
                     </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     </table>
                         </div>
 
@@ -150,7 +150,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
             </div>
         </div>
 

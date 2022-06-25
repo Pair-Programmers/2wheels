@@ -31,10 +31,10 @@
                     <h2>Create Bike Model</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
-                            <a>Bike Mode</a>
+                            <a>Bike Mode;</a>
                         </li>
                         <li class="active">
                             <strong>Create</strong>
@@ -324,13 +324,13 @@
 
 
                     </tbody>
-                    <tfoot>
+                    {{-- <tfoot>
                     <tr>
                         <th>No.</th>
                         <th>Model</th>
                         <th>Company</th>
                     </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     </table>
                         </div>
 
@@ -348,7 +348,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
             </div>
         </div>
 

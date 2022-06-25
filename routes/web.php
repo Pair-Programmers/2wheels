@@ -18,6 +18,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\BikeAdminController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -130,7 +132,7 @@ Route::get('bikeinsurance', function () {
 
 Route::get('currentfuelprice', function () {
     return view('pages/currentfuelprice');
-});
+})->name('currentfuelprice');
 
 Route::get('abc', function () {
     return view('pages/bike_new_show');

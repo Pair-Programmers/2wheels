@@ -25,13 +25,13 @@
     <?=$sidebar; ?>
 
         <div id="page-wrapper" class="gray-bg">
-            <?=$header; ?>            
+            <?=$header; ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
                     <h2>Edit Company</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <a>Company</a>
@@ -59,12 +59,12 @@
                                         <input type="text" class="form-control" name="name" value="{{$company->name}}">
                                     </div>
 
-                                   
 
-                                    
+
+
                                 </div>
 
-                                
+
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button class="btn btn-primary" type="submit">Save</button>
@@ -73,11 +73,11 @@
                             </form>
                         </div>
                         <br>
-                
+
             </div>
         </div>
 
-        
+
 
 
         <div class="footer">
@@ -85,7 +85,7 @@
                 10GB of <strong>250GB</strong> Free.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2015
+                <strong>Copyright</strong> twowheelss.com &copy; 2014-2015
             </div>
         </div>
 

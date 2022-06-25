@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="communication-text">
                                         <h4>Website:</h4>
-                                        <p><a href="#">https://2wheels.com</a></p>
+                                        <p><a href="#">https://twowheelss.com</a></p>
                                     </div>
                                 </div>
                             </div>

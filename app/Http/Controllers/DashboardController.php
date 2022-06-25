@@ -23,8 +23,8 @@ class DashboardController extends Controller
     {
         if(Session::has('adminLogin')){
 
-            $count_Dealers = User::where('type', 'Dealers')->count();
-            $count_Non_Dealers = User::where('type', 'Non-Dealers')->count();
+            $count_Dealers = User::where('type', 'Dealer')->count();
+            $count_Non_Dealers = User::where('type', 'Non-Dealer')->count();
             $count_product_post = Product::count();
             $count_bike_posts = Bike::count();
             $count_Models = BikeModel::count();

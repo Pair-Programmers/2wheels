@@ -33,7 +33,7 @@
                     <ol class="breadcrumb">
                         <li>
                             <!-- Home -->
-                            <a href="index.html">Home</a>
+                            <a href="{{route('admin_dashboard_page')}}">Home</a>
                         </li>
                         <li>
                             <!-- orders -->
@@ -135,7 +135,7 @@
 
 
                                         </tbody>
-                                        <tfoot>
+                                        {{-- <tfoot>
                                             <tr>
                                                 <th>Order #</th>
                                                 <th>Customer</th>
@@ -145,7 +145,7 @@
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
-                                        </tfoot>
+                                        </tfoot> --}}
                                     </table>
                                 </div>
 

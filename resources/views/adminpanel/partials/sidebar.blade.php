@@ -3,7 +3,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="{{asset('adminpanel')}}/img/admin_profile.jpg" style="width: 70px; height: 70px" />
+                            <img alt="image" class="img-circle" src="{{asset('adminpanel')}}/img/admin_profile.JPG" style="width: 70px; height: 70px" />
                              </span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">2Wheels</strong>
@@ -20,7 +20,7 @@
                         </div>
                     </li>
                     <li >
-                        <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                        <a href="{{route('admin_dashboard_page')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
 
                     </li>
                     <li>

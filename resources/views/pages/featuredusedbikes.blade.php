@@ -886,7 +886,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>SigmaMotorsports Pakistan</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03229000800</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1015,7 +1015,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>SigmaMotorsports Pakistan</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03229000800</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1144,7 +1144,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03024354122</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1273,7 +1273,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03214820747</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1402,7 +1402,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03024354122</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1531,7 +1531,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03024354122</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1660,7 +1660,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03024354122</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1781,7 +1781,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Haseeb</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03165009202</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -1913,7 +1913,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Hamza A</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03008010908</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -2041,7 +2041,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Qazi Mussavir</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03212828620</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -2169,7 +2169,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>OW MOTORSPORTS</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03222033399</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -2297,7 +2297,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>OW MOTORSPORTS</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03222033399</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -2394,7 +2394,7 @@
           $('input#id').val(ad_id);
           $('#contact-title').html(title);
           $('#contact-alert-title').html(title);
-          $('.sellerTextArea').val('Hi,\n I am interested in your "' + title + '" advertised on 2Wheels.com. Please let me know if it\'s still available.\n Thanks');
+          $('.sellerTextArea').val('Hi,\n I am interested in your "' + title + '" advertised on twowheelss.com. Please let me know if it\'s still available.\n Thanks');
 
           $('#contact_seller_div').modal('show');
       }else{
@@ -2520,7 +2520,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>OW MOTORSPORTS</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03222033399</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -2771,7 +2771,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>shahjeez</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03132872272</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -2899,7 +2899,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03024354122</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -3027,7 +3027,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>Shaukat autos</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03024354122</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -3277,7 +3277,7 @@
                     <div class='text-center owner-info-popover'>
                       <div class='primary-lang'>OW MOTORSPORTS</div>
                       <h4 style='display:inline-block' class='nomargin mt5 generic-green primary-lang'><i class='fa fa-phone'></i> 03222033399</h4>
-                      <p style='margin:10px -15px 0' class='fs12'>Mention 2Wheels.com when calling Seller to get a good deal</p>
+                      <p style='margin:10px -15px 0' class='fs12'>Mention twowheelss.com when calling Seller to get a good deal</p>
                     </div>
                   " data-placement="bottom" data-trigger="focus" data-html="true"><i class='fa fa-phone'></i>Show Phone No.</button>
 
@@ -4004,7 +4004,7 @@
           $('input#id').val(ad_id);
           $('#contact-title').html(title);
           $('#contact-alert-title').html(title);
-          $('.sellerTextArea').val('Hi,\n I am interested in your "' + title + '" advertised on 2Wheels.com. Please let me know if it\'s still available.\n Thanks');
+          $('.sellerTextArea').val('Hi,\n I am interested in your "' + title + '" advertised on twowheelss.com. Please let me know if it\'s still available.\n Thanks');
 
           $('#contact_seller_div').modal('show');
       }else{
