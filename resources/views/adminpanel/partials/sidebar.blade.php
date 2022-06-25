@@ -41,7 +41,7 @@
 
                     </li>
                     <li>
-                        <a href="{{route('model.create')}}"><i class="fa fa-envelope"></i> <span class="nav-label">Manage Model</span><span class="fa arrow"></span></a>
+                        <a href="{{route('model.create')}}"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Manage Model</span><span class="fa arrow"></span></a>
 
                     </li>
 
