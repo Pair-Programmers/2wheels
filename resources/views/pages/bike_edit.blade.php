@@ -538,8 +538,6 @@
                                             <ul class="list-unstyled list-inline sell-feature-list col-12">
                                                 <li>
                                                     <label class="d-flex align-items-center">
-                                                        <input name="additional_info[]"
-                                                            type="hidden" value="0" />
                                                             <input  @if(json_decode($bike->additional_info)[0] != 0) checked @endif style="height: 15px;"
                                                             id="used_bike_anti_theft_lock" name="additional_info[]"
                                                             type="checkbox" value="Anti Theft Lock" /> <span

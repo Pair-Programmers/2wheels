@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class WishlistController extends Controller
 {
@@ -58,12 +58,18 @@ class WishlistController extends Controller
     public function addToWishlist($id)
     {
 
+        $checkWishlist=Wishlist::where('product_or_bike_id',$id)
+        ->where('user_id',Auth::user()->id)
+        ->where('for_favourite', 'bike')
+        ->first();
+        if(!$checkWishlist){
 
-        $wishlist=new Wishlist();
-        $wishlist->user_id=Auth::user()->id;
-        $wishlist->product_or_bike_id=$id;
-        $wishlist->for_favourite='bike';
-        $wishlist->save();
+            $wishlist=new Wishlist();
+            $wishlist->user_id=Auth::user()->id;
+            $wishlist->product_or_bike_id=$id;
+            $wishlist->for_favourite='bike';
+            $wishlist->save();
+        }
     }
 
     /**
@@ -108,7 +114,7 @@ class WishlistController extends Controller
      */
     public function destroy($id)
     {
-        $delete=Wishlist::where('user_id',Auth::user()->id)->where('product_or_bike_id',$id)->delete();
-        return redirect()->back();
+        $delete=Wishlist::where('user_id', Auth::user()->id)->where('product_or_bike_id',$id)->delete();
+        
     }
 }

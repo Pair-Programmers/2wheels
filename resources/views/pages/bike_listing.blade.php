@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{{ asset('website') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('website') }}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('website') }}/assets/css/application.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="preload"
         href="https://wsa2.pakwheels.com/assets/desktop/application-a5b694b3fae411e8b15ce4c8f0071139.css" as="style">
     <link
@@ -449,16 +451,19 @@
 
                     <script>
                          var selectedCompanies = @json(old('companies'));
-                        for (let index = 0; index < selectedCompanies.length; index++) {
-                            $('#company-checkbox-' + selectedCompanies[index]).attr('checked', true);
-                            $('#company-checkbox-' + selectedCompanies[index]).trigger("change");
-                        }
-                        if(selectedCompanies.length > 0){
-                            $('#demo2').removeClass('collapse');
-                        }
-                        else{
-                            $('#demo2').addClass('collapse');
-                        }
+                         if(selectedCompanies){
+                            for (let index = 0; index < selectedCompanies.length; index++) {
+                                $('#company-checkbox-' + selectedCompanies[index]).attr('checked', true);
+                                $('#company-checkbox-' + selectedCompanies[index]).trigger("change");
+                            }
+                            if(selectedCompanies.length > 0){
+                                $('#demo2').removeClass('collapse');
+                            }
+                            else{
+                                $('#demo2').addClass('collapse');
+                            }
+                         }
+
                     </script>
                 </div>
                 <h4 data-toggle="collapse" data-target="#demo33" class="pt-3" style="cursor: pointer;">Model</h4>
@@ -477,15 +482,18 @@
                     @endif
                     <script>
                         var selectedModels = @json(old('models'));
-                        for (let index = 0; index < selectedModels.length; index++) {
-                            $('#model-checkbox-' + selectedModels[index]).attr('checked', true);
+                        if(selectedModels){
+                            for (let index = 0; index < selectedModels.length; index++) {
+                                $('#model-checkbox-' + selectedModels[index]).attr('checked', true);
+                            }
+                            if(selectedModels.length > 0){
+                                $('#demo33').removeClass('collapse');
+                            }
+                            else{
+                                $('#demo33').addClass('collapse');
+                            }
                         }
-                        if(selectedModels.length > 0){
-                            $('#demo33').removeClass('collapse');
-                        }
-                        else{
-                            $('#demo33').addClass('collapse');
-                        }
+
                     </script>
 
                 </div>
@@ -582,15 +590,18 @@
 
                     <script>
                         var selectedBodyType = @json(old('body_type'));
-                       for (let index = 0; index < selectedBodyType.length; index++) {
-                           $('#bodytype-' + selectedBodyType[index]).attr('checked', true);
-                       }
-                       if(selectedBodyType.length > 0){
-                           $('#demoBodyType').removeClass('collapse');
-                       }
-                       else{
-                           $('#demoBodyType').addClass('collapse');
-                       }
+                        if(selectedBodyType){
+                            for (let index = 0; index < selectedBodyType.length; index++) {
+                                $('#bodytype-' + selectedBodyType[index]).attr('checked', true);
+                            }
+                            if(selectedBodyType.length > 0){
+                                $('#demoBodyType').removeClass('collapse');
+                            }
+                            else{
+                                $('#demoBodyType').addClass('collapse');
+                            }
+                        }
+
                    </script>
                 </div>
                 <h4 data-toggle="collapse" data-target="#democity" class="pt-3" style="cursor: pointer;">LOCATIONS</h4>
@@ -620,16 +631,20 @@
                 </div>
 
                 <script>
+
                     var selectedCity = @json(old('city'));
-                   for (let index = 0; index < selectedCity.length; index++) {
-                       $('#city_name-' + selectedCity[index]).attr('checked', true);
-                   }
-                   if(selectedCity.length > 0){
-                       $('#democity').removeClass('collapse');
-                   }
-                   else{
-                       $('#democity').addClass('collapse');
-                   }
+                    if(selectedCity){
+                        for (let index = 0; index < selectedCity.length; index++) {
+                            $('#city_name-' + selectedCity[index]).attr('checked', true);
+                        }
+                        if(selectedCity.length > 0){
+                            $('#democity').removeClass('collapse');
+                        }
+                        else{
+                            $('#democity').addClass('collapse');
+                        }
+                    }
+
                </script>
                                             <button class="btn common-btn-clr mt-5 text-right" type="submit">
                                                 Search</button>
@@ -803,12 +818,41 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 text-right p-0" style="margin-bottom: 5px">
-                                                        <button type="button"
-                                                            onclick="addtoWishlist({{ $product->id }})"
-                                                            class="btn btn-light"
-                                                            style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
+                                                    @if (Auth::user())
+                                                        @php
+                                                            $found = false;
+                                                        @endphp
+                                                        @foreach ($wishlist as $value)
 
+                                                            @if ($value->product_or_bike_id	== $product->id)
+                                                                <button id="wishlistButton-{{$product->id}}" type="button"
+                                                                onclick="removeFromWishlist({{ $product->id }})"
+                                                                class="btn btn-light"
+                                                                style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9829;</button>
+                                                                @php
+                                                                $found = true;
+                                                                @endphp
+                                                                @break
+                                                            @endif
+                                                        @endforeach
+                                                        @if (!$found)
+
+                                                        <button id="wishlistButton-{{$product->id}}" type="button"
+                                                        onclick="addtoWishlist({{ $product->id }})"
+                                                        class="btn btn-light"
+                                                        style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
+
+                                                        @endif
+
+                                                        @else
+                                                        <button type="button"
+                                                        onclick="loginRedirect()"
+                                                        class="btn btn-light"
+                                                        style="font-size: 25px; color:rgba(243, 180, 8, 0.877); ">&#9825;</button>
+
+                                                        @endif
                                                     </div>
+
                                                     <div class="search-bottom clearfix">
                                                         <div>
                                                             <div style="margin-bottom: 10px"
@@ -852,43 +896,6 @@
                                       'price_to'=>old('price_to')])->links('pagination::bootstrap-4') }}
                                 </div>
 
-                                {{-- <div data-pjax-enable>
-                                    <ul class="pagination search-pagi">
-
-
-                                        <li class="page active">
-                                            <a href="">1</a>
-                                        </li>
-
-                                        <li class="page">
-                                            <a href="" rel="next">2</a>
-                                        </li>
-
-                                        <li class="page">
-                                            <a href="">3</a>
-                                        </li>
-
-                                        <li class="page">
-                                            <a href="">4</a>
-                                        </li>
-
-                                        <li class="page">
-                                            <a href="">5</a>
-                                        </li>
-
-                                        <li class="page gap disabled"><a href="#" onclick="return false;">&hellip;</a>
-                                        </li>
-                                        <li class="next_page">
-                                            <a href="" rel="next">Next &rsaquo;</a>
-                                        </li>
-
-                                        <li class="last next">
-                                            <a href="">Last
-                                                &raquo;</a>
-                                        </li>
-
-                                    </ul>
-                                </div> --}}
                             </div>
                             <!-- copy end -->
                         </div>
@@ -902,73 +909,10 @@
     </div>
     <div class="header-space"></div>
     <div class="header-space"></div>
-    {{-- <script>
-        function handle_version_select(version_li) {
-            var version_id = $(version_li).attr('version_id');
-            $('#ride_car_version_id').val(version_id);
-
-            $('.version-listings .version.current').removeClass('current');
-            $(version_li).addClass('current');
-        }
-        $(document).on('ready pjax:complete', function() {
-            $('.year-listings .model_year').click(function() {
-                if (allow_make_model_change) {
-                    var year = $(this).data().year;
-                    handle_year_change(year);
-                    $('.cat-selection.active').removeClass('active');
-                    $('.cat-selection.models').addClass('active');
-                }
-            });
-
-            $('.make-listings .make').click(function() {
-                if (allow_make_model_change) {
-                    var make_id = $(this).data().make;
-                    handle_make_select(make_id);
-                    $('.cat-selection.active').removeClass('active');
-                    $('.cat-selection.models').addClass('active');
-                }
-
-            });
-
-            $('.model-listings .model').click(function() {
-                if (allow_make_model_change) {
-                    var model_id = $(this).data().model;
-                    handle_model_select((model_id));
-                    $('.cat-selection.active').removeClass('active');
-                    $('.cat-selection.versions').addClass('active');
-                }
-            });
-
-            $('.version-listings .version').click(function() {
-                handle_version_select(this);
-            });
-
-        });
-
-        function removeDuplicates(url) {
-            var mk_exists = false,
-                md_exists = false,
-                yr_exists = false;
-            var sanitized_url = [];
-            $.each(url.split('/').reverse(), function(index, val) {
-                if (/^mk_/.test(val) && !mk_exists) {
-                    mk_exists = true;
-                    sanitized_url.unshift(val);
-                } else if (/^md_/.test(val) && !md_exists) {
-                    md_exists = true;
-                    sanitized_url.unshift(val);
-                } else if (/^yr_/.test(val) && !yr_exists) {
-                    yr_exists = true;
-                    sanitized_url.unshift(val);
-                } else if (!/^mk_/.test(val) && !/^md_/.test(val) && !/^yr_/.test(val)) {
-                    sanitized_url.unshift(val);
-                }
-            });
-            return sanitized_url.join('/');
-        }
-    </script> --}}
     <script>
         allow_make_model_change = true;
+
+
 
         $(document).ready(function() {
             applyPjax();
@@ -988,6 +932,7 @@
                 $('.sell-bar-fixed').removeClass('hide').addClass('show');
                 $('#fb-root').removeClass('show').addClass('hide');
             }
+
 
         });
     </script>
@@ -1157,8 +1102,8 @@
                                         <span>Web</span>
                                     </div>
                                     <div class="food-info-content">
-                                        <a href="#">info@twowheelss.com</a>
-                                        <a href="#">www.twowheelss.com</a>
+                                        <a href="mailto:info@twowheelss.com">info@twowheelss.com</a>
+                                        <a href="{{route('index')}}">www.twowheelss.com</a>
                                     </div>
                                 </div>
                             </div>
@@ -1172,7 +1117,7 @@
                 <div class="row">
                     <div class="col-md-8 col-12">
                         <div class="copyright">
-                            <p>©Copyright, 2018 All Rights Reserved by <a href="#">2Wheels</a></p>
+                            <p>©Copyright, 2018 All Rights Reserved by <a href="{{route('index')}}">2Wheels</a></p>
                         </div>
                     </div>
                     <div class="col-md-4 col-12">
@@ -1187,14 +1132,30 @@
 </body>
 <script>
     function addtoWishlist(id) {
-        alert(id);
         $.ajax({
             type: "GET",
-            url: {{ url('/addToWishlist2/') }} + id,
+            url: `{{ url('/addToWishlist2') }}` +'/'+ id,
             success: function(data) {
-                alert('asd');
+                $('#wishlistButton-' + id).html("&#9829;");
+                $('#wishlistButton-'+id).attr("onclick","removeFromWishlist(" + id + ")");
+
             }
         });
+    }
+
+    function removeFromWishlist(id) {
+        $.ajax({
+            type: "GET",
+            url: `{{ url('/removeToWishlist') }}` +'/'+ id,
+            success: function(data) {
+                $('#wishlistButton-'+id).html("&#9825;");
+                $('#wishlistButton-'+id).attr("onclick","addtoWishlist(" + id + ")");
+            }
+        });
+    }
+
+    function loginRedirect() {
+        document.location.href = `{{route('login')}}`;
     }
 
     function sortProduct() {

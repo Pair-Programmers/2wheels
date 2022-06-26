@@ -906,8 +906,8 @@
                                         <span>Web</span>
                                     </div>
                                     <div class="food-info-content">
-                                        <a href="#">info@twowheelss.com</a>
-                                        <a href="#">www.twowheelss.com</a>
+                                        <a href="mailto:info@twowheelss.com">info@twowheelss.com</a>
+                                        <a href="{{route('index')}}">www.twowheelss.com</a>
                                     </div>
                                 </div>
                             </div>

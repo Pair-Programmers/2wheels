@@ -499,7 +499,6 @@
                                             <ul class="list-unstyled list-inline sell-feature-list col-12">
                                                 <li>
                                                     <label class="d-flex align-items-center">
-                                                        <input name="additional_info[]" type="hidden" value="0" />
                                                         <input style="height: 15px;" id="used_bike_anti_theft_lock" name="additional_info[]"
                                                             type="checkbox" value="Anti Theft Lock" />
                                                             <span style="width: 28vw;">Anti Theft Lock</span>

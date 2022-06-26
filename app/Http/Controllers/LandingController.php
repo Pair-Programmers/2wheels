@@ -6,8 +6,9 @@ use App\Models\Product;
 use App\Models\Blog;
 use App\Models\Company;
 use App\Models\BikeModel;
-
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use VisitLog;
 
 class LandingController extends Controller
@@ -66,8 +67,15 @@ class LandingController extends Controller
         $bikesPriceLowToHigh = $bikes;
         $bikesDateRecent = $bikes;
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
+
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
         // if($request->city != null && $request->price_range != null && $request->company_model != null){
         //     $bikes = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->paginate($this->paginate_qty);
         //     $bikesPriceHighToLow = Bike::where('reg_city_id', 'like', '%'.$request->city.'%')->where('name', 'like', '%'.$request->company_model.'%')->where('price', '<=', $request->price_range)->orderby('price', 'DESC')->paginate($this->paginate_qty);
@@ -200,9 +208,15 @@ class LandingController extends Controller
             $bikesDateRecent = Bike::where('is_active', true)->where('name', 'like', '%'.$request->keyword.'%')->where('price', '<=', $request->max_price)->where('price', '>=', $request->min_price)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
         }
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         $request->flash();
-        return view('pages/bike_listing', ['bikes'=>$searchedbikes, 'companies'=>$companies, 'models'=>$models, 'bikesPriceHighToLow'=>$bikesPriceHighToLow, 'bikesPriceLowToHigh'=>$bikesPriceLowToHigh, 'bikesDateOld'=>$bikesDateOld, 'bikesDateRecent'=>$bikesDateRecent]);
+        return view('pages/bike_listing', ['wishlist'=>$wishlist, 'bikes'=>$searchedbikes, 'companies'=>$companies, 'models'=>$models, 'bikesPriceHighToLow'=>$bikesPriceHighToLow, 'bikesPriceLowToHigh'=>$bikesPriceLowToHigh, 'bikesDateOld'=>$bikesDateOld, 'bikesDateRecent'=>$bikesDateRecent]);
 
         //return view('pages/index', compact('newBikes', 'usedBikes', 'latestProducts', 'blogs', 'searchedbikes', 'companies', 'models'));
     }
@@ -387,10 +401,15 @@ class LandingController extends Controller
 
         }
 
-
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         $request->flash();
-        return view('pages/bike_listing', ['bikes'=>$searchedbikes, 'companies'=>$companies, 'models'=>$models, 'bikesPriceHighToLow'=>$bikesPriceHighToLow, 'bikesPriceLowToHigh'=>$bikesPriceLowToHigh, 'bikesDateOld'=>$bikesDateOld, 'bikesDateRecent'=>$bikesDateRecent]);
+        return view('pages/bike_listing', ['wishlist'=>$wishlist, 'bikes'=>$searchedbikes, 'companies'=>$companies, 'models'=>$models, 'bikesPriceHighToLow'=>$bikesPriceHighToLow, 'bikesPriceLowToHigh'=>$bikesPriceLowToHigh, 'bikesDateOld'=>$bikesDateOld, 'bikesDateRecent'=>$bikesDateRecent]);
 
         //return view('pages/index', compact('newBikes', 'usedBikes', 'latestProducts', 'blogs', 'searchedbikes', 'models', 'companies'));
     }

@@ -9,6 +9,7 @@ use App\Models\Company;
 use App\Models\BikeReview;
 use App\Models\User;
 use App\Models\Blog;
+use App\Models\Wishlist;
 use Auth;
 
 class BikeController extends Controller
@@ -208,9 +209,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('category', 'Used Bike')->where('company_id', $make)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function usedBikesByBodyType($body_type)//ok
@@ -226,9 +233,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('category', 'Used Bike')->where('body_type', $body_type)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function usedBikesByCity($city)//ok
@@ -244,9 +257,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('category', 'Used Bike')->where('reg_city_id', $city)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function usedBikesByPrice($price)//
@@ -307,8 +326,15 @@ class BikeController extends Controller
                 $vendors = array();
           }
 
+          if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
+
           return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-          'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+          'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function newBikesByMake($make)//ok
@@ -324,9 +350,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('category', 'New Bike')->where('company_id', $make)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function bikesByMake($make)//ok
@@ -342,9 +374,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('company_id', $make)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('company_id', $make)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function newBikesByModel($model)//
@@ -383,9 +421,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('category', 'Used Bike')->where('model_id', $model)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
     }
 
     public function bikesByModel($model)//ok
@@ -401,9 +445,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('model_id', $model)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('model_id', $model)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wislist'));
     }
 
 
@@ -419,8 +469,16 @@ class BikeController extends Controller
         $bikesPriceLowToHigh = Bike::orderby('price', 'ASC')->paginate($this->paginate_qty);
         $bikesDateOld = Bike::orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
+
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-         'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+         'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
 
     }
 
@@ -436,8 +494,16 @@ class BikeController extends Controller
         $bikesPriceLowToHigh = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('price', 'ASC')->paginate($this->paginate_qty);
         $bikesDateOld = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('name', 'like', '%'.$request->searchbyname.'%')->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
+
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
+
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-         'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+         'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
 
     }
 
@@ -454,9 +520,15 @@ class BikeController extends Controller
         $bikesDateOld = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'ASC')->paginate($this->paginate_qty);
         $bikesDateRecent = Bike::where('price', '>=', $request->price_from)->where('price', '<=', $request->price_to)->orderby('created_at', 'DESC')->paginate($this->paginate_qty);
 
+        if(Auth::user()){
+            $wishlist = Wishlist::where('for_favourite', 'bike')->where('user_id', Auth::id())->get();
+        }
+        else{
+            $wishlist = null;
+        }
 
         return view('pages/bike_listing', compact('bikes', 'bikesPriceHighToLow',
-        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models'));
+        'bikesPriceLowToHigh', 'bikesDateOld', 'bikesDateRecent', 'search_result', 'companies', 'models', 'wishlist'));
 
     }
 
