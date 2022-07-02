@@ -17,7 +17,7 @@ class BikeModelController extends Controller
     public function index()
     {
         $models = BikeModel::all();
-          
+
         $view = View::make('adminpanel/pages/blog_list', ['models'=>$models]);
         $view->nest('sidebar','adminpanel/partials/sidebar');
         $view->nest('header','adminpanel/partials/header');
@@ -53,13 +53,13 @@ class BikeModelController extends Controller
         {
             $image = $request->image;
             $name=time() . '_'. $request->name . '.'. $image->getClientOriginalExtension();
-            $image->move(public_path().'/storage/images/bikemodels/', $name); 
+            $image->move(public_path().'/storage/images/bikemodels/', $name);
             $inputs['image'] = $name;
         }else{
             $inputs['image'] = 'xyz.png';
         }
-        
-        
+
+
 
         BikeModel::create($inputs);
         return redirect()->route('model.create');
@@ -109,11 +109,11 @@ class BikeModelController extends Controller
         {
             $image = $request->image;
             $name=time() . '_'. $request->name . '.'. $image->getClientOriginalExtension();
-            $image->move(public_path().'/storage/images/bikemodels/', $name); 
+            $image->move(public_path().'/storage/images/bikemodels/', $name);
             $inputs['image'] = $name;
         }
 
-        
+
 
         $model->update($inputs);
         return redirect()->route('model.create');
@@ -137,5 +137,5 @@ class BikeModelController extends Controller
         return response()->json(['models'=>$models]);
     }
 
-    
+
 }

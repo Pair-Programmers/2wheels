@@ -30,13 +30,15 @@ class Bike extends Model
         'seller_address',
         'user_id',
         'no_of_reviews',
+        'is_active',
+        'is_featured',
     ];
 
     public function getImages()
     {
         return json_decode($this->images);
     }
-    
+
     public function company(){
         return $this->hasOne(Company::class, 'id', 'company_id');
     }

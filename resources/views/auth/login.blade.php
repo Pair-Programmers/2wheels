@@ -46,7 +46,7 @@
                                     <div class="login-form">
                                         <form method="POST" action="{{ route('login') }}">
                                             @csrf
-                                            <input type="text" name="email" placeholder="Username">
+                                            <input type="text" name="email" value="{{old('email')}}" placeholder="Username">
                                             <input type="password" name="password" placeholder="Password">
                                             <div class="button-box">
                                                 <div class="login-toggle-btn">

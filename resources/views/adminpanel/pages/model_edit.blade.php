@@ -95,10 +95,21 @@
 
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Engine_type</label>
-
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" name="engine_type" required value="{{$model->engine_type}}">
-                                    </div>
+                                    <select class="form-control" name="engine_type" required>
+                                        <option value="">Engine Type</option>
+                                        @if ($model->engine_type == '2-stroke')
+                                        <option value="2-stroke" selected>2 Stroke</option>
+                                        <option value="4-stroke">4-stroke</option>
+                                        @elseif ($model->engine_type == '4-stroke')
+                                        <option value="2-stroke">2 Stroke</option>
+                                        <option value="4-stroke" selected>4 Stroke</option>
+                                        @else
+                                        <option value="2-stroke">2 Stroke</option>
+                                        <option value="4-stroke">4 Stroke</option>
+                                        @endif
+                                    </select>
+                                </div>
 
                                     <label class="col-sm-2 control-label">Displacement</label>
 

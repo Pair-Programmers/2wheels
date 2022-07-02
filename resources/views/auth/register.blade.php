@@ -48,17 +48,22 @@
                                             @csrf
                                             <select name="type" id="" style="margin-bottom: 20px" required>
                                                 <option value="" selected disabled>Type</option>
-                                                <option value="Dealer">Dealer</option>
+                                                @if (old('type') == 'Dealer')
+                                                <option value="Dealer" selected>Dealer</option>
                                                 <option value="Non-Dealer">Non-Dealer</option>
+                                                @else
+                                                <option value="Dealer">Dealer</option>
+                                                <option value="Non-Dealer" selected>Non-Dealer</option>
+                                                @endif
                                             </select>
                                             <br>
-                                            <input type="text" name="name" placeholder="Full Name" required>
-                                            <input name="phone" placeholder="Phone" type="number" required>
-                                            <input name="address" placeholder="Address" type="text" required>
-                                            <input name="email" placeholder="Email" type="email" required>
+                                            <input type="text" value="{{old('name')}}" name="name" placeholder="Full Name" required>
+                                            <input name="phone" placeholder="Phone" value="{{old('phone')}}" type="number" required>
+                                            <input name="address" value="{{old('address')}}" placeholder="Address" type="text" required>
+                                            <input name="email" value="{{old('email')}}" placeholder="Email" type="email" required>
                                             <input type="password" name="password" placeholder="Password" required>
                                             <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-                                            
+
                                             <div class="button-box">
                                                 <button type="submit" class="btn-style cr-btn"><span>Register</span></button>
                                             </div>
