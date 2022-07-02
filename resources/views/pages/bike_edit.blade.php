@@ -642,8 +642,7 @@
                                         <label class="col-md-3" for="price" id="price-label"><span>Images<span
                                                     class='text-error'>*</span> <span></span></span></label>
                                         <div class="col-md-5">
-                                            <input id="bike_selector" accept="image/*" name="images[]" placeholder="" multiple type="file" value=""
-                                                required />
+                                            <input id="bike_selector" accept="image/*" name="images[]" placeholder="" multiple type="file" value="" />
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-hint">
@@ -675,7 +674,7 @@
 
                                 </div>
                             </fieldset>
-                            
+
                             <fieldset>
                                 <div class="well">
                                     <legend class="noborder">Contact Information</legend>
