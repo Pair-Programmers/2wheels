@@ -570,7 +570,7 @@
                                 </div>
                             </fieldset>
 
-                            <fieldset>
+                            {{-- <fieldset>
                                 <div class="well">
 
 
@@ -632,8 +632,50 @@
 
                                     </div>
                                 </div>
-                            </fieldset>
+                            </fieldset> --}}
 
+                            <fieldset>
+                                <div class="well">
+                                    <legend class="noborder">Upload Images to show to users</legend>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3" for="price" id="price-label"><span>Images<span
+                                                    class='text-error'>*</span> <span></span></span></label>
+                                        <div class="col-md-5">
+                                            <input id="bike_selector" accept="image/*" name="images[]" placeholder="" multiple type="file" value=""
+                                                required />
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-hint">
+                                                <img alt="Hint" class="hint-img"
+                                                    src="{{ asset('website') }}/assets/img/bulb.svg" />
+                                                Please enter a realistic Images, 5 max, one is required.
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div id="EvaluatePriceModal" class="modal" tabindex="-1" role="dialog"
+                                        aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body text-center">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+                            </fieldset>
+                            
                             <fieldset>
                                 <div class="well">
                                     <legend class="noborder">Contact Information</legend>
