@@ -29,14 +29,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('users', UserApiController::class);
-Route::apiResource('bikes', BikeApiController::class);
-Route::apiResource('products', ProductApiController::class);
-Route::apiResource('companies', CompanyApiController::class);
-Route::apiResource('models', ModelApiController::class);
-Route::apiResource('blogs', BlogApiController::class);
-Route::apiResource('reviews', ReviewApiController::class);
-Route::apiResource('product_categories', ProductCategoryApiController::class);
-Route::apiResource('orderdetails', OrderDetailApiController::class);
-Route::apiResource('orders', OrderApiController::class);
+
 
