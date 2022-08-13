@@ -135,8 +135,26 @@
                     </div>
 
 
-        </div>
+                    <div class="wrapper wrapper-content animated fadeInRight">
+                        <div class="row">
 
+                            <div class="col-lg-8">
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-title">
+                                        <h5>Visitors By Last 12 Months</h5>
+                                    </div>
+                                    <div class="ibox-content">
+                                        <div>
+                                            <canvas id="barChart" height="140"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+        </div>
 
 
 
@@ -153,96 +171,48 @@
     <script src="{{asset('adminpanel')}}/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="{{asset('adminpanel')}}/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Flot -->
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.pie.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.symbol.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/flot/jquery.flot.time.js"></script>
-
-    <!-- Peity -->
-    <script src="{{asset('adminpanel')}}/js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="{{asset('adminpanel')}}/js/demo/peity-demo.js"></script>
 
     <!-- Custom and plugin javascript -->
     <script src="{{asset('adminpanel')}}/js/inspinia.js"></script>
     <script src="{{asset('adminpanel')}}/js/plugins/pace/pace.min.js"></script>
 
-    <!-- jQuery UI -->
-    <script src="{{asset('adminpanel')}}/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-    <!-- Jvectormap -->
-    <script src="{{asset('adminpanel')}}/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="{{asset('adminpanel')}}/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- ChartJS-->
+    <script src="{{asset('adminpanel')}}/js/plugins/chartJs/Chart.min.js"></script>
+    {{-- <script src="{{asset('adminpanel')}}/js/demo/chartjs-demo.js"></script> --}}
 
-    <!-- EayPIE -->
-    <script src="{{asset('adminpanel')}}/js/plugins/easypiechart/jquery.easypiechart.js"></script>
-
-    <!-- Sparkline -->
-    <script src="{{asset('adminpanel')}}/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-
-    <!-- Sparkline demo data  -->
-    <script src="{{asset('adminpanel')}}/js/demo/sparkline-demo.js"></script>
-
-    <script src="{{asset('adminpanel')}}/js/plugins/dataTables/datatables.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $('.dataTables-example').DataTable({
-                dom: '<"html5buttons"B>lTfgitp',
-                buttons: [
-                    { extend: 'copy'},
-                    {extend: 'csv'},
-                    {extend: 'excel', title: 'ExampleFile'},
-                    {extend: 'pdf', title: 'ExampleFile'},
 
-                    {extend: 'print',
-                     customize: function (win){
-                            $(win.document.body).addClass('white-bg');
-                            $(win.document.body).css('font-size', '10px');
+var barData = {
+        labels: @json($months),
+        datasets: [
 
-                            $(win.document.body).find('table')
-                                    .addClass('compact')
-                                    .css('font-size', 'inherit');
-                    }
-                    }
-                ]
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(26,179,148,0.5)",
+                strokeColor: "rgba(26,179,148,0.8)",
+                highlightFill: "rgba(26,179,148,0.75)",
+                highlightStroke: "rgba(26,179,148,1)",
+                data: @json($visitLogByMonthally)
+            }
+        ]
+    };
 
-            });
-
-            /* Init DataTables */
-            var oTable = $('#editable').DataTable();
-
-            /* Apply the jEditable handlers to the table */
-            oTable.$('td').editable( '../example_ajax.php', {
-                "callback": function( sValue, y ) {
-                    var aPos = oTable.fnGetPosition( this );
-                    oTable.fnUpdate( sValue, aPos[0], aPos[1] );
-                },
-                "submitdata": function ( value, settings ) {
-                    return {
-                        "row_id": this.parentNode.getAttribute('id'),
-                        "column": oTable.fnGetPosition( this )[2]
-                    };
-                },
-
-                "width": "90%",
-                "height": "100%"
-            } );
+    var barOptions = {
+        scaleBeginAtZero: true,
+        scaleShowGridLines: true,
+        scaleGridLineColor: "rgba(0,0,0,.05)",
+        scaleGridLineWidth: 1,
+        barShowStroke: true,
+        barStrokeWidth: 2,
+        barValueSpacing: 5,
+        barDatasetSpacing: 1,
+        responsive: true
+    }
 
 
-        });
-
-        function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData( [
-                "Custom row",
-                "New row",
-                "New row",
-                "New row",
-                "New row" ] );
-
-        }
+    var ctx = document.getElementById("barChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Bar(barData, barOptions);
     </script>
 </body>
 </html>

@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Blog;
 use App\Models\BikeModel;
 use App\Models\Company;
+use Sarfraznawaz2005\VisitLog\Facades\VisitLog;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        VisitLog::save();
         $models = BikeModel::all();
 
         $companies = Company::all();
