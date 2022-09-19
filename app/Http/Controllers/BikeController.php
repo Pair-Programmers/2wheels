@@ -182,8 +182,11 @@ class BikeController extends Controller
     public function usedBikes()
     {
         $companies = Company::all();
-        $usedBikes = Bike::where('category', 'Used Bike')->get();
+        $usedBikes = Bike::where('category', 'Used Bike')->where('is_featured', true)->get();
         $popularUsedBikes = Bike::where('category', 'Used Bike')->where('rating', '>=', 4)->get();
+        if(count($popularUsedBikes)<1){
+            $popularUsedBikes = Bike::where('category', 'Used Bike')->get();
+        }
         return view('pages/usedbikes', compact('usedBikes','popularUsedBikes', 'companies'));
     }
 

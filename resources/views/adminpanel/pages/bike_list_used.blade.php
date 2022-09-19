@@ -86,6 +86,7 @@
                         <th>Body Type</th>
                         <th>Price</th>
                         <th>User</th>
+                        <th>Feature</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -106,6 +107,13 @@
                             <td class="center">{{$bike->body_type}}</td>
                             <td class="center">{{$bike->price}}</td>
                             <td class="center">{{$bike->user->name}}</td>
+                            <td class="center" id="feature_action_no_{{$bike->id}}">
+                                @if ($bike->is_featured)
+                                <small class="label label-primary"><i class="fa"></i>Yes</small>
+                                @else
+                                <small class="label label-danger"><i class="fa"></i>No</small>
+                                @endif
+                            </td>
                             <td class="center" id="action_no_{{$bike->id}}">
                                 @if ($bike->is_active)
                                 <small class="label label-primary"><i class="fa"></i>Active</small>
@@ -120,6 +128,10 @@
                                 </a>
                                 <a onclick="changeStatus({{$bike->id}})">
                                     <small id="" class="label label-warning">Change Status</small>
+                                </a>
+
+                                <a onclick="changeFeatureStatus({{$bike->id}})">
+                                    <small id="" class="label label-warning">Change Feature</small>
                                 </a>
                             </td>
                         </tr>
@@ -247,6 +259,20 @@
                     $('#action_no_' + id).html(`<small class="label label-primary"><i class="fa"></i>Active</small>`);
                 } else {
                     $('#action_no_' + id).html(`<small id="" class="label label-danger">InActive</small>`);
+                }
+            }
+        });
+    }
+
+    function changeFeatureStatus(id) {
+        $.ajax({
+            method: 'GET',
+            url: `{{url('/change-is_feature-status')}}/` + id,
+            success: function(data) {
+                if (data.status) {
+                    $('#feature_action_no_' + id).html(`<small class="label label-primary"><i class="fa"></i>Yes</small>`);
+                } else {
+                    $('#feature_action_no_' + id).html(`<small id="" class="label label-danger">No</small>`);
                 }
             }
         });

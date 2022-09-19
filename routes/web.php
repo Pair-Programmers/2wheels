@@ -203,6 +203,7 @@ Route::get('/bike_edit_admin/{id}', [BikeAdminController::class, 'edit'])->name(
 Route::post('/bike_update_admin/{id}', [BikeAdminController::class, 'update'])->name('admin.bike.update');
 Route::get('/bike_destroy_admin/{id}', [BikeAdminController::class, 'destroy'])->name('admin.bike.destroy');
 Route::get('/approve-bike-post/{id}', [BikeAdminController::class, 'approveBikePost'])->name('admin.bike.approve-post');
+Route::get('/change-is_feature-status/{id}', [BikeAdminController::class, 'changeFeatureStatus'])->name('admin.bike.is_feature');
 
 
 //product

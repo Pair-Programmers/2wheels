@@ -52,6 +52,20 @@ class BikeAdminController extends Controller
         return response()->json(['success'=>'done', 'status'=>$bike->is_active]);
     }
 
+    public function changeFeatureStatus($id)
+    {
+        $bike = Bike::find($id);
+        if( $bike->is_featured){
+            $bike->is_featured = false;
+        }
+        else{
+            $bike->is_featured = true;
+        }
+        $bike->save();
+
+        return response()->json(['success'=>'done', 'status'=>$bike->is_featured]);
+    }
+
 
     /**
      * Show the form for creating a new resource.

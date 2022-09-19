@@ -800,7 +800,7 @@
                     data-ride="carousel" dir="ltr">
                     <div id="slider" class="carousel-inner" style="max-height: 290px; overflow: hidden;">
                         <ul class="list-unstyled fs12 bike-featured-used-bike-home bike-slide-0 item active clearfix">
-                            @foreach ($usedBikes as $key => $bike)
+                            @foreach ($popularUsedBikes as $key => $bike)
                                 @php
                                     $key++;
                                 @endphp
