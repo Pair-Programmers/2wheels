@@ -503,7 +503,7 @@
                                     <div class="product-item-dec">
                                         <ul>
                                             <li>{{$bike->model_year}}</li>
-                                            <li>{{$bike->company->name}}</li>
+                                            <li>{{$bike->company? $bike->company->name : ''}}</li>
                                             <li>{{$bike->body_type}}</li>
                                             <li>{{$bike->engine_type}}</li>
                                         </ul>
